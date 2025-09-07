@@ -1,0 +1,847 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="修复github-22端口不通的方法-hosts文件修改. SSH连接问题错误信息 ssh: connect to host github.com port 22: Connection refused 表明当前无法通过SSH连接到GitHub。这可能是由于网络环境或SSH配置的问题。 解决方法：检查网络是否限制了端口22 检查本地问题(1) 测试端口 22 是否可用使用以下命令检查本地是否能连接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修复github-22端口不通的方法-hosts文件修改">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/12/16/GPT%E9%97%AE%E7%AD%94%E7%B1%BB/%E4%BF%AE%E5%A4%8Dgithub-22%E7%AB%AF%E5%8F%A3%E4%B8%8D%E9%80%9A%E7%9A%84%E6%96%B9%E6%B3%95-hosts%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="修复github-22端口不通的方法-hosts文件修改. SSH连接问题错误信息 ssh: connect to host github.com port 22: Connection refused 表明当前无法通过SSH连接到GitHub。这可能是由于网络环境或SSH配置的问题。 解决方法：检查网络是否限制了端口22 检查本地问题(1) 测试端口 22 是否可用使用以下命令检查本地是否能连接">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/12/16/pSRMZHBxJVqiecl.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/16/RfB2SN9kOaWnvZz.png">
+<meta property="article:published_time" content="2024-12-16T14:46:04.000Z">
+<meta property="article:modified_time" content="2025-09-07T05:35:23.649Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="git命令">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="git仓库">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2024/12/16/pSRMZHBxJVqiecl.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>修复github-22端口不通的方法-hosts文件修改 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="修复github-22端口不通的方法-hosts文件修改"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-16 14:46" pubdate>
+          2024年12月16日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">修复github-22端口不通的方法-hosts文件修改</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="修复github-22端口不通的方法-hosts文件修改"><a href="#修复github-22端口不通的方法-hosts文件修改" class="headerlink" title="修复github-22端口不通的方法-hosts文件修改"></a>修复github-22端口不通的方法-hosts文件修改</h1><p>. SSH连接问题<br>错误信息 ssh: connect to host github.com port 22: Connection refused 表明当前无法通过SSH连接到GitHub。这可能是由于网络环境或SSH配置的问题。</p>
+<p>解决方法：<br>检查网络是否限制了端口22<br> 检查本地问题<br>(1) 测试端口 22 是否可用<br>使用以下命令检查本地是否能连接到 GitHub 的端口 22：</p>
+<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-lguhbtmf99epmp"></i><span>NGINX</span><div class="collapse show" id="collapse-lguhbtmf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> -T git<span class="hljs-variable">@github</span>.com<br></code></pre></td></tr></table></div></figure>
+<p>如果出现如下的图片就是正常链接到github的</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://s2.loli.net/2024/12/16/pSRMZHBxJVqiecl.png" srcset="/img/loading.gif" lazyload></h2><p>如果出现下面这种情况就是链接失败的</p>
+<p><img src="https://s2.loli.net/2024/12/16/RfB2SN9kOaWnvZz.png" srcset="/img/loading.gif" lazyload></p>
+<p>最后我发现在打开了加整github的加速软件「Watt Toolkit」导致的。后来我修改下面文件<br>hosts文件修改方法可以参以下：：<br>在使用 Windows 系统时，我遇到了一个无法保存修改 <code>hosts</code> 文件的情况。每次尝试保存时，都会弹出提示框，显示文件无法保存，且文件可能被保护。经过多次尝试和排查，我最终找到了一个有效的解决方案，下面是我解决这个问题的详细过程：</p>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次修改 <code>hosts</code> 文件后，尝试保存时，Notepad++ 会弹出以下错误提示：</p>
+<figure class="highlight vim"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-a7vruzmf99epmp"></i><span>VIM</span><div class="collapse show" id="collapse-a7vruzmf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vim">vbnet复制代码Save failed<br>The <span class="hljs-keyword">file</span> cannot <span class="hljs-keyword">be</span> saved <span class="hljs-built_in">and</span> it may <span class="hljs-keyword">be</span> protected.<br>Do you want <span class="hljs-keyword">to</span> launch Notepad++ in Administrator <span class="hljs-keyword">mode</span>?<br></code></pre></td></tr></table></div></figure>
+
+<p>尽管我已经以管理员身份运行 Notepad++，但依然无法保存文件。</p>
+<h3 id="排查步骤"><a href="#排查步骤" class="headerlink" title="排查步骤"></a>排查步骤</h3><ol>
+<li><strong>检查文件权限</strong>：<ul>
+<li>首先，我右键点击 <code>hosts</code> 文件，选择 <strong>属性</strong>，进入 <strong>安全</strong> 选项卡，确保我的账户有 <strong>完全控制</strong> 权限。</li>
+<li>尽管权限设置正确，但问题依旧存在。</li>
+</ul>
+</li>
+<li><strong>检查文件是否被其他程序占用</strong>：<ul>
+<li>我尝试关闭了所有可能会占用 <code>hosts</code> 文件的程序，如防火墙、杀毒软件等。</li>
+<li>但问题依然没有解决。</li>
+</ul>
+</li>
+<li><strong>尝试使用其他编辑器</strong>：<ul>
+<li>我尝试使用 Windows 自带的 <strong>记事本</strong> 以管理员身份打开 <code>hosts</code> 文件进行修改，但同样无法保存文件。</li>
+</ul>
+</li>
+<li><strong>查看 Windows 文件保护机制</strong>：<ul>
+<li>由于 <code>hosts</code> 文件是系统文件，Windows 可能会启用文件保护机制，防止修改。</li>
+<li>但是禁用文件保护并不是一个推荐的解决方案，因为它可能会影响系统的安全性。</li>
+</ul>
+</li>
+</ol>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>经过多次尝试后，我发现以下步骤有效地解决了问题：</p>
+<ol>
+<li><strong>重启电脑</strong>：<ul>
+<li>首先，我重启了电脑，确保没有程序在后台占用 <code>hosts</code> 文件。</li>
+</ul>
+</li>
+<li><strong>修改 <code>hosts</code> 文件</strong>：<ul>
+<li>重启后，我重新打开 Notepad++，以管理员身份编辑 <code>hosts</code> 文件。</li>
+<li>这一次，我能够成功修改文件并保存。</li>
+</ul>
+</li>
+<li><strong>再次重启电脑</strong>：<ul>
+<li>为确保修改生效，我再次重启了电脑。</li>
+<li>重启后，我发现 <code>hosts</code> 文件的修改已经生效，问题完全解决。</li>
+</ul>
+</li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>通过重启电脑并再次尝试修改 <code>hosts</code> 文件，我成功解决了无法保存文件的问题。这个过程表明，可能是某些程序占用了文件或系统缓存导致文件无法保存。重启后，系统会释放这些资源，使得文件可以正常编辑和保存。</p>
+<h3 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h3><ul>
+<li><strong>管理员权限</strong>：在修改系统文件时，确保使用管理员权限打开编辑器。</li>
+<li><strong>重启电脑</strong>：如果遇到无法保存文件的情况，重启电脑是一个有效的解决方法，能够清理系统缓存和释放文件锁定。</li>
+<li><strong>文件保护机制</strong>：某些系统文件可能会受到 Windows 文件保护机制的限制，修改时需要特别注意。</li>
+</ul>
+<p>希望这个解决方案能帮助到遇到类似问题的朋友，避免重复的排查和无效尝试。</p>
+<hr>
+<p>你可以将这个过程作为博客文章记录，方便以后参考。如果有其他问题，也可以随时更新这篇文章。</p>
+<h5 id="您说："><a href="#您说：" class="headerlink" title="您说："></a>您说：</h5><p>要写明，用什么命令测试是否22端口被禁用。然后确是22端口，再修改这个文件内容，要把内容写上来作为演示</p>
+<h6 id="ChatGPT-说："><a href="#ChatGPT-说：" class="headerlink" title="ChatGPT 说："></a>ChatGPT 说：</h6><p>ChatGPT</p>
+<p>好的，下面是更新后的博客记录，包含了如何使用命令检查是否 22 端口被禁用，并详细描述了如何修改 <code>hosts</code> 文件的内容。</p>
+<hr>
+<h2 id="修复-hosts-文件无法保存问题的详细过程"><a href="#修复-hosts-文件无法保存问题的详细过程" class="headerlink" title="修复 hosts 文件无法保存问题的详细过程"></a>修复 <code>hosts</code> 文件无法保存问题的详细过程</h2><p>在使用 Windows 系统时，我遇到了一个无法保存修改 <code>hosts</code> 文件的情况。每次尝试保存时，都会弹出提示框，显示文件无法保存，且文件可能被保护。经过多次尝试和排查，我最终找到了一个有效的解决方案，下面是我解决这个问题的详细过程：</p>
+<h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>每次修改 <code>hosts</code> 文件后，尝试保存时，Notepad++ 会弹出以下错误提示：</p>
+<figure class="highlight vim"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-sekmqsmf99epmp"></i><span>VIM</span><div class="collapse show" id="collapse-sekmqsmf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vim">vbnet复制代码Save failed<br>The <span class="hljs-keyword">file</span> cannot <span class="hljs-keyword">be</span> saved <span class="hljs-built_in">and</span> it may <span class="hljs-keyword">be</span> protected.<br>Do you want <span class="hljs-keyword">to</span> launch Notepad++ in Administrator <span class="hljs-keyword">mode</span>?<br></code></pre></td></tr></table></div></figure>
+
+<p>尽管我已经以管理员身份运行 Notepad++，但依然无法保存文件。</p>
+<h3 id="排查步骤-1"><a href="#排查步骤-1" class="headerlink" title="排查步骤"></a>排查步骤</h3><ol>
+<li><p><strong>检查文件权限</strong>：</p>
+<ul>
+<li>首先，我右键点击 <code>hosts</code> 文件，选择 <strong>属性</strong>，进入 <strong>安全</strong> 选项卡，确保我的账户有 <strong>完全控制</strong> 权限。</li>
+<li>尽管权限设置正确，但问题依旧存在。</li>
+</ul>
+</li>
+<li><p><strong>检查文件是否被其他程序占用</strong>：</p>
+<ul>
+<li>我尝试关闭了所有可能会占用 <code>hosts</code> 文件的程序，如防火墙、杀毒软件等。</li>
+<li>但问题依然没有解决。</li>
+</ul>
+</li>
+<li><p><strong>尝试使用其他编辑器</strong>：</p>
+<ul>
+<li>我尝试使用 Windows 自带的 <strong>记事本</strong> 以管理员身份打开 <code>hosts</code> 文件进行修改，但同样无法保存文件。</li>
+</ul>
+</li>
+<li><p><strong>查看 Windows 文件保护机制</strong>：</p>
+<ul>
+<li>由于 <code>hosts</code> 文件是系统文件，Windows 可能会启用文件保护机制，防止修改。</li>
+<li>但是禁用文件保护并不是一个推荐的解决方案，因为它可能会影响系统的安全性。</li>
+</ul>
+</li>
+<li><p><strong>检查端口是否被禁用</strong>：</p>
+<ul>
+<li>在排查过程中，我发现可能与网络端口的访问权限有关。为了测试是否是端口问题，我使用以下命令检查 22 端口是否被禁用：</li>
+</ul>
+<figure class="highlight routeros"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c9vrh9mf99epmp"></i><span>ROUTEROS</span><div class="collapse show" id="collapse-c9vrh9mf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">bash<br><br><br>复制代码<br>netstat -an | <span class="hljs-built_in">find</span> <span class="hljs-string">&quot;22&quot;</span><br></code></pre></td></tr></table></div></figure>
+
+<ul>
+<li>如果 22 端口被禁用，输出结果会显示类似于以下内容：</li>
+</ul>
+<figure class="highlight elixir"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ow2k1smf99epmp"></i><span>ELIXIR</span><div class="collapse show" id="collapse-ow2k1smf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs elixir">less<br><br><br>复制代码<br><span class="hljs-title class_">TCP</span>    [::]<span class="hljs-symbol">:</span><span class="hljs-number">22</span>                   [::]<span class="hljs-symbol">:</span><span class="hljs-number">0</span>                 <span class="hljs-title class_">LISTENING</span><br></code></pre></td></tr></table></div></figure>
+
+<ul>
+<li>如果没有显示任何结果，表示 22 端口被禁用了。</li>
+</ul>
+</li>
+</ol>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>经过多次尝试后，我发现以下步骤有效地解决了问题：</p>
+<ol>
+<li><p><strong>重启电脑</strong>：</p>
+<ul>
+<li>首先，我重启了电脑，确保没有程序在后台占用 <code>hosts</code> 文件。</li>
+</ul>
+</li>
+<li><p><strong>修改 <code>hosts</code> 文件</strong>：</p>
+<ul>
+<li>重启后，我重新打开 Notepad++，以管理员身份编辑 <code>hosts</code> 文件。</li>
+<li>这一次，我能够成功修改文件并保存。以下是我修改后的 <code>hosts</code> 文件内容：</li>
+<li>以下是原内容的其中一部份：</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight accesslog"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-d7fvifmf99epmp"></i><span>ACCESSLOG</span><div class="collapse show" id="collapse-d7fvifmf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"># Steam++ Start<br><span class="hljs-number">127.0.0.1</span> steamcdn-a.akamaihd.net<br><span class="hljs-number">127.0.0.1</span> steamuserimages-a.akamaihd.net<br><span class="hljs-number">127.0.0.1</span> cdn.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> community.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> avatars.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> store.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> community.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> media.steampowered.com<br><span class="hljs-number">127.0.0.1</span> steamcommunity.com<br><span class="hljs-number">127.0.0.1</span> www.steamcommunity.com<br><span class="hljs-number">127.0.0.1</span> store.steampowered.com<br><span class="hljs-number">127.0.0.1</span> api.steampowered.com<br><span class="hljs-number">127.0.0.1</span> help.steampowered.com<br><span class="hljs-number">127.0.0.1</span> login.steampowered.com<br><span class="hljs-number">127.0.0.1</span> checkout.steampowered.com<br><span class="hljs-number">127.0.0.1</span> img.youtube.com<br><span class="hljs-number">127.0.0.1</span> shared.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> clan.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> store.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> avatars.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> media.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> video.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> huggingface.co<br><span class="hljs-number">127.0.0.1</span> github.dev<br><span class="hljs-number">127.0.0.1</span> api.github.com<br><span class="hljs-number">127.0.0.1</span> gist.github.com<br><span class="hljs-number">127.0.0.1</span> github.githubassets.com<br><span class="hljs-number">127.0.0.1</span> support-assets.githubassets.com<br><span class="hljs-number">127.0.0.1</span> education.github.com<br><span class="hljs-number">127.0.0.1</span> raw.github.com<br><span class="hljs-number">127.0.0.1</span> githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> raw.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> camo.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> cloud.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> avatars.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> avatars0.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> avatars1.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> avatars2.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> avatars3.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> user-images.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> objects.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> private-user-images.githubusercontent.com<br><span class="hljs-number">127.0.0.1</span> github.com<br><span class="hljs-number">127.0.0.1</span> pages.github.com<br><span class="hljs-number">127.0.0.1</span> githubapp.com<br><span class="hljs-number">127.0.0.1</span> hub.docker.com<br># Steam++ End<br></code></pre></td></tr></table></div></figure>
+<p>把上面的肉容改成如下，也就是注释了一部份：</p>
+<figure class="highlight accesslog"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bww22cmf99epmp"></i><span>ACCESSLOG</span><div class="collapse show" id="collapse-bww22cmf99epmp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"># Steam++ Start<br><span class="hljs-number">127.0.0.1</span> steamcdn-a.akamaihd.net<br><span class="hljs-number">127.0.0.1</span> steamuserimages-a.akamaihd.net<br><span class="hljs-number">127.0.0.1</span> cdn.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> community.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> avatars.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> store.akamai.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> community.steamstatic.com<br><span class="hljs-number">127.0.0.1</span> media.steampowered.com<br><span class="hljs-number">127.0.0.1</span> steamcommunity.com<br><span class="hljs-number">127.0.0.1</span> www.steamcommunity.com<br><span class="hljs-number">127.0.0.1</span> store.steampowered.com<br><span class="hljs-number">127.0.0.1</span> api.steampowered.com<br><span class="hljs-number">127.0.0.1</span> help.steampowered.com<br><span class="hljs-number">127.0.0.1</span> login.steampowered.com<br><span class="hljs-number">127.0.0.1</span> checkout.steampowered.com<br><span class="hljs-number">127.0.0.1</span> img.youtube.com<br><span class="hljs-number">127.0.0.1</span> shared.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> clan.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> store.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> avatars.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> media.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> video.st.dl.eccdnx.com<br><span class="hljs-number">127.0.0.1</span> huggingface.co<br># Removed GitHub entries<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> github.dev<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> api.github.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> gist.github.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> github.githubassets.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> support-assets.githubassets.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> education.github.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> raw.github.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> raw.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> camo.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> cloud.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> avatars.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> avatars0.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> avatars1.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> avatars2.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> avatars3.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> user-images.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> objects.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> private-user-images.githubusercontent.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> github.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> pages.github.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> githubapp.com<br># <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> hub.docker.com<br># Steam++ End<br><br></code></pre></td></tr></table></div></figure>
+
+<p>我发现怎样改也改不了！后来发现重启解决问题！其实重启是多余，真正是关了上面说到的github加速软件！！！完美解决！</p>
+<ol start="3">
+<li><p><strong>再次重启电脑</strong>：</p>
+<ul>
+<li>为确保修改生效，我再次重启了电脑。</li>
+<li>重启后，我发现 <code>hosts</code> 文件的修改已经生效，问题完全解决。</li>
+</ul>
+</li>
+</ol>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>通过重启电脑并再次尝试修改 <code>hosts</code> 文件，我成功解决了无法保存文件的问题。这个过程表明，可能是某些程序占用了文件或系统缓存导致文件无法保存。重启后，系统会释放这些资源，使得文件可以正常编辑和保存。</p>
+<h3 id="经验总结-1"><a href="#经验总结-1" class="headerlink" title="经验总结"></a>经验总结</h3><ul>
+<li><strong>管理员权限</strong>：在修改系统文件时，确保使用管理员权限打开编辑器。</li>
+<li><strong>重启电脑</strong>：如果遇到无法保存文件的情况，重启电脑是一个有效的解决方法，能够清理系统缓存和释放文件锁定。</li>
+<li><strong>文件保护机制</strong>：某些系统文件可能会受到 Windows 文件保护机制的限制，修改时需要特别注意。</li>
+</ul>
+<p>希望这个解决方案能帮助到遇到类似问题的朋友，避免重复的排查和无效尝试。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/GPT%E9%97%AE%E7%AD%94%E7%B1%BB/" class="category-chain-item">GPT问答类</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/git%E5%91%BD%E4%BB%A4/" class="print-no-link">#git命令</a>
+      
+        <a href="/tags/git/" class="print-no-link">#git</a>
+      
+        <a href="/tags/git%E4%BB%93%E5%BA%93/" class="print-no-link">#git仓库</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/12/16/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/github%E4%BD%BF%E7%94%A8/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0%20Git%20%E4%BB%93%E5%BA%93-%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="初始化本地 Git 仓库-并绑定到远程仓库">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">初始化本地 Git 仓库-并绑定到远程仓库</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/11/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/RIME%E4%B8%AA%E6%80%A7%E7%9F%AD%E8%AF%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B72024/" title="RIME个性短语管理工具">
+                        <span class="hidden-mobile">RIME个性短语管理工具</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="最近闲来无事，就想着用github page+hexo搭建一个个人博客，以便于储存自己平时的笔记资料。我发现网络上大部分此类的个人博客，主页（就是http:&#x2F;&#x2F;xxxx.github.io）或者home点进去都是文章列表，而我则希望主页进去以及点击home之后。显示的内容是对博客的介绍，或者是对自己本人的介绍，而不是我的博文列表。因此这就需要我对博客的首页进行自定义设置。但我在网上看了一圈，大部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改hexo主页">
+<meta property="og:url" content="https://24.lifu.us.kg/2023/09/23/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E4%B8%8E%E4%B8%BB%E9%A2%98/%E4%BF%AE%E6%94%B9hexo%E4%B8%BB%E9%A1%B5/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="最近闲来无事，就想着用github page+hexo搭建一个个人博客，以便于储存自己平时的笔记资料。我发现网络上大部分此类的个人博客，主页（就是http:&#x2F;&#x2F;xxxx.github.io）或者home点进去都是文章列表，而我则希望主页进去以及点击home之后。显示的内容是对博客的介绍，或者是对自己本人的介绍，而不是我的博文列表。因此这就需要我对博客的首页进行自定义设置。但我在网上看了一圈，大部分">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-23T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-07T05:35:23.651Z">
+<meta property="article:author" content="LI bao">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>修改hexo主页 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="修改hexo主页"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-23 10:00" pubdate>
+          2023年9月23日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">修改hexo主页</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>最近闲来无事，就想着用github page+hexo搭建一个个人博客，以便于储存自己平时的笔记资料。我发现网络上大部分此类的个人博客，主页（就是<a href="http://xxxx.github.io）或者home点进去都是文章列表，而我则希望主页进去以及点击home之后。显示的内容是对博客的介绍，或者是对自己本人的介绍，而不是我的博文列表。因此这就需要我对博客的首页进行自定义设置。但我在网上看了一圈，大部分的首页配置内容都是在讲怎么让博文以摘要内容形式排列等等，这并不满足我的需求。因此我就自己琢磨着用了以下这个方法：">http://xxxx.github.io）或者home点进去都是文章列表，而我则希望主页进去以及点击home之后。显示的内容是对博客的介绍，或者是对自己本人的介绍，而不是我的博文列表。因此这就需要我对博客的首页进行自定义设置。但我在网上看了一圈，大部分的首页配置内容都是在讲怎么让博文以摘要内容形式排列等等，这并不满足我的需求。因此我就自己琢磨着用了以下这个方法：</a></p>
+<ol start="0">
+<li>在写这篇文章时，我默认我的读者能至少有非常新手级别的hexo配置经验。因此如果对于hexo操作部分有问题的话，知乎或者其他论坛有很详细的小白教程，我就不再班门弄斧了。</li>
+</ol>
+<p>创建独立的home文件：<br>我使用的是Next主题，在该主题的配置文件中（hexo&#x2F;theme&#x2F;next&#x2F;_config.yml），关于home的配置是：</p>
+<p>home: &#x2F; || fa fa-home<br>这里home默认的link是‘&#x2F;’，我并不知道这个是在哪里，所以没法设置。因此我的想法是我新建一个叫home的page，然后把home指向这个page，在manu部分把关于home的修改为：</p>
+<p>home: &#x2F;home&#x2F; || fa fa-home<br>然后在git bash运行</p>
+<p>hexo new page “home”<br>之后在‘hexo&#x2F;source’中应该能找到home文件夹，并且包含index.md文件。修改index.md文件，将front matter部分设置为：</p>
+<hr>
+<h2 id="title-Homedate-2020-05-05-19-55-15type-“Home”"><a href="#title-Homedate-2020-05-05-19-55-15type-“Home”" class="headerlink" title="title: Homedate: 2020-05-05 19:55:15type: “Home”"></a>title: Home<br>date: 2020-05-05 19:55:15<br>type: “Home”</h2><p>这一步你可以设置自己想要的内容，我这里只是简单介绍一下。完成这一步之后，运行</p>
+<p>hexo -s<br>将里面的 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 黏贴到浏览器，点击home你会发现出现的是有home字样的空白页而不再是文章列表。此时运行</p>
+<p>hexo d -g<br>将你的改变部署到博客上。之后你要对home做的任何改变只要在home的index.md里添加即可。</p>
+<ol start="2">
+<li>配置首页：</li>
+</ol>
+<p>第一步之后你会发现，尽管home可以自己设置了，但打开主页时出现的依旧是文章列表，也就是当你打开<a href="http://xxxx.github.io时出现的依旧是文章列表。这就需要我们对打开后出现的首页（不知道这个叙述对不对）也进行配置。我查了hexo的文档，打开个人博客时，主页是index.html页面，但是Next主题并没有这个文件。因此我的想法是，我人为再新建一个page，把这个page指定为启动时的首页。这里我的方法是，首先我新建一个叫intro的page：">http://xxxx.github.io时出现的依旧是文章列表。这就需要我们对打开后出现的首页（不知道这个叙述对不对）也进行配置。我查了hexo的文档，打开个人博客时，主页是index.html页面，但是Next主题并没有这个文件。因此我的想法是，我人为再新建一个page，把这个page指定为启动时的首页。这里我的方法是，首先我新建一个叫intro的page：</a></p>
+<p>hexo new page “home”<br>然后在hexo&#x2F;config.yml（注意这次是hexo的配置文件，不是主题配置文件）中找到index_generator，在path中填入你所需要指向的位置。在我的例子里，我填的是</p>
+<p>index_generator:<br>  path: ‘&#x2F;intro&#x2F;‘<br>  per_page: 10<br>  order_by: -date<br>注意冒号后的空格，再打开hexo&#x2F;source&#x2F;intro&#x2F;index.md，将front matter修改为</p>
+<hr>
+<h2 id="title-introdate-2020-05-05-21-39-53type-“intro”permalink-index-html"><a href="#title-introdate-2020-05-05-21-39-53type-“intro”permalink-index-html" class="headerlink" title="title: introdate: 2020-05-05 21:39:53type: “intro”permalink: index.html"></a>title: intro<br>date: 2020-05-05 21:39:53<br>type: “intro”<br>permalink: index.html</h2><p>再检查配置是否成功：运行hexo -s，将地址打开，就会发现当域名为<a target="_blank" rel="noopener" href="http://xxxx.github.io时指向的是intro,而不是之前的博文列表.此时,返回git/">http://xxxx.github.io时指向的是intro，而不是之前的博文列表。此时，返回git</a> bash, ctrl+c退出hexo -s, 然后hexo d -g部署我们的改变。之后你可以在intro里添加任何你想要的内容，当然我的出发点是希望首页和home一致，所以我的话就会把两者设置成一样。</p>
+<p>其实我一开始的尝试是把path指向home文件，但我发现当我用home相关文件进行上述处理时，点击home出现了404。也许home文件不能被指向两次（不知道这个说法是否准确）。因此我就改为新增一个intro文件，并将该文件作为首页文件。如果想要intro和home内容一致，那么就把他们两给做成一样就可以了，当然也可以做成不一样的样子。</p>
+<p>我自己选择搭建个人博客的原因，一方面是希望这个过程能更有效地督促自己把该看的文章，该总结的资料给弄完。毕竟搭个个人博客的过程对我这个新手来说也不容易，这也就强行给自己安排了沉没成本（博客都搭了，我还拖着不做，实在是良心过不去…）。另一方面也是希望增加一门手艺，平时在搜索资料时，我发现大部分的精华内容一般都在个人博客（网站）上，看上去很酷炫的样子。因此我就打算在github page的基础上搭建一个个人博客来记录我自己的一些内容。</p>
+<p>由于我自己没有CS，开发或者框架搭建的背景，并且目前我也还在摸索之中，所以有些地方可能做的不是很妥当。对于我来说，我用的方法能够满足自己的需要就行了，至于优化或者逻辑啥的就不那么看重（这个做法其实不好…但无奈这些毕竟不是我主业，而且的确能力和时间有限）。因此如果你和我一样是新手，也有同样的问题，那么希望这个文章能够给你带来一些启发；如果你是专业大佬，原谅我能力有限，我希望这个文章能抛砖引玉，你们的想法和建议对我来说也是很好的经验。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" class="category-chain-item">hexo与git学习日记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E4%B8%8E%E4%B8%BB%E9%A2%98/" class="category-chain-item">hexo博客与主题</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/23/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E4%B8%8E%E4%B8%BB%E9%A2%98/git%E8%A3%85hexo%20%E8%A3%85%E4%B8%8D%E4%B8%8A,%E6%9C%80%E5%90%8E%E4%BD%BF%E7%94%A8%20yarn%E6%89%8D%E8%83%BD%E6%88%90%E5%8A%9F/" title="装hexo 装不上,最后使用 yarn才能成功">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">装hexo 装不上,最后使用 yarn才能成功</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

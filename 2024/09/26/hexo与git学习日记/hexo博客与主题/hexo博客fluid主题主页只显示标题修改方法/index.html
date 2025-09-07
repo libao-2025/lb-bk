@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="hexo博客fluid主题主页只显示标题修改方法只要更改一个文件即可博客根目录下的\themes\fluid\layout\index.ejs把上面的代码改成以下的即可 只显示标题：PGSQL1234567891011121314151617181920212223242526272829303132333435&lt;%if (theme.index.slogan.enable) &#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客fluid主题主页只显示标题修改方法">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/09/26/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E4%B8%8E%E4%B8%BB%E9%A2%98/hexo%E5%8D%9A%E5%AE%A2fluid%E4%B8%BB%E9%A2%98%E4%B8%BB%E9%A1%B5%E5%8F%AA%E6%98%BE%E7%A4%BA%E6%A0%87%E9%A2%98%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="hexo博客fluid主题主页只显示标题修改方法只要更改一个文件即可博客根目录下的\themes\fluid\layout\index.ejs把上面的代码改成以下的即可 只显示标题：PGSQL1234567891011121314151617181920212223242526272829303132333435&lt;%if (theme.index.slogan.enable) &#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-26T16:11:37.000Z">
+<meta property="article:modified_time" content="2025-09-07T05:35:23.651Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="hexo主页">
+<meta property="article:tag" content="fluid主题">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>hexo博客fluid主题主页只显示标题修改方法 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="hexo博客fluid主题主页只显示标题修改方法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-26 16:11" pubdate>
+          2024年9月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">hexo博客fluid主题主页只显示标题修改方法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="hexo博客fluid主题主页只显示标题修改方法"><a href="#hexo博客fluid主题主页只显示标题修改方法" class="headerlink" title="hexo博客fluid主题主页只显示标题修改方法"></a>hexo博客fluid主题主页只显示标题修改方法</h1><p>只要更改一个文件即可<br>博客根目录下的\themes\fluid\layout\index.ejs<br>把上面的代码改成以下的即可</p>
+<h2 id="只显示标题："><a href="#只显示标题：" class="headerlink" title="只显示标题："></a>只显示标题：</h2><figure class="highlight pgsql"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-629ncwmf99epmw"></i><span>PGSQL</span><div class="collapse show" id="collapse-629ncwmf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">&lt;%<br><span class="hljs-keyword">if</span> (theme.<span class="hljs-keyword">index</span>.slogan.<span class="hljs-keyword">enable</span>) &#123;<br>  page.subtitle = theme.<span class="hljs-keyword">index</span>.slogan.text || config.subtitle || <span class="hljs-string">&#x27;&#x27;</span><br>&#125;<br>page.banner_img = theme.<span class="hljs-keyword">index</span>.banner_img<br>page.banner_img_height = theme.<span class="hljs-keyword">index</span>.banner_img_height<br>page.banner_mask_alpha = theme.<span class="hljs-keyword">index</span>.banner_mask_alpha<br>%&gt;<br><br>&lt;% page.posts.<span class="hljs-keyword">each</span>(<span class="hljs-keyword">function</span> (post) &#123; %&gt;<br>  &lt;div <span class="hljs-keyword">class</span>=&quot;row mx-auto index-card&quot;&gt;<br>    &lt;% var post_url = url_for(post.path), index_img = post.index_img || theme.post.default_index_img %&gt;<br>    &lt;% <span class="hljs-keyword">if</span> (index_img) &#123; %&gt;<br>      &lt;div <span class="hljs-keyword">class</span>=&quot;col-12 col-md-4 m-auto index-img&quot;&gt;<br>        &lt;a href=&quot;&lt;%= post_url %&gt;&quot; target=&quot;&lt;%- theme.index.post_url_target %&gt;&quot;&gt;<br>          &lt;img src=&quot;&lt;%= url_for(index_img) %&gt;&quot; alt=&quot;&lt;%= post.title %&gt;&quot;&gt;<br>        &lt;/a&gt;<br>      &lt;/div&gt;<br>    &lt;% &#125; %&gt;<br>    &lt;article <span class="hljs-keyword">class</span>=&quot;col-12 col-md-&lt;%= index_img ? &#x27;8&#x27; : &#x27;12&#x27; %&gt; mx-auto index-info&quot;&gt;<br>      &lt;h2 <span class="hljs-keyword">class</span>=&quot;index-header&quot;&gt;<br>        &lt;% <span class="hljs-keyword">if</span> (theme.<span class="hljs-keyword">index</span>.post_sticky &amp;&amp; theme.<span class="hljs-keyword">index</span>.post_sticky.<span class="hljs-keyword">enable</span> &amp;&amp; post.sticky &gt; <span class="hljs-number">0</span>) &#123; %&gt;<br>          &lt;i <span class="hljs-keyword">class</span>=&quot;index-pin &lt;%= theme.index.post_sticky &amp;&amp; theme.index.post_sticky.icon %&gt;&quot; title=&quot;Pin on top&quot;&gt;&lt;/i&gt;<br>        &lt;% &#125; %&gt;<br>        &lt;a href=&quot;&lt;%= post_url %&gt;&quot; target=&quot;&lt;%- theme.index.post_url_target %&gt;&quot;&gt;<br>          &lt;%= post.title %&gt;<br>        &lt;/a&gt;<br>      &lt;/h2&gt;<br><br>    &lt;/article&gt;<br>  &lt;/div&gt;<br>&lt;% &#125;) %&gt;<br><br>&lt;%- partial(<span class="hljs-string">&#x27;_partials/paginator&#x27;</span>) %&gt;<br><br></code></pre></td></tr></table></div></figure>
+
+
+<p>改了上面即可了！！！<br>如果想更详细可以看下面从 <code>&lt;/article&gt;</code>前面加入即可</p>
+<h2 id="摘要显示-这份没注释"><a href="#摘要显示-这份没注释" class="headerlink" title="摘要显示(这份没注释)"></a>摘要显示(这份没注释)</h2><figure class="highlight vbscript-html"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6zniz0mf99epmw"></i><span>VBSCRIPT-HTML</span><div class="collapse show" id="collapse-6zniz0mf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vbscript-html"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;index-excerpt&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;</span></span></span><span class="language-vbscript">&lt;%= post.url %&gt;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;</span></span></span><span class="language-vbscript">&lt;%- theme.index.post_url_target %&gt;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> </span><span class="language-vbscript">&lt;%- strip_html(excerpt).<span class="hljs-keyword">sub</span><span class="hljs-built_in">string</span>(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>).<span class="hljs-built_in">trim</span>().<span class="hljs-built_in">replace</span>(/\n/g, <span class="hljs-comment">&#x27; &#x27;) %&gt;</span></span><span class="language-xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> </span><br><span class="language-xml"></span><br></code></pre></td></tr></table></div></figure>
+
+<h2 id="日期、分类、标签等元数据显示（这份是注释的）"><a href="#日期、分类、标签等元数据显示（这份是注释的）" class="headerlink" title="日期、分类、标签等元数据显示（这份是注释的）"></a>日期、分类、标签等元数据显示（这份是注释的）</h2><figure class="highlight applescript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-p74t45mf99epmw"></i><span>APPLESCRIPT</span><div class="collapse show" id="collapse-p74t45mf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs applescript"><br>&lt;!<span class="hljs-comment">-- </span><br>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;index-btm post-metas&quot;</span>&gt; &lt;% <span class="hljs-keyword">if</span> (theme.index.post_meta.<span class="hljs-built_in">date</span>) &#123; %&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;post-meta mr-3&quot;</span>&gt; &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;iconfont icon-date&quot;</span>&gt;&lt;/i&gt; &lt;<span class="hljs-built_in">time</span> datetime=<span class="hljs-string">&quot;&lt;%= full_date(post.date, &#x27;YYYY-MM-DD HH:mm&#x27;) %&gt;&quot;</span> pubdate&gt; &lt;%- <span class="hljs-built_in">date</span>(post.<span class="hljs-built_in">date</span>, config.date_format) %&gt; &lt;/<span class="hljs-built_in">time</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;% &#125; %&gt; &lt;% <span class="hljs-keyword">if</span> (theme.index.post_meta.category &amp;&amp; post.categories.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) &#123; %&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;post-meta mr-3 d-flex align-items-center&quot;</span>&gt; &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;iconfont icon-category&quot;</span>&gt;&lt;/i&gt; &lt;%- partial(&#x27;_partials/category-chains&#x27;, &#123; categories: post.categories, limit: <span class="hljs-number">1</span> &#125;) %&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;% &#125; %&gt; &lt;% <span class="hljs-keyword">if</span> (theme.index.post_meta.tag &amp;&amp; post.tags.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) &#123; %&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt; &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;iconfont icon-tags&quot;</span>&gt;&lt;/i&gt; &lt;% post.tags.each(function(tag)&#123; %&gt; &lt;a href=<span class="hljs-string">&quot;&lt;%= url_for(tag.path) %&gt;&quot;</span>&gt;<span class="hljs-comment">#&lt;%- tag.name %&gt;&lt;/a&gt; &lt;% &#125;) %&gt; &lt;/div&gt; &lt;% &#125; %&gt; &lt;/div&gt; </span><br><span class="hljs-comment">--&gt;</span><br><br></code></pre></td></tr></table></div></figure>
+
+<p>注意，如果要注释，在代码前一行加入, 上面两段一份一注释，一份没注释的！</p>
+<figure class="highlight ada"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c1er3fmf99epmw"></i><span>ADA</span><div class="collapse show" id="collapse-c1er3fmf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">&lt;!<span class="hljs-comment">-- </span><br></code></pre></td></tr></table></div></figure>
+
+<p>代码后下一行加入</p>
+<figure class="highlight ada"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-qkiynimf99epmw"></i><span>ADA</span><div class="collapse show" id="collapse-qkiynimf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada"><span class="hljs-comment">--&gt;</span><br></code></pre></td></tr></table></div></figure>
+
+<p>即可！！！</p>
+<h2 id="还有这两种种设置方法："><a href="#还有这两种种设置方法：" class="headerlink" title="还有这两种种设置方法："></a>还有这两种种设置方法：</h2><h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><ul>
+<li>用文本编辑器打开 themes&#x2F; 目录下的对应的主题的theme文件夹下的 _config.yml 文件，找到这段代码，如果没有则新建，可能不同的主题会不支持这种方法：</li>
+</ul>
+<figure class="highlight xml"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-blg250mf99epmw"></i><span>XML</span><div class="collapse show" id="collapse-blg250mf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"># Automatically Excerpt. Not recommend.  <br># Please use <span class="hljs-comment">&lt;!-- more --&gt;</span> in the post to control excerpt accurately.  <br>auto_excerpt:  <br>  enable: false  <br>  length: 150<br> <br></code></pre></td></tr></table></div></figure>
+
+<p>把 enable 的 false 改成 true 就行了，然后 length 是设定文章预览的文本长度。<br>修改后重启 hexo 就ok了。</p>
+<p>* </p>
+<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><ul>
+<li>在你写 md 文章的时候，可以在内容中加上 <code>&lt;!--more--&gt;</code>，这样首页和列表页展示的文章内容就是 <code>&lt;!--more--&gt;</code> 之前的文字，而之后的就不会显示了。</li>
+</ul>
+<p>效果上面两种方式展示出来的效果是不一样的。</p>
+<p>第一种修改 _config.yml 文件的效果是会格式化你文章的样式，直接把文字挤在一起显示，最后会有 …。</p>
+<p>而第二种加上 <code>&lt;!--more--&gt;</code>展示出来的就是你原本文章的样式，最后不会有…。</p>
+<h3 id="第三种方式"><a href="#第三种方式" class="headerlink" title="第三种方式"></a>第三种方式</h3><ul>
+<li>在文章的 <code>front-matter</code> 中添加 <code>description</code>，并提供文章摘录</li>
+</ul>
+<figure class="highlight yaml"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5619agmf99epmw"></i><span>YAML</span><div class="collapse show" id="collapse-5619agmf99epmw"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---  </span><br><span class="hljs-attr">title:</span> <span class="hljs-string">让hexo的首页只显示文章的部分内容而不是全部</span>  <br><span class="hljs-attr">id:</span> <span class="hljs-string">set-hexo-show-more-button-on-index</span>  <br><span class="hljs-attr">categories:</span>  <br><span class="hljs-bullet">-</span> <span class="hljs-string">WEB开发</span>  <br><span class="hljs-attr">date:</span> <span class="hljs-number">2017-09-30 11:01:40</span>  <br><span class="hljs-attr">tags:</span>  <br><span class="hljs-bullet">-</span> <span class="hljs-string">blog</span>  <br><span class="hljs-bullet">-</span> <span class="hljs-string">hexo</span>  <br><span class="hljs-attr">description:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">的</span> <span class="hljs-string">Next</span> <span class="hljs-string">主题默认是首页显示你每篇文章的全文内容，那么要如何设置只显示部分呢？正如你现在看到的本篇文章，只显示到这里。</span>  <br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br></code></pre></td></tr></table></div></figure>
+
+
+<p>但是使用这种方式生成的描述信息在文章的详情页是不再显示的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>各种方式展示的效果各有好处，第二种方法保留了样式而且可以自行选择显示哪些内容来预览，推荐使用此方法，第一种方法显示的每篇文章的预览都是一样的高度，第三种则需要在文章的[front-matter]里面添加。<br>综合考虑的话还是建议使用第二种方法，毕竟以后各种插件也能准确的获取到你想要输出的本篇的描述信息。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" class="category-chain-item">hexo与git学习日记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E4%B8%8E%E4%B8%BB%E9%A2%98/" class="category-chain-item">hexo博客与主题</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/hexo%E4%B8%BB%E9%A1%B5/" class="print-no-link">#hexo主页</a>
+      
+        <a href="/tags/fluid%E4%B8%BB%E9%A2%98/" class="print-no-link">#fluid主题</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/26/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/%E7%94%A8%E5%91%BD%E4%BB%A4%E5%9C%A8%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E5%92%8C%E4%BB%A5%E4%B8%8B%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95%E6%90%9C%E6%96%87%E4%BB%B6/" title="用命令在当前目录和以下的子目录搜文件">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">用命令在当前目录和以下的子目录搜文件</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/25/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/GitLab%E4%BD%BF%E7%94%A8/GitLab%E5%9C%A8%E7%94%B5%E8%84%91%E6%9C%AC%E5%9C%B0SSH%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="GitLab在电脑本地SSH配置指南">
+                        <span class="hidden-mobile">GitLab在电脑本地SSH配置指南</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

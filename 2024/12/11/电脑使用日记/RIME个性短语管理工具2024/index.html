@@ -1,0 +1,924 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="RIME个性短语管理工具2024-1今天我突发奇想，让Ai给我写一个RIME输入法的造句工具，丰常适合做电商客服用！可以将几行的语句改成一句，适合输入法脚本用！呵呵这是一个用于管理RIME输入法自定义短语的图形界面工具。它可以帮助用户方便地添加、编辑、删除和管理RIME输入法中的个性短语。  功能特点 自动导入RIME默认短语文件 自动记住上次打开的文件路径 窗口标题栏实时显示当前文件路径 支持添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RIME个性短语管理工具">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/12/11/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/RIME%E4%B8%AA%E6%80%A7%E7%9F%AD%E8%AF%AD%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B72024/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="RIME个性短语管理工具2024-1今天我突发奇想，让Ai给我写一个RIME输入法的造句工具，丰常适合做电商客服用！可以将几行的语句改成一句，适合输入法脚本用！呵呵这是一个用于管理RIME输入法自定义短语的图形界面工具。它可以帮助用户方便地添加、编辑、删除和管理RIME输入法中的个性短语。  功能特点 自动导入RIME默认短语文件 自动记住上次打开的文件路径 窗口标题栏实时显示当前文件路径 支持添">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/12/12/jXEWYBex9ZIqVJc.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/12/Y5yIbjOQRZCEfie.png">
+<meta property="article:published_time" content="2024-12-11T23:34:41.000Z">
+<meta property="article:modified_time" content="2025-09-07T05:35:23.658Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="GPT学习">
+<meta property="article:tag" content="hexo博客">
+<meta property="article:tag" content="md命令">
+<meta property="article:tag" content="hexo主页">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2024/12/12/jXEWYBex9ZIqVJc.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>RIME个性短语管理工具 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="RIME个性短语管理工具"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-11 23:34" pubdate>
+          2024年12月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">RIME个性短语管理工具</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="RIME个性短语管理工具2024-1"><a href="#RIME个性短语管理工具2024-1" class="headerlink" title="RIME个性短语管理工具2024-1"></a>RIME个性短语管理工具2024-1</h1><p>今天我突发奇想，让Ai给我写一个RIME输入法的造句工具，丰常适合做电商客服用！可以将几行的语句改成一句，适合输入法脚本用！呵呵<br>这是一个用于管理RIME输入法自定义短语的图形界面工具。它可以帮助用户方便地添加、编辑、删除和管理RIME输入法中的个性短语。</p>
+<p><img src="https://s2.loli.net/2024/12/12/jXEWYBex9ZIqVJc.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
+<li>自动导入RIME默认短语文件</li>
+<li>自动记住上次打开的文件路径</li>
+<li>窗口标题栏实时显示当前文件路径</li>
+<li>支持添加、编辑、删除短语</li>
+<li>自动去除重复输入码</li>
+<li>支持一键整理相同内容短语</li>
+<li>支持调整左右面板大小</li>
+<li>自动识别汉字的五笔编码</li>
+<li>自动去重和格式化</li>
+<li>支持导入&#x2F;导出短语文件</li>
+<li>支持快速编辑和右键菜单操作</li>
+<li>自动保存功能</li>
+<li>操作日志记录功能</li>
+<li>支持多种格式化方案</li>
+<li>支持一键添加所有编码方式</li>
+</ul>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="1-基本操作"><a href="#1-基本操作" class="headerlink" title="1. 基本操作"></a>1. 基本操作</h3><ul>
+<li><strong>导入短语</strong>：点击”导入”按钮，选择要导入的短语文件</li>
+<li><strong>保存短语</strong>：点击”保存”按钮保存到当前文件，或使用”另存为”保存到新文件</li>
+<li><strong>清空编辑</strong>：点击”清空编辑”按钮清除当前编辑区域的内容</li>
+<li><strong>一键整理</strong>：点击”一键整理”按钮将相同文本内容的短语自动排列到一起</li>
+<li><strong>添加本条所有键码</strong>：点击此按钮为当前文本自动添加所有可能的编码方式</li>
+<li><strong>文件路径</strong>：窗口标题栏会显示当前正在编辑的文件完整路径</li>
+<li><strong>界面调整</strong>：可以拖动中间分隔线调整左右面板的宽度比例</li>
+</ul>
+<h3 id="2-格式化方案选择"><a href="#2-格式化方案选择" class="headerlink" title="2. 格式化方案选择"></a>2. 格式化方案选择</h3><p>提供三种格式化方案：</p>
+<ol>
+<li><strong>所有行不加空格</strong>：文本内容保持原样</li>
+<li><strong>所有行前加空格</strong>：每行文本前添加两个全角空格</li>
+<li><strong>首行以外加空格</strong>：除第一行外，其他行前添加两个全角空格</li>
+</ol>
+<h3 id="3-添加新短语"><a href="#3-添加新短语" class="headerlink" title="3. 添加新短语"></a>3. 添加新短语</h3><ol>
+<li>在右侧大文本框中输入要添加的文本内容</li>
+<li>在”输入码”框中输入短语的编码<ul>
+<li>可以使用以下自动识别按钮：<ul>
+<li>“识别头2字4键”：取前2个汉字的五笔码，每字取前2码（如：改电 -&gt; ntjn）</li>
+<li>“识别头3字6键”：取前3个汉字的五笔码，每字取前2码（如：改电车 -&gt; ntjnlg）</li>
+<li>“识别头4字4键”：取前4个汉字的五笔码，每字取第1码（如：改电车只 -&gt; ntjk）</li>
+<li>“识别头4字8键”：取前4个汉字的五笔码，每字取前2码（如：改电车只 -&gt; ntjnlgkm）</li>
+<li>“识别123码6键”：取前3个汉字的五笔码，第1字取1码，第2字取2码，第3字取3码（如：改电车 -&gt; nljlggg）</li>
+</ul>
+</li>
+<li>或者使用一键添加功能：<ul>
+<li>“添加本条所有键码”：自动为当前文本添加所有可能的编码方式（最多5种编码）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在”权重数”框中输入权重（默认为3）</li>
+<li>点击”确认修改”按钮添加短语</li>
+</ol>
+<h3 id="4-编码识别说明"><a href="#4-编码识别说明" class="headerlink" title="4. 编码识别说明"></a>4. 编码识别说明</h3><p>所有识别方法都会自动跳过非汉字字符（如标点符号、空格等），只处理有效的汉字：</p>
+<ol>
+<li><p><strong>识别头2字4键</strong>：</p>
+<ul>
+<li>需要至少2个汉字</li>
+<li>每个字取前2码</li>
+<li>总计4个编码键</li>
+</ul>
+</li>
+<li><p><strong>识别头3字6键</strong>：</p>
+<ul>
+<li>需要至少3个汉字</li>
+<li>每个字取前2码</li>
+<li>总计6个编码键</li>
+</ul>
+</li>
+<li><p><strong>识别头4字4键</strong>：</p>
+<ul>
+<li>需要至少4个汉字</li>
+<li>每个字只取第1码</li>
+<li>总计4个编码键</li>
+</ul>
+</li>
+<li><p><strong>识别头4字8键</strong>：</p>
+<ul>
+<li>需要至少4个汉字</li>
+<li>每个字取前2码</li>
+<li>总计8个编码键</li>
+</ul>
+</li>
+<li><p><strong>识别123码6键</strong>：</p>
+<ul>
+<li>需要至少3个汉字</li>
+<li>第1个字取1码</li>
+<li>第2个字取2码</li>
+<li>第3个字取3码</li>
+<li>总计6个编码键</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-一键添加所有编码说明"><a href="#5-一键添加所有编码说明" class="headerlink" title="5. 一键添加所有编码说明"></a>5. 一键添加所有编码说明</h3><ul>
+<li>功能：点击”添加本条所有键码”按钮，会自动为当前文本添加所有可能的编码方式</li>
+<li>添加规则：<ol>
+<li>识别头2字4键编码</li>
+<li>识别头3字6键编码</li>
+<li>识别头4字4键编码</li>
+<li>识别头4字8键编码</li>
+<li>识别123码6键编码</li>
+</ol>
+</li>
+<li>特点：<ul>
+<li>一次操作可添加最多5种不同编码的短语</li>
+<li>所有短语共用相同的文本内容</li>
+<li>每种编码方式独立保存为一条短语</li>
+<li>自动跳过无法识别的编码</li>
+<li>添加完成后自动清空编辑区</li>
+<li>自动保存所有添加的短语</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-右键菜单功能"><a href="#6-右键菜单功能" class="headerlink" title="6. 右键菜单功能"></a>6. 右键菜单功能</h3><p>在左侧列表中右键点击短语可以：</p>
+<ul>
+<li><strong>编辑</strong>：将选中的短语加载到编辑区</li>
+<li><strong>复制</strong>：复制短语内容到编辑区（输入码留空）</li>
+<li><strong>删除</strong>：从列表中删除选中的短语</li>
+</ul>
+<h3 id="7-日志功能"><a href="#7-日志功能" class="headerlink" title="7. 日志功能"></a>7. 日志功能</h3><ul>
+<li>程序会自动在<code>logs</code>文件夹下生成日志文件</li>
+<li>日志文件名格式：<code>rime_phrase_YYYYMMDD.log</code></li>
+<li>记录内容包括：<ul>
+<li>程序启动和关闭</li>
+<li>文件导入和保存</li>
+<li>短语的添加、修改、删除</li>
+<li>一键整理操作</li>
+<li>错误信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-文件保存"><a href="#8-文件保存" class="headerlink" title="8. 文件保存"></a>8. 文件保存</h3><ul>
+<li>程序会自动保存到RIME的默认目录</li>
+<li>默认路径：<code>%USERPROFILE%\AppData\Roaming\Rime\custom_phrase.txt</code></li>
+<li>配置文件：程序会在同目录下创建<code>config.json</code>保存上次使用的文件路径和格式化方案</li>
+</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><p>自动去重说明：</p>
+<ul>
+<li>程序会自动检查并去除重复的输入码</li>
+<li>当存在相同输入码时，只保留最后添加的那一条</li>
+<li>相同文本内容但输入码不同的短语会被保留</li>
+<li>去重操作在每次保存时自动执行</li>
+</ul>
+</li>
+<li><p>一键整理说明：</p>
+<ul>
+<li>将具有相同文本内容的短语自动排列到一起</li>
+<li>整理后会按文本内容字典序排序</li>
+<li>确保每个短语后都有换行符，防止内容合并</li>
+<li>自动循环检测并清理所有空行</li>
+<li>实时刷新显示整理进度</li>
+<li>整理完成后会自动保存</li>
+</ul>
+</li>
+<li><p>特殊字符处理：</p>
+<ul>
+<li>全角空格(U+3000)：用于替换制表符和半角空格，使文本排版更美观</li>
+<li>段落分隔符(U+2029)：用于连接多行文本，保持格式整洁</li>
+<li>自动跳过非汉字字符，不影响编码识别</li>
+</ul>
+</li>
+<li><p>权重说明：</p>
+<ul>
+<li>权重越大，短语在候选项中排序越靠前</li>
+<li>默认权重为3</li>
+<li>建议范围：1-10</li>
+</ul>
+</li>
+</ol>
+<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><ul>
+<li>Windows操作系统</li>
+<li>Python 3.6或更高版本</li>
+<li>需要安装tkinter库</li>
+<li>需要写入权限（用于生成日志）</li>
+<li>需要五笔码表文件（wubi86.txt）</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p><strong>为什么自动识别功能不工作？</strong></p>
+<ul>
+<li>确保<code>wubi86.txt</code>文件在程序目录下</li>
+<li>检查汉字是否在五笔码表中</li>
+<li>确认文本中有足够的汉字数量</li>
+</ul>
+</li>
+<li><p><strong>如何让修改生效？</strong></p>
+<ul>
+<li>保存文件后，需要在RIME输入法中重新部署才能生效</li>
+</ul>
+</li>
+<li><p><strong>找不到默认文件？</strong></p>
+<ul>
+<li>确保已安装RIME输入法</li>
+<li>检查RIME配置目录是否正确</li>
+</ul>
+</li>
+<li><p><strong>程序没有打开上次的文件？</strong></p>
+<ul>
+<li>检查配置文件<code>config.json</code>是否存在且有读写权限</li>
+<li>确认上次使用的文件路径是否依然有效</li>
+</ul>
+</li>
+</ol>
+<h2 id="更多帮助"><a href="#更多帮助" class="headerlink" title="更多帮助"></a>更多帮助</h2><p>如果您在使用过程中遇到问题，请：</p>
+<ol>
+<li>检查日志文件了解详细错误信息</li>
+<li>确认文件编码为UTF-8</li>
+<li>检查五笔码表文件是否完整</li>
+<li>重新部署RIME输入法</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/12/12/Y5yIbjOQRZCEfie.png" srcset="/img/loading.gif" lazyload alt="image-20241212160135087"></p>
+<p>总之有AI无什么是不可能的！呵呵</p>
+<p>和代码py文件打包一起了！想要的可以下载</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://app.lifu.us.kg/%E4%BF%9D%E8%AE%B0%E6%8C%87%E6%8C%A5AI%E5%86%99%E7%9A%84%E7%A8%8B%E5%BA%8F/Rime%E7%9F%AD%E8%AF%AD%E7%AE%A1%E7%90%86.rar">点这下载</a></p>
+<p>一发现冇好使讲我听，我来叫AI改改！！！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/" class="category-chain-item">电脑使用日记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/GPT%E5%AD%A6%E4%B9%A0/" class="print-no-link">#GPT学习</a>
+      
+        <a href="/tags/hexo%E5%8D%9A%E5%AE%A2/" class="print-no-link">#hexo博客</a>
+      
+        <a href="/tags/md%E5%91%BD%E4%BB%A4/" class="print-no-link">#md命令</a>
+      
+        <a href="/tags/hexo%E4%B8%BB%E9%A1%B5/" class="print-no-link">#hexo主页</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/12/16/GPT%E9%97%AE%E7%AD%94%E7%B1%BB/%E4%BF%AE%E5%A4%8Dgithub-22%E7%AB%AF%E5%8F%A3%E4%B8%8D%E9%80%9A%E7%9A%84%E6%96%B9%E6%B3%95-hosts%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9/" title="修复github-22端口不通的方法-hosts文件修改">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">修复github-22端口不通的方法-hosts文件修改</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/11/28/%E7%BD%91%E9%A1%B5%E4%BB%A3%E7%A0%81/%E5%85%8D%E8%B4%B9%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E4%BB%8B%E7%BB%8D/" title="免费静态网站生成器介绍">
+                        <span class="hidden-mobile">免费静态网站生成器介绍</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

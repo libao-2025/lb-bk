@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="玩客云安装1Panel安装Home-Assistant记录过程原文地址https:&#x2F;&#x2F;www.right.com.cn&#x2F;forum&#x2F;thread-8344722-1-1.html 【SSH连接玩客云登录armbian】刷机后，给玩客云接上网线，通上电。进入路由器查看玩客云的IP，注意要等玩客云通电长一点时间，大概3-5分钟再去路由器查看IP，无法找到IP的话，尝试重启路由器，或者电脑运行cmd中执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玩客云安装1Panel安装Home-Assistant记录过程">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/12/17/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%AE%89%E8%A3%851Panel%E5%AE%89%E8%A3%85Home-Assistant%E8%AE%B0%E5%BD%95%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="玩客云安装1Panel安装Home-Assistant记录过程原文地址https:&#x2F;&#x2F;www.right.com.cn&#x2F;forum&#x2F;thread-8344722-1-1.html 【SSH连接玩客云登录armbian】刷机后，给玩客云接上网线，通上电。进入路由器查看玩客云的IP，注意要等玩客云通电长一点时间，大概3-5分钟再去路由器查看IP，无法找到IP的话，尝试重启路由器，或者电脑运行cmd中执">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-17T20:15:51.000Z">
+<meta property="article:modified_time" content="2025-09-07T05:35:23.660Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="玩客云">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>玩客云安装1Panel安装Home-Assistant记录过程 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="玩客云安装1Panel安装Home-Assistant记录过程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-17 20:15" pubdate>
+          2024年12月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">玩客云安装1Panel安装Home-Assistant记录过程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="玩客云安装1Panel安装Home-Assistant记录过程"><a href="#玩客云安装1Panel安装Home-Assistant记录过程" class="headerlink" title="玩客云安装1Panel安装Home-Assistant记录过程"></a>玩客云安装1Panel安装Home-Assistant记录过程</h1><p>原文地址<br><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8344722-1-1.html">https://www.right.com.cn/forum/thread-8344722-1-1.html</a></p>
+<h2 id="【SSH连接玩客云登录armbian】"><a href="#【SSH连接玩客云登录armbian】" class="headerlink" title="【SSH连接玩客云登录armbian】"></a>【<strong><strong>SSH连接玩客云登录armbian</strong></strong>】</h2><p>刷机后，给玩客云接上网线，通上电。进入路由器查看玩客云的IP，注意要等玩客云通电长一点时间，大概3-5分钟再去路由器查看IP，无法找到IP的话，尝试重启路由器，或者电脑运行cmd中执行arp -a查看，再或者重启玩客云。通过SSH客户端（推荐NxShell：<a target="_blank" rel="noopener" href="https://nxshell.github.io/">https://nxshell.github.io</a>），连接玩客云的IP，登录armbian。<strong>用户名root，密码1234</strong>，登录后提示需要更改密root的初始密码，自行设置。更改完密码后，会提示创建账户，我们直接Ctrl+C取消。</p>
+<h2 id="【设置armbian】"><a href="#【设置armbian】" class="headerlink" title="【设置armbian】"></a>【<strong><strong>设置armbian</strong></strong>】</h2><ul>
+<li><strong>检查时间</strong></li>
+</ul>
+<p>1.执行以下命令，一键更换国内源。</p>
+<figure class="highlight applescript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ejjfdvmf99epmv"></i><span>APPLESCRIPT</span><div class="collapse show" id="collapse-ejjfdvmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript"><span class="hljs-built_in">date</span> -R<br></code></pre></td></tr></table></div></figure>
+<p>2.如果时区及时间不对，输入命令。</p>
+<figure class="highlight awk"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-h7boo8mf99epmv"></i><span>AWK</span><div class="collapse show" id="collapse-h7boo8mf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cp <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zoneinfo/</span>Asia<span class="hljs-regexp">/Shanghai  /</span>etc/localtime<br></code></pre></td></tr></table></div></figure>
+
+<p>3.再次检查时间。</p>
+<figure class="highlight applescript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-z86db7mf99epmv"></i><span>APPLESCRIPT</span><div class="collapse show" id="collapse-z86db7mf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript"><span class="hljs-built_in">date</span> -R<br></code></pre></td></tr></table></div></figure>
+
+<h2 id="一键更换国内源"><a href="#一键更换国内源" class="headerlink" title="一键更换国内源"></a>一键更换国内源</h2><p>1.执行以下命令，一键更换国内源。</p>
+<figure class="highlight lisp"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-n0zckomf99epmv"></i><span>LISP</span><div class="collapse show" id="collapse-n0zckomf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lisp">bash &lt;(<span class="hljs-name">curl</span> -sSL https<span class="hljs-symbol">://linuxmirrors</span>.cn/main.sh)<br></code></pre></td></tr></table></div></figure>
+
+<p>参考LinuxMirrors：<a target="_blank" rel="noopener" href="https://github.com/SuperManito/LinuxMirrors">https://github.com/SuperManito/LinuxMirrors</a><br>使用方法：<a target="_blank" rel="noopener" href="https://linuxmirrors.cn/use/">https://linuxmirrors.cn/use/</a></p>
+<h2 id="灯光控制"><a href="#灯光控制" class="headerlink" title="灯光控制"></a><strong>灯光控制</strong></h2><p>1.黑色电工胶带直接粘住，也是一个办法。或者执行以下命令，关闭所有灯。</p>
+<figure class="highlight angelscript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-r4osdgmf99epmv"></i><span>ANGELSCRIPT</span><div class="collapse show" id="collapse-r4osdgmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">echo <span class="hljs-number">0</span> &gt;/sys/<span class="hljs-keyword">class</span>/<span class="hljs-symbol">leds</span>/<span class="hljs-symbol">onecloud</span>\:<span class="hljs-symbol">blue</span>\:<span class="hljs-symbol">alive</span>/<span class="hljs-symbol">brightness</span><br><span class="hljs-symbol">echo</span> <span class="hljs-symbol">0</span> &gt;/<span class="hljs-symbol">sys</span>/<span class="hljs-symbol">class</span>/<span class="hljs-symbol">leds</span>/<span class="hljs-symbol">onecloud</span>\:<span class="hljs-symbol">green</span>\:<span class="hljs-symbol">alive</span>/<span class="hljs-symbol">brightness</span><br><span class="hljs-symbol">echo</span> <span class="hljs-symbol">0</span> &gt;/<span class="hljs-symbol">sys</span>/<span class="hljs-symbol">class</span>/<span class="hljs-symbol">leds</span>/<span class="hljs-symbol">onecloud</span>\:<span class="hljs-symbol">red</span>\:<span class="hljs-symbol">alive</span>/<span class="hljs-symbol">brightness</span><br></code></pre></td></tr></table></div></figure>
+
+<p>2.执行以下命令，蓝灯常亮；绿灯常亮和红灯常亮的方法类推。</p>
+<figure class="highlight angelscript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-z8u8timf99epmv"></i><span>ANGELSCRIPT</span><div class="collapse show" id="collapse-z8u8timf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">echo <span class="hljs-string">&quot;default-on&quot;</span> &gt;/sys/<span class="hljs-keyword">class</span>/<span class="hljs-symbol">leds</span>/<span class="hljs-symbol">onecloud</span>\:<span class="hljs-symbol">blue</span>\:<span class="hljs-symbol">alive</span>/<span class="hljs-symbol">trigger</span><br><span class="hljs-symbol">echo</span> &quot;<span class="hljs-symbol">none</span>&quot; &gt;/<span class="hljs-symbol">sys</span>/<span class="hljs-symbol">class</span>/<span class="hljs-symbol">leds</span>/<span class="hljs-symbol">onecloud</span>\:<span class="hljs-symbol">green</span>\:<span class="hljs-symbol">alive</span>/<span class="hljs-symbol">trigger</span><br><span class="hljs-symbol">echo</span> &quot;<span class="hljs-symbol">none</span>&quot; &gt;/<span class="hljs-symbol">sys</span>/<span class="hljs-symbol">class</span>/<span class="hljs-symbol">leds</span>/<span class="hljs-symbol">onecloud</span>\:<span class="hljs-symbol">red</span>\:<span class="hljs-symbol">alive</span>/<span class="hljs-symbol">trigger</span><br></code></pre></td></tr></table></div></figure>
+
+
+<p>参考论坛用户“lanwairen123”在《玩客云灯光问题》中的回复：<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8253350">https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=8253350</a></p>
+<h2 id="安装1panel（为了更加方便的控制容器，以及设置定时任务重启小雅alist进行更新，如果不需要的话可以跳过）"><a href="#安装1panel（为了更加方便的控制容器，以及设置定时任务重启小雅alist进行更新，如果不需要的话可以跳过）" class="headerlink" title="安装1panel（为了更加方便的控制容器，以及设置定时任务重启小雅alist进行更新，如果不需要的话可以跳过）"></a>安装1panel（为了更加方便的控制容器，以及设置定时任务重启小雅alist进行更新，如果不需要的话可以跳过）</h2><figure class="highlight vim"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5qb2domf99epmv"></i><span>VIM</span><div class="collapse show" id="collapse-5qb2domf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">curl -sSL https://resource.fit2cloud.<span class="hljs-keyword">com</span>/<span class="hljs-number">1</span>panel/package/quick_start.<span class="hljs-keyword">sh</span> -<span class="hljs-keyword">o</span> quick_start.<span class="hljs-keyword">sh</span> &amp;&amp; bash quick_start.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></div></figure>
+<p>全部回车确定即可快速配置</p>
+<p>等待安装完成即可，根据给出的内网访问地址、面板账号、面板密码进行登录。检查安装是非完成。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/bingganzhen/article/details/140609250">https://blog.csdn.net/bingganzhen/article/details/140609250</a><br>【******登陆1panel安装Home-Assistant】<br>————————————————</p>
+<h2 id="安装Samba（文件共享）"><a href="#安装Samba（文件共享）" class="headerlink" title="安装Samba（文件共享）"></a>安装Samba（文件共享）</h2><p>CasaOS的文件共享不能设置密码，故而安装Samba，按需食用。</p>
+<p>1.执行以下命令，更新软件包列表，并通过APT安装Samba应用。</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-jcu6uzmf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-jcu6uzmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt install samba<br></code></pre></td></tr></table></div></figure>
+
+<p>2.执行以下命令，打开Samba的配置文件。</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-k9ncsbmf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-k9ncsbmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/samba/smb.conf<br><br></code></pre></td></tr></table></div></figure>
+
+<p>3.在文件的末尾添加以下内容（配置信息）后，Ctrl+X保存，以创建共享。</p>
+<figure class="highlight clean"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-x7sgpomf99epmv"></i><span>CLEAN</span><div class="collapse show" id="collapse-x7sgpomf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs clean">#######################################################<br>#[共享显示的名称，可自定义]<br>[libao-tb]<br>#自定义备注信息<br>comment = <span class="hljs-number">16</span>G<br>#路径，下列是我的共享路径，要设置成你的，怎么查询路径，CasaOS主页,文件夹图标打开，左侧位置&gt;下面会列出挂载的U盘，点击目标U盘进入，鼠标移到目标文件夹出现<span class="hljs-number">3</span>个点点，点击选择拷贝路径，再粘贴到path<br>path = /mnt/libao<br>#共享用户名<br>valid users = root<br>#只读 yes=是 no=否<br>read only = no<br>#来宾<br>guest ok = no<br>#创建文件时权限，权限按需设置<br>create maks = <span class="hljs-number">0777</span><br>#创建目录时权限，权限按需设置<br>directory mask = <span class="hljs-number">0777</span><br>#是否可被看见<br>browseable = yes<br>available = yes<br>writable = yes<br>#######################################################<br></code></pre></td></tr></table></div></figure>
+<p>这里是我的<a target="_blank" rel="noopener" href="https://app.lifu.us.kg/%E5%85%B6%E5%AE%83%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/Samba%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%96%87%E6%B3%A8%E9%87%8A/%E4%B8%AD%E6%96%87%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6smb.conf">smb.conf-打开文件</a>，中文翻译注释，可以<a target="_blank" rel="noopener" href="https://app.lifu.us.kg/%E5%85%B6%E5%AE%83%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/Samba%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC%E4%B8%AD%E6%96%87%E6%B3%A8%E9%87%8A/smb.rar">下载本文件压缩包</a><br>4.上述设置会默认共享root目录，如不想显示root目录，可以增加在[homes]节点中，“comment &#x3D; Home Directories”，“browseable &#x3D; no”的下面增加下列配置信息。</p>
+<figure class="highlight ini"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-lgb5vwmf99epmv"></i><span>INI</span><div class="collapse show" id="collapse-lgb5vwmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment">#是否可被看见</span><br><span class="hljs-attr">browseable</span> = <span class="hljs-literal">no</span><br><span class="hljs-attr">available</span> = <span class="hljs-literal">no</span><br><span class="hljs-attr">writable</span> = <span class="hljs-literal">no</span><br></code></pre></td></tr></table></div></figure>
+
+<p>5.创建用户密码，注意用户名是否是第2步骤用户名。</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-7io9awmf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-7io9awmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> smbpasswd -a lifuaini<br></code></pre></td></tr></table></div></figure>
+<p>6.执行以下命令，重启Samba服务以应用配置更改。</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-r9vmbnmf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-r9vmbnmf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart smbd<br></code></pre></td></tr></table></div></figure>
+<p>每次重启也只要上面这行</p>
+<p>7.执行以下命令，设置Samba开机自启。</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-edhsr1mf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-edhsr1mf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl start smbd<br></code></pre></td></tr></table></div></figure>
+<p>两条单独执行</p>
+<hr>
+<h2 id="安装Cpolar（内网穿透）"><a href="#安装Cpolar（内网穿透）" class="headerlink" title="安装Cpolar（内网穿透）"></a>安装Cpolar（内网穿透）</h2><p>**1.执行以下代码，安装Cpolar。  </p>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1gr68ymf99epmv"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-1gr68ymf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">curl</span> <span class="hljs-literal">-L</span> https://www.cpolar.com/<span class="hljs-keyword">static</span>/downloads/<span class="hljs-built_in">install-release</span><span class="hljs-literal">-cpolar</span>.sh | sudo bash<br></code></pre></td></tr></table></div></figure>
+
+<p>2.查看版本号，有正常显示版本号即为安装成功。<br>3.登录cpolar官网后台，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里。</p>
+<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-znt5ammf99epmv"></i><span>EBNF</span><div class="collapse show" id="collapse-znt5ammf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">cpolar authtoken xxxxxxx</span><br></code></pre></td></tr></table></div></figure>
+
+
+<p>4.向系统添加服务。</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zspg5amf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-zspg5amf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> cpolar<br></code></pre></td></tr></table></div></figure>
+
+<p>5.启动cpolar服务</p>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8ygdl7mf99epmv"></i><span>BASH</span><div class="collapse show" id="collapse-8ygdl7mf99epmv"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl start cpolar<br></code></pre></td></tr></table></div></figure>
+
+<p>6.在浏览器上访问本地端口http:&#x2F;&#x2F;玩客云IP:9200,使用cpolar邮箱账号登录Cpolar web UI管理界面，即可开始使用cpolar。<br>7.登录完cpolar本地管理界面后，在“隧道管理”-“创建隧道”中，可以给SSH、CasaOS、qBittorrent、青龙等创建隧道，这样就可以实现远程访问了。但是要注意最好是先更改它们的默认端口和默认的账号密码再来创建才比较安全。<br>8.常见的默认端口：<br>&#96;</p>
+<ul>
+<li>CasaOS：8181</li>
+<li>Cpolar：9200</li>
+<li>qBittorrent ：8080</li>
+<li>FAST OS DOCKER：8081</li>
+<li>青龙：5700</li>
+<li>Home Assistant：8123<br>&#96;</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/" class="category-chain-item">软路由专栏</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/" class="print-no-link">#玩客云</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/01/02/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/github%E4%BD%BF%E7%94%A8/%E5%85%8D%E8%B4%B9%E8%AE%BF%E9%97%AEgithub%E5%8A%A0%E9%80%9F%E8%BD%AF%E4%BB%B6/" title="免费访问github加速软件">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">免费访问github加速软件</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/16/AI%E4%B8%93%E9%A2%98/%E6%9C%80%E5%85%A8%E9%9D%A2%E8%AF%A6%E7%BB%86%E7%9A%84Cursor%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="最全面详细的Cursor使用教程">
+                        <span class="hidden-mobile">最全面详细的Cursor使用教程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

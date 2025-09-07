@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="保记文本内容替换助手 - 使用说明简介保记文本内容替换助手是一款强大的文本处理工具，通过定义特定的变量标记和替换规则，用户可以在大批量文本中实现内容自动替换和动态生成。该工具特别适合需要批量替换或自动化生成编号的场景。 下载地址下载地址- 初次运行首次运行保记文本内容替换助手时，工具会自动生成一个初始的配置文件（.json ），该文件用于保存用户的默认设置和变量定义，以便后续快速加载配置、简化操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保记文本内容替换助手 - 使用说明">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/11/18/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/%E4%BF%9D%E8%AE%B0%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E6%9B%BF%E6%8D%A2%E5%8A%A9%E6%89%8B%20-%20%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="保记文本内容替换助手 - 使用说明简介保记文本内容替换助手是一款强大的文本处理工具，通过定义特定的变量标记和替换规则，用户可以在大批量文本中实现内容自动替换和动态生成。该工具特别适合需要批量替换或自动化生成编号的场景。 下载地址下载地址- 初次运行首次运行保记文本内容替换助手时，工具会自动生成一个初始的配置文件（.json ），该文件用于保存用户的默认设置和变量定义，以便后续快速加载配置、简化操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/565c3b70afead4411094b2b904b7e2ef.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/c6a9eadfa9e45ca5c0822e25bf8b676b.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/fc2eb7e262e75e67cecb8fad77ce31c4.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/53e270108f8ba2aa93b111f4c9642ce5.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/7dc1aed3e09ecd68b3df9aaeed442548.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/00b6f951e488d40af8d1e1a5fc78cb7a.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/c3b75dc1a58c1f2004faec0bf011337f.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/baf2f54823ff8097dcd8b32e217da746.png">
+<meta property="article:published_time" content="2024-11-18T16:29:24.000Z">
+<meta property="article:modified_time" content="2025-09-07T05:35:23.658Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="md命令">
+<meta property="article:tag" content="md代码">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://app.fekepj.com/list-tu/2024/11/19/565c3b70afead4411094b2b904b7e2ef.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>保记文本内容替换助手 - 使用说明 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="保记文本内容替换助手 - 使用说明"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-18 16:29" pubdate>
+          2024年11月18日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">保记文本内容替换助手 - 使用说明</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="保记文本内容替换助手-使用说明"><a href="#保记文本内容替换助手-使用说明" class="headerlink" title="保记文本内容替换助手 - 使用说明"></a>保记文本内容替换助手 - 使用说明</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>保记文本内容替换助手是一款强大的文本处理工具，通过定义特定的变量标记和替换规则，用户可以在大批量文本中实现内容自动替换和动态生成。该工具特别适合需要批量替换或自动化生成编号的场景。</p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a target="_blank" rel="noopener" href="https://app.lifu.us.kg/%E4%BF%9D%E8%AE%B0%E6%8C%87%E6%8C%A5AI%E5%86%99%E7%9A%84%E7%A8%8B%E5%BA%8F/%E4%BF%9D%E8%AE%B0%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E6%9B%BF%E6%8D%A2%E5%8A%A9%E6%89%8B.rar">下载地址-</a></p>
+<h2 id="初次运行"><a href="#初次运行" class="headerlink" title="初次运行"></a>初次运行</h2><p>首次运行保记文本内容替换助手时，工具会自动生成一个初始的配置文件（<code>.json</code> ），该文件用于保存用户的默认设置和变量定义，以便后续快速加载配置、简化操作。首次运行时界面将自动加载并显示初始化成功的提示信息，提醒用户可以开始配置变量和替换规则。</p>
+<h2 id="文件名带空格或特殊符的"><a href="#文件名带空格或特殊符的" class="headerlink" title="文件名带空格或特殊符的"></a>文件名带空格或特殊符的</h2><p>这也是这程序唯一的，带空格或者特殊字符必须手动选择到窗口内，不能以拖拉的方式丢进来！我觉得是不够完美的地方，暂时不折腾它了，例如这里两个文件，不能识别带空格的 </p>
+<p><img src="https://app.fekepj.com/list-tu/2024/11/19/565c3b70afead4411094b2b904b7e2ef.png" srcset="/img/loading.gif" lazyload alt="image-20241119123622098"></p>
+<p>必须手动选择导入:例如下图</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/11/19/c6a9eadfa9e45ca5c0822e25bf8b676b.png" srcset="/img/loading.gif" lazyload alt="image-20241119123713992"></p>
+<h2 id="配置文件说明"><a href="#配置文件说明" class="headerlink" title="配置文件说明"></a>配置文件说明</h2><p>初次生成的配置文件记录了程序的默认参数以及每个变量的初始设置，如变量的计数起始值、递增步长等信息。用户可以通过直接修改该配置文件或使用工具界面进行设置，以调整后续运行的输出效果。常见配置项包括：</p>
+<ul>
+<li><strong>初始计数值</strong>：定义 <code>-&#123;countzhcn&#125;</code> 和 <code>-&#123;counter&#125;</code> 等变量的起始值。</li>
+<li><strong>递增步长</strong>：设置计数值的增量，默认为 1。</li>
+<li><strong>变量格式</strong>：指定变量格式（中文数字或阿拉伯数字）。</li>
+</ul>
+<p>修改配置文件后，保存并重新运行程序即可生效。</p>
+<hr>
+<h2 id="工具界面操作指南"><a href="#工具界面操作指南" class="headerlink" title="工具界面操作指南"></a>工具界面操作指南</h2><p>保记文本内容替换助手提供了直观的用户界面，简化了文本的导入、变量设置和替换执行。以下是各个主要操作的详细说明：</p>
+<h3 id="1-导入原始文本"><a href="#1-导入原始文本" class="headerlink" title="1. 导入原始文本"></a>1. 导入原始文本</h3><p>在界面中点击“导入文本”按钮，选择需要进行替换的文件，支持多种格式（如 <code>.txt</code> 或 <code>.md</code> 文件）。导入的文本将显示在预览窗口中，便于用户确认内容。</p>
+<h3 id="2-设置变量和替换规则"><a href="#2-设置变量和替换规则" class="headerlink" title="2. 设置变量和替换规则"></a>2. 设置变量和替换规则</h3><p>在工具界面中，用户可以设置各种变量和替换规则，具体包括以下内容：</p>
+<ul>
+<li><strong>变量定义</strong>：界面上会列出 <code>-&#123;countzhcn&#125;</code> 和 <code>-&#123;counter&#125;</code> 等常用变量，用户可以点击选择并设置其参数。</li>
+<li><strong>起始值和步长</strong>：用户可以指定每个变量的初始值和步长，工具将根据这些参数递增或递减输出。</li>
+<li><strong>替换格式</strong>：支持选择计数输出格式，如 <code>-&#123;countzhcn&#125;</code> 会以中文数字输出，<code>-&#123;counter&#125;</code> 则以阿拉伯数字输出。</li>
+</ul>
+<h3 id="3-执行替换"><a href="#3-执行替换" class="headerlink" title="3. 执行替换"></a>3. 执行替换</h3><p>配置完替换规则后，点击“开始替换”按钮，程序会自动扫描文本并替换指定变量。替换后的文本将在预览窗口中展示，用户可以确认是否符合预期。</p>
+<h3 id="4-保存替换结果"><a href="#4-保存替换结果" class="headerlink" title="4. 保存替换结果"></a>4. 保存替换结果</h3><p>替换完成后，用户可以点击“保存为文件”按钮，将处理后的文本保存为新文件。同时，也可以选择覆盖原始文件。</p>
+<hr>
+<h2 id="关键变量说明"><a href="#关键变量说明" class="headerlink" title="关键变量说明"></a>关键变量说明</h2><h3 id="countzhcn"><a href="#countzhcn" class="headerlink" title="-{countzhcn}"></a><code>-&#123;countzhcn&#125;</code></h3><p>此变量用于在文本中生成以中文数字格式显示的动态计数，适用于需要中文格式编号的场景。</p>
+<ul>
+<li><strong>作用</strong>：<code>-&#123;countzhcn&#125;</code> 会将每次递增的计数值以“一、二、三”等中文数字显示。</li>
+<li><strong>计数逻辑</strong>：起始值由配置文件决定或手动设置，适合用于列出带有中文编号的任务或步骤。</li>
+</ul>
+<h4 id="示例图"><a href="#示例图" class="headerlink" title="示例图"></a>示例图</h4><p><img src="https://app.fekepj.com/list-tu/2024/11/19/fc2eb7e262e75e67cecb8fad77ce31c4.png" srcset="/img/loading.gif" lazyload alt="image-20241119124354338"></p>
+<figure class="highlight dust"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-xpyjs0mf99epmt"></i><span>DUST</span><div class="collapse show" id="collapse-xpyjs0mf99epmt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码</span><br><span class="language-xml">第 -</span><span class="hljs-template-variable">&#123;countzhcn&#125;</span><span class="language-xml"> 项任务。</span><br></code></pre></td></tr></table></div></figure>
+
+<p>替换结果：</p>
+<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ojqubvmf99epmt"></i><span>DUST</span><div class="collapse show" id="collapse-ojqubvmf99epmt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码<br>第一项任务。<br></code></pre></td></tr></table></figure>
+
+<h3 id="counter"><a href="#counter" class="headerlink" title="-{counter}"></a><code>-&#123;counter&#125;</code></h3><p>此变量用于以阿拉伯数字格式进行计数，非常适合需要精确数字的场景。</p>
+<ul>
+<li><strong>作用</strong>：生成的计数结果为阿拉伯数字，例如 “1, 2, 3…”。</li>
+<li><strong>计数逻辑</strong>：初始值和步长均可设置，方便自定义序列。</li>
+</ul>
+<h4 id="示例-图片"><a href="#示例-图片" class="headerlink" title="示例:图片"></a>示例:图片</h4><p><img src="https://app.fekepj.com/list-tu/2024/11/19/53e270108f8ba2aa93b111f4c9642ce5.png" srcset="/img/loading.gif" lazyload alt="image-20241119124454894"></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码</span><br><span class="language-xml">编号：-</span><span class="hljs-template-variable">&#123;counter&#125;</span><br></code></pre></td></tr></table></div></figure>
+
+<p>替换结果：</p>
+<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-enqg8jmf99epmt"></i><span>DIFF</span><div class="collapse show" id="collapse-enqg8jmf99epmt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码<br>编号：1<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="批量变量替换"><a href="#批量变量替换" class="headerlink" title="批量变量替换"></a>批量变量替换</h3><p>允许在同一文本中使用多个相同或不同的变量标记，程序会逐个识别并替换，极大提高了文本处理效率。</p>
+<h3 id="自定义变量格式"><a href="#自定义变量格式" class="headerlink" title="自定义变量格式"></a>自定义变量格式</h3><p>提供变量的格式化选项，例如 <code>-&#123;countzhcn&#125;</code> 可选择大写中文数字、简写等不同输出格式，便于满足不同文本风格需求。</p>
+<h3 id="一键预览与撤销"><a href="#一键预览与撤销" class="headerlink" title="一键预览与撤销"></a>一键预览与撤销</h3><p>替换前支持实时预览，用户可以确认替换效果；如需更改，支持撤销替换，恢复原始内容。</p>
+<hr>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="任务清单示例"><a href="#任务清单示例" class="headerlink" title="任务清单示例"></a>任务清单示例</h3><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs diff">diff复制代码任务清单：<br><span class="hljs-deletion">-&#123;countzhcn&#125;：准备数据</span><br><span class="hljs-deletion">-&#123;countzhcn&#125;：编写文档</span><br><span class="hljs-deletion">-&#123;countzhcn&#125;：代码测试</span><br></code></pre></td></tr></table></div></figure>
+
+<p>替换后：</p>
+<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-u84v65mf99epmt"></i><span>DUST</span><div class="collapse show" id="collapse-u84v65mf99epmt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码任务清单：<br>一：准备数据<br>二：编写文档<br>三：代码测试<br></code></pre></td></tr></table></figure>
+
+<h3 id="项目序号示例"><a href="#项目序号示例" class="headerlink" title="项目序号示例"></a>项目序号示例</h3><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码项目 -</span><span class="hljs-template-variable">&#123;counter&#125;</span><span class="language-xml">：完成需求分析</span><br><span class="language-xml">项目 -</span><span class="hljs-template-variable">&#123;counter&#125;</span><span class="language-xml">：开始开发</span><br><span class="language-xml">项目 -</span><span class="hljs-template-variable">&#123;counter&#125;</span><span class="language-xml">：测试部署</span><br></code></pre></td></tr></table></div></figure>
+
+<p>替换后：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码项目 1：完成需求分析<br>项目 2：开始开发<br>项目 3：测试部署<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="一些常规的替换也是可以的"><a href="#一些常规的替换也是可以的" class="headerlink" title="一些常规的替换也是可以的"></a>一些常规的替换也是可以的</h2><p>例如:</p>
+<img src="https://app.fekepj.com/list-tu/2024/11/19/7dc1aed3e09ecd68b3df9aaeed442548.png" srcset="/img/loading.gif" lazyload alt="image-20241119124656986" style="zoom:50%;" />
+
+<hr>
+<h2 id="转换结果对比"><a href="#转换结果对比" class="headerlink" title="转换结果对比"></a>转换结果对比</h2><p>转换后-                                                            –                                                                                  -转换前</p>
+<img src="https://app.fekepj.com/list-tu/2024/11/19/00b6f951e488d40af8d1e1a5fc78cb7a.png" srcset="/img/loading.gif" lazyload alt="image-20241119103054085" style="zoom: 50%;" />
+
+<p>然后加个标是：git分支切换问题  一键发布到hexo博客，就成为这样的文单网页了可点下图进入看效果，也可以：<a target="_blank" rel="noopener" href="https://保.us.kg/2024/11/19/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/github%E4%BD%BF%E7%94%A8/git%E5%88%86%E6%94%AF%E5%88%87%E6%8D%A2%E9%97%AE%E9%A2%98-%E5%BC%BA%E5%88%B6%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0/">点此浏览网页效果</a></p>
+<p>问的题可以折叠收缩起来，效果杆杆的！！</p>
+<p><a target="_blank" rel="noopener" href="https://保.us.kg/2024/11/19/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/github%E4%BD%BF%E7%94%A8/git%E5%88%86%E6%94%AF%E5%88%87%E6%8D%A2%E9%97%AE%E9%A2%98-%E5%BC%BA%E5%88%B6%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0/"><img src="https://app.fekepj.com/list-tu/2024/11/19/c3b75dc1a58c1f2004faec0bf011337f.png" srcset="/img/loading.gif" lazyload alt="image-20241119103356213"></a></p>
+<p>上面为折叠效果</p>
+<p>下面为展开效果</p>
+<p><a target="_blank" rel="noopener" href="https://保.us.kg/2024/11/19/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/github%E4%BD%BF%E7%94%A8/git%E5%88%86%E6%94%AF%E5%88%87%E6%8D%A2%E9%97%AE%E9%A2%98-%E5%BC%BA%E5%88%B6%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0/"><img src="https://app.fekepj.com/list-tu/2024/11/19/baf2f54823ff8097dcd8b32e217da746.png" srcset="/img/loading.gif" lazyload alt="image-20241119103541401"></a></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li><strong>变量语法</strong>：变量必须严格按照 <code>&#123;&#125;</code> 内格式编写，确保准确识别。</li>
+<li><strong>文件备份</strong>：建议在执行替换前对原文件备份，避免误操作。</li>
+<li><strong>配置文件编辑</strong>：手动修改配置文件后需重启程序使其生效。</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>保记文本内容替换助手是我用我的想法，让Ai给我写的代码！虽然市面上有很多程序，但，，，，始终都没有我订制用得舒服！！！！再说：这通过强大的变量标记和自动替换功能，帮助用户在复杂文本中快速实现内容替换和编号管理，特别适合批量文档处理场景。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/" class="category-chain-item">电脑使用日记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/md%E5%91%BD%E4%BB%A4/" class="print-no-link">#md命令</a>
+      
+        <a href="/tags/md%E4%BB%A3%E7%A0%81/" class="print-no-link">#md代码</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/11/19/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/github%E4%BD%BF%E7%94%A8/git%E5%88%86%E6%94%AF%E5%88%87%E6%8D%A2%E9%97%AE%E9%A2%98-%E5%BC%BA%E5%88%B6%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0/" title="git分支切换问题-强制获取所有远程更新">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git分支切换问题-强制获取所有远程更新</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/11/15/GPT%E9%97%AE%E7%AD%94%E7%B1%BB/%E7%94%9F%E6%88%90%E7%A8%8B%E5%BA%8F%E6%97%B6%E6%89%93%E5%8C%85%E5%9B%BE%E6%A0%87%E7%9A%84%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/" title="生成程序时打包图标的执行命令">
+                        <span class="hidden-mobile">生成程序时打包图标的执行命令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
