@@ -42,6 +42,6 @@ jobs:
           publish_dir: ./public
           publish_branch: main
           # 如果你绑定了域名
-          cname: c51.lfvps.eu.org
+          cname: 
           # main 分支保留其他文件吗？false 表示覆盖
           keep_files: false
