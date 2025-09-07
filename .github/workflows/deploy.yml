@@ -1,43 +1,47 @@
 name: Build & Deploy Hexo (befe -> main)
 
+# 触发条件
 on:
   push:
     branches:
-      - befe          # 你在 befe 写文章并推送时触发
-  workflow_dispatch:  # 手动触发也可以
+      - befe          # 当你推送到 befe 分支时触发
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ 检出源代码（befe 分支）
       - name: Checkout source (befe)
         uses: actions/checkout@v4
         with:
           ref: befe
 
+      # 2️⃣ 安装 Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # 你说可以接受每次安装，这里就用 npm ci。需要更快可以加 cache。
+      # 3️⃣ 安装依赖（每次干净安装）
       - name: Install dependencies
         run: npm ci
 
+      # 4️⃣ Hexo 清理 & 生成网页
       - name: Clean & Generate
         run: |
           npx hexo clean
           npx hexo generate
 
-      # 部署到 main 分支（覆盖为静态站点）
+      # 5️⃣ 部署到 main 分支（覆盖静态站点）
       - name: Deploy to main (Pages)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: main
-          # 如果你希望 Action 自动写 CNAME 文件，打开下面一行：
+          # 如果你绑定了域名
           cname: c51.lfvps.eu.org
-          # 如果 main 里还有你手动放的其它文件需要保留，改成 true
+          # main 分支保留其他文件吗？false 表示覆盖
           keep_files: false
