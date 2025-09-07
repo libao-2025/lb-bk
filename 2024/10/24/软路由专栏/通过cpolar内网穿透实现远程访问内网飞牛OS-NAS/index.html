@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言随着数字化时代的到来，家庭和企业对于数据存储和远程访问的需求日益增加。网络附加存储（NAS）作为数据中心的重要组成部分，凭借其高扩展性、高可靠性和便捷性，已成为众多用户首选的数据存储解决方案。然而，传统的NAS设备在远程访问方面往往受限于网络环境，特别是在没有公网IP的情况下，如何实现远程访问成为了一个亟待解决的问题。 飞牛私有云fnOS NAS以其卓越的性能、强大的兼容性和智能化的管理界面，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过cpolar内网穿透实现远程访问内网飞牛OS-NAS">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/10/24/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E9%80%9A%E8%BF%87cpolar%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E9%A3%9E%E7%89%9BOS-NAS/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="前言随着数字化时代的到来，家庭和企业对于数据存储和远程访问的需求日益增加。网络附加存储（NAS）作为数据中心的重要组成部分，凭借其高扩展性、高可靠性和便捷性，已成为众多用户首选的数据存储解决方案。然而，传统的NAS设备在远程访问方面往往受限于网络环境，特别是在没有公网IP的情况下，如何实现远程访问成为了一个亟待解决的问题。 飞牛私有云fnOS NAS以其卓越的性能、强大的兼容性和智能化的管理界面，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/2845afa50932e874686fce69913d68a4.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/a3cebecf1d8ab9ba97e0b59cc5f15a79.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/cc0332a9bb13f795a7d6e38f5fe97be9.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/3f1d0dbdb4b785be2801d619ad97e507.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/9da335da16620235460224629a4e97d9.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/ba99764b8d010f095afeb2e710972040.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/cc10b712926e6d2ef4f6127111231e2e.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/b34b528bc1425a011db4d68e719ebc91.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/032c6de7c3edaa5a6580be29e3f3ca56.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/be8f9750430528189ded55c50f3807e0.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/d162478b5468ead7232603a980b33f51.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/df5c54ac981939ba401e3a0cd4a20793.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/65a235d06017580703b5434396fd0a63.png">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/24/e2a5bb915457140004092a0a70055d25.png">
+<meta property="article:published_time" content="2024-10-24T05:28:24.000Z">
+<meta property="article:modified_time" content="2025-03-19T08:46:12.831Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="NAS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://app.fekepj.com/list-tu/2024/10/24/2845afa50932e874686fce69913d68a4.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>通过cpolar内网穿透实现远程访问内网飞牛OS-NAS - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="通过cpolar内网穿透实现远程访问内网飞牛OS-NAS"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-24 13:28" pubdate>
+          2024年10月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">通过cpolar内网穿透实现远程访问内网飞牛OS-NAS</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着数字化时代的到来，家庭和企业对于数据存储和远程访问的需求日益增加。网络附加存储（NAS）作为数据中心的重要组成部分，凭借其高扩展性、高可靠性和便捷性，已成为众多用户首选的数据存储解决方案。然而，传统的NAS设备在远程访问方面往往受限于网络环境，特别是在没有公网IP的情况下，如何实现远程访问成为了一个亟待解决的问题。</p>
+<p>飞牛私有云fnOS NAS以其卓越的性能、强大的兼容性和智能化的管理界面，在NAS市场中脱颖而出。fnOS基于最新的Linux内核（Debian发行版）深度开发，不仅兼容主流x86硬件，还支持自由拓展和灵活扩容，为用户提供了前所未有的数据存储体验。然而，仅仅拥有优秀的NAS设备还不足以满足所有需求，特别是当需要在不同网络环境下进行远程访问时，内网穿透技术显得尤为重要。</p>
+<p>Cpolar作为一款高效、稳定且易于使用的内网穿透工具，能够将本地服务暴露给外网用户访问。它支持https、tcp、等协议，且配置简单，使用方便。尤为重要的是，Cpolar提供了永久免费版，虽然带宽有限且域名随机变化，但对于日常远程访问和数据传输已足够应对。对于需要更高稳定性和更多功能的用户，Cpolar也提供了付费版本，以满足不同需求。</p>
+<p>本文将详细介绍如何在飞牛私有云fnOS NAS上安装Cpolar穿透工具，并实现远程访问。通过本文的指导，您将能够轻松突破网络限制，随时随地访问您的NAS设备。无论您是家庭用户还是企业用户，本文都将为您提供有价值的参考和实用的解决方案。</p>
+<p>接下来，我们将逐步介绍Cpolar的安装、配置和使用过程，帮助您快速上手并成功实现远程访问。请跟随我们的步伐，一起探索飞牛私有云fnOS NAS与Cpolar的无限可能。</p>
+<h2 id="1-安装Cpolar工具"><a href="#1-安装Cpolar工具" class="headerlink" title="1. 安装Cpolar工具"></a>1. 安装Cpolar工具</h2><p>打开飞牛云NAS设置界面,开启ssh 连接,端口默认为22即可,开启后,我们就可以ssh 连接飞牛云NAS执行命令.</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/2845afa50932e874686fce69913d68a4.png" srcset="/img/loading.gif" lazyload alt="image-20240904140930405"></p>
+<p>然后我们通过局域网IP ssh远程连接进去,因为该NAS是基于Linux 内核开发的,所以我们可以按照cpolar的Linux安装方法进行安装</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/a3cebecf1d8ab9ba97e0b59cc5f15a79.png" srcset="/img/loading.gif" lazyload alt="image-20240904142047011"></p>
+<p>连接后执行下面cpolar Linux 安装命令</p>
+<figure class="highlight shell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8yw2trmf2com4g"></i><span>SHELL</span><div class="collapse show" id="collapse-8yw2trmf2com4g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -L https://www.cpolar.com/static/downloads/install-release-cpolar.sh | sudo bash<br></code></pre></td></tr></table></div></figure>
+
+<p>Bash</p>
+<p>Copy</p>
+<p>执行这个命令后可能会出现卡主,可以看到这个位置是提示需要输入NAS用户名对应的密码,直接输入密码回车即可,期间没有报错表示安装成功</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/cc0332a9bb13f795a7d6e38f5fe97be9.png" srcset="/img/loading.gif" lazyload alt="image-20240904142640620"></p>
+<p>然后执行下面系列命令来操作cpolar 服务</p>
+<figure class="highlight shell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-m7h88lmf2com4g"></i><span>SHELL</span><div class="collapse show" id="collapse-m7h88lmf2com4g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">加入系统服务设置开机启动</span><br>sudo systemctl enable cpolar<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">启动cpolar服务</span><br>sudo systemctl start cpolar<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">重启cpolar服务</span><br>sudo systemctl restart cpolar<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看cpolar服务状态</span><br>sudo systemctl status cpolar<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">停止cpolar服务</span><br>sudo systemctl stop cpolar<br></code></pre></td></tr></table></div></figure>
+
+<p>Bash</p>
+<p>Copy</p>
+<p>启动cpolar服务后,我们通过NAS局域网IP访问9200端口,即可看到cpolar的web ui 管理界面,一切操作在管理界面操作即可,如果没有账号,可以进入下面cpolar官网注册,或者点击登陆按钮下面免费注册也可以跳转去免费注册,注册后登录即可,这样cpolar在飞牛云安装就完成了,下面我们通过cpolar设置远程访问飞牛云NAS.</p>
+<blockquote>
+<p>cpolar官网地址: <a target="_blank" rel="noopener" href="https://www.cpolar.com/">https://www.cpolar.com</a></p>
+</blockquote>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/3f1d0dbdb4b785be2801d619ad97e507.png" srcset="/img/loading.gif" lazyload alt="image-20240904143832209"></p>
+<h2 id="2-配置远程访问地址"><a href="#2-配置远程访问地址" class="headerlink" title="2. 配置远程访问地址"></a>2. 配置远程访问地址</h2><p>登录后,在管理界面点击左侧仪表盘的隧道管理——创建隧道，创建一个飞牛云NAS 的公网http地址隧道!</p>
+<ul>
+<li>隧道名称：可自定义命名，注意不要与已有的隧道名称重复</li>
+<li>协议：选择http</li>
+<li>本地地址：8000 (访问飞牛云界面的端口)</li>
+<li>域名类型：免费选择随机域名</li>
+<li>地区：选择China vip</li>
+</ul>
+<p>点击<code>创建</code>(点击一次创建按钮即可,不要重复点击!)</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/9da335da16620235460224629a4e97d9.png" srcset="/img/loading.gif" lazyload alt="image-20240904144842844"></p>
+<p>隧道创建成功后，点击左侧的状态——在线隧道列表,查看所生成的公网访问地址，有两种访问方式,一种是http 和https,两种都可以访问</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/ba99764b8d010f095afeb2e710972040.png" srcset="/img/loading.gif" lazyload alt="image-20240904144923655"></p>
+<h2 id="3-远程访问飞牛云NAS"><a href="#3-远程访问飞牛云NAS" class="headerlink" title="3. 远程访问飞牛云NAS"></a>3. 远程访问飞牛云NAS</h2><p>在浏览器输入上面我们创建的Cpolar 公网域名,可以看到成功访问了我们飞牛云NAS界面</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/cc10b712926e6d2ef4f6127111231e2e.png" srcset="/img/loading.gif" lazyload alt="image-20240904145035277"></p>
+<p>同样我们输入账号密码,即可成功登录,这样一个远程访问的公网地址就设置好了,使用该地址可以在任意浏览器进行访问.</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/b34b528bc1425a011db4d68e719ebc91.png" srcset="/img/loading.gif" lazyload alt="image-20240904145157480"></p>
+<p><strong>小结</strong></p>
+<p>为了更好地演示，我们在前述过程中使用了cpolar生成的隧道，其公网地址是随机生成的。</p>
+<p>这种随机地址的优势在于建立速度快，可以立即使用。然而，它的缺点是网址由随机字符生成，不太容易记忆（例如：7ff0466b.r12.vip.cpolar.cn）。另外，这个地址在24小时内会发生随机变化，更适合于临时使用。</p>
+<p>我一般会使用固定二级子域名，原因是我希望将网址发送给同事或客户时，它是一个固定、易记的公网地址（例如：fnostest.cpolar.cn），这样更显正式，便于流交协作。</p>
+<h2 id="4-固定远程访问地址"><a href="#4-固定远程访问地址" class="headerlink" title="4. 固定远程访问地址"></a>4. 固定远程访问地址</h2><p>由于以上使用Cpolar所创建的隧道使用的是随机公网地址，24小时内会随机变化，不利于长期远程访问。因此我们可以为其配置二级子域名，该地址为固定地址，不会随机变化【ps：cpolar.cn已备案】</p>
+<blockquote>
+<p>注意需要将cpolar套餐升级至基础套餐或以上，且每个套餐对应的带宽不一样。【cpolar.cn已备案】</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://dashboard.cpolar.com/">点击进入和登录Cpolar官网</a>，点击左侧的预留，选择保留二级子域名，设置一个二级子域名名称，点击保留</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/032c6de7c3edaa5a6580be29e3f3ca56.png" srcset="/img/loading.gif" lazyload alt="image-20240904150257232"></p>
+<p>保留成功后复制保留成功的二级子域名的名称</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/be8f9750430528189ded55c50f3807e0.png" srcset="/img/loading.gif" lazyload alt="image-20240904150447612"></p>
+<p>返回登录cpolar web UI管理界面，点击左侧仪表盘的隧道管理——隧道列表，找到所要配置的隧道，点击右侧的编辑</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/d162478b5468ead7232603a980b33f51.png" srcset="/img/loading.gif" lazyload alt="image-20240904150526977"></p>
+<p>修改隧道信息，将保留成功的二级子域名配置到隧道中</p>
+<ul>
+<li>域名类型：选择二级子域名</li>
+<li>Sub Domain：填写保留成功的二级子域名</li>
+</ul>
+<p>点击<code>更新</code>(注意,点击一次更新即可,不需要重复提交)</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/df5c54ac981939ba401e3a0cd4a20793.png" srcset="/img/loading.gif" lazyload alt="image-20240904150553677"></p>
+<p>更新完成后,打开在线隧道列表,此时可以看到公网地址已经发生变化,地址二级名称变成了我们自己设置的二级子域名名称</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/65a235d06017580703b5434396fd0a63.png" srcset="/img/loading.gif" lazyload alt="image-20240904150619186"></p>
+<p>再次打开浏览器,输入我们固定的cpolar公网地址,新地址访问可能需要登陆,登录后,可以看到同样访问成功了,这样一个固定的地址就设置好了,不用再担心地址会变化!</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/24/e2a5bb915457140004092a0a70055d25.png" srcset="/img/loading.gif" lazyload alt="image-20240904150712856"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/" class="category-chain-item">软路由专栏</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/NAS/" class="print-no-link">#NAS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/24/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E4%B8%80%E9%94%AE%E9%87%8D%E5%90%AF%E8%B7%AF%E7%94%B1%E5%99%A8%E8%84%9A%E6%9C%AC%E6%B7%BB%E5%8A%A0%E5%AD%A6%E4%B9%A0/" title="一键重启路由器脚本添加学习">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">一键重启路由器脚本添加学习</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/22/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/OpenWrt%E7%BC%96%E8%AF%91App%E6%8F%92%E4%BB%B6%E5%BA%94%E7%94%A8%E8%AF%B4%E6%98%8E-L%E5%A4%A7/" title="OpenWrt编译App插件应用说明-L大">
+                        <span class="hidden-mobile">OpenWrt编译App插件应用说明-L大</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,1046 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="CF-edgetunnel项目使用说明这是一个基于 CF Worker 平台的脚本，在原版的基础上修改了显示 VLESS 配置信息转换为订阅内容。使用该脚本，你可以方便地将 VLESS 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。  基础部署视频教程：https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;LeT4jQUh8ok 快速部署视频教程：https:&#x2F;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF-edgetunnel项目使用说明">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/10/16/CF%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/CF-edgetunnel%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="CF-edgetunnel项目使用说明这是一个基于 CF Worker 平台的脚本，在原版的基础上修改了显示 VLESS 配置信息转换为订阅内容。使用该脚本，你可以方便地将 VLESS 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。  基础部署视频教程：https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;LeT4jQUh8ok 快速部署视频教程：https:&#x2F;&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://starchart.cc/cmliu/edgetunnel.svg?variant=adaptive">
+<meta property="og:image" content="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png">
+<meta property="article:published_time" content="2024-10-16T03:47:44.000Z">
+<meta property="article:modified_time" content="2025-03-19T08:46:12.787Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="CF节点">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://starchart.cc/cmliu/edgetunnel.svg?variant=adaptive">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>CF-edgetunnel项目使用说明 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CF-edgetunnel项目使用说明"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-16 11:47" pubdate>
+          2024年10月16日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">CF-edgetunnel项目使用说明</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="CF-edgetunnel项目使用说明"><a href="#CF-edgetunnel项目使用说明" class="headerlink" title="CF-edgetunnel项目使用说明"></a>CF-edgetunnel项目使用说明</h1><p>这是一个基于 CF Worker 平台的脚本，在原版的基础上修改了显示 VLESS 配置信息转换为订阅内容。使用该脚本，你可以方便地将 VLESS 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。</p>
+<ul>
+<li>基础部署视频教程：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LeT4jQUh8ok">https://www.youtube.com/watch?v=LeT4jQUh8ok</a></li>
+<li>快速部署视频教程：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=59THrmJhmAw">https://www.youtube.com/watch?v=59THrmJhmAw</a> <em><strong>最佳推荐!!!</strong></em></li>
+<li>进阶使用视频教程：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8">https://www.youtube.com/watch?v=s91zjpw3-P8</a></li>
+<li><strong>从入门到精通</strong>教程：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=oRYnrp5rQSc">https://www.youtube.com/watch?v=oRYnrp5rQSc</a> <em><strong>必看内容!必看内容!必看内容!!!</strong></em></li>
+</ul>
+<p>Telegram交流群：<a target="_blank" rel="noopener" href="https://t.me/CMLiussss">@CMLiussss</a>，<strong>感谢<a target="_blank" rel="noopener" href="https://url.cmliussss.com/alice">Alice Networks</a>提供的云服务器维持<a target="_blank" rel="noopener" href="https://sub.fxxk.dedyn.io/">CM订阅转换服务</a>！</strong></p>
+<h1 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h1><p>本免责声明适用于 GitHub 上的 “edgetunnel” 项目（以下简称“本项目”），项目链接为：<a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel">https://github.com/cmliu/edgetunnel</a> 。</p>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><p>本项目仅供教育、研究和安全测试目的而设计和开发。旨在为安全研究人员、学术界人士及技术爱好者提供一个探索和实践网络通信技术的工具。</p>
+<h3 id="合法性"><a href="#合法性" class="headerlink" title="合法性"></a>合法性</h3><p>在下载和使用本项目代码时，必须遵守使用者所适用的法律和规定。使用者有责任确保其行为符合所在地区的法律框架、规章制度及其他相关规定。</p>
+<h3 id="免责"><a href="#免责" class="headerlink" title="免责"></a>免责</h3><ol>
+<li>作为本项目的 <strong>二次开发作者</strong>（以下简称“作者”），我 <strong>cmliu</strong> 强调本项目仅应用于合法、道德和教育目的。</li>
+<li>作者不认可、不支持亦不鼓励任何形式的非法使用。如果发现本项目被用于任何非法或不道德的活动，作者将对此强烈谴责。</li>
+<li>作者对任何人或组织利用本项目代码从事的任何非法活动不承担责任。使用本项目代码所产生的任何后果，均由使用者自行承担。</li>
+<li>作者不对使用本项目代码可能引起的任何直接或间接损害负责。</li>
+<li>为避免任何意外后果或法律风险，使用者应在使用本项目代码后的 24 小时内删除代码。</li>
+</ol>
+<p>通过使用本项目代码，使用者即表示理解并同意本免责声明的所有条款。如使用者不同意这些条款，应立即停止使用本项目。</p>
+<p>作者保留随时更新本免责声明的权利，且不另行通知。最新版本的免责声明将发布在本项目的 GitHub 页面上。</p>
+<h2 id="风险提示"><a href="#风险提示" class="headerlink" title="风险提示"></a>风险提示</h2><ul>
+<li>通过提交虚假的节点配置给订阅服务，避免节点配置信息泄露。</li>
+<li>另外，您也可以选择自行部署 <a target="_blank" rel="noopener" href="https://github.com/cmliu/WorkerVless2sub">WorkerVless2sub 订阅生成服务</a>，这样既可以利用订阅生成器的便利。</li>
+</ul>
+<h2 id="Workers-部署方法-视频教程"><a href="#Workers-部署方法-视频教程" class="headerlink" title="Workers 部署方法 视频教程"></a>Workers 部署方法 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LeT4jQUh8ok&t=83s">视频教程</a></h2><ol>
+<li><p>部署 CF Worker：</p>
+<ul>
+<li>在 CF Worker 控制台中创建一个新的 Worker。</li>
+<li>将 <a target="_blank" rel="noopener" href="https://github.com/lifuaini2019/edgetunnel/blob/main/_worker.js">worker.js</a> 的内容粘贴到 Worker 编辑器中。</li>
+<li>将第 7 行 <code>userID</code> 修改成你自己的 <strong>UUID</strong> 。</li>
+</ul>
+</li>
+<li><p>访问订阅内容：</p>
+<ul>
+<li>访问 <code>https://[YOUR-WORKERS-URL]/[UUID]</code> 即可获取订阅内容。</li>
+<li>例如 <code>https://vless.google.workers.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd</code> 就是你的通用自适应订阅地址。</li>
+<li>例如 <code>https://vless.google.workers.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sub</code> Base64订阅格式，适用PassWall,SSR+等。</li>
+<li>例如 <code>https://vless.google.workers.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?clash</code> Clash订阅格式，适用OpenClash等。</li>
+<li>例如 <code>https://vless.google.workers.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sb</code> singbox订阅格式，适用singbox等。</li>
+</ul>
+</li>
+<li><p>给 workers绑定 自定义域： </p>
+<ul>
+<li>在 workers控制台的 <code>触发器</code>选项卡，下方点击 <code>添加自定义域</code>。</li>
+<li>填入你已转入 CF 域名解析服务的次级域名，例如:<code>vless.google.com</code>后 点击<code>添加自定义域</code>，等待证书生效即可。</li>
+<li><strong>如果你是小白，你现在可以直接起飞，不用再往下看了！！！</strong></li>
+</ul>
+</li>
+</ol>
+<details>
+<summary><code><strong>「 我不是小白！我真的真的不是小白！我要玩花活！我要开启高端玩法！ 」</strong></code></summary>
+
+<ol start="4">
+<li>使用自己的<code>优选域名</code>&#x2F;<code>优选IP</code>的订阅内容：<ul>
+<li>如果你想使用自己的优选域名或者是自己的优选IP，可以参考 <a target="_blank" rel="noopener" href="https://github.com/cmliu/WorkerVless2sub">WorkerVless2sub GitHub 仓库</a> 中的部署说明自行搭建。</li>
+<li>打开 <a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel/blob/main/_worker.js">worker.js</a> 文件，在第 12 行找到 <code>sub</code> 变量，将其修改为你部署的订阅生成器地址。例如 <code>let sub = &#39;sub.cmliussss.workers.dev&#39;;</code>，注意不要带https等协议信息和符号。</li>
+<li>注意，如果您使用了自己的订阅地址，要求订阅生成器的 <code>sub</code>域名 和 <code>[YOUR-WORKER-URL]</code>的域名 不同属一个顶级域名，否则会出现异常。您可以在 <code>sub</code> 变量赋值为 workers.dev 分配到的域名。</li>
+</ul>
+</li>
+</ol>
+</details>
+
+<h2 id="Pages-上传-部署方法-最佳推荐-视频教程"><a href="#Pages-上传-部署方法-最佳推荐-视频教程" class="headerlink" title="Pages 上传 部署方法 最佳推荐!!! 视频教程"></a>Pages 上传 部署方法 <strong>最佳推荐!!!</strong> <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=59THrmJhmAw">视频教程</a></h2><ol>
+<li><p>部署 CF Pages：</p>
+<ul>
+<li>下载 <a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip">main.zip</a> 文件，并点上 Star !!!</li>
+<li>在 CF Pages 控制台中选择 <code>上传资产</code>后，为你的项目取名后点击 <code>创建项目</code>，然后上传你下载好的 <a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip">main.zip</a> 文件后点击 <code>部署站点</code>。</li>
+<li>部署完成后点击 <code>继续处理站点</code> 后，选择 <code>设置</code> &gt; <code>环境变量</code> &gt; <strong>制作</strong>为生产环境定义变量 &gt; <code>添加变量</code>。<br>变量名称填写<strong>UUID</strong>，值则为你的UUID，后点击 <code>保存</code>即可。</li>
+<li>返回 <code>部署</code> 选项卡，在右下角点击 <code>创建新部署</code> 后，重新上传 <a target="_blank" rel="noopener" href="https://github.com/cmliu/edgetunnel/archive/refs/heads/main.zip">main.zip</a> 文件后点击 <code>保存并部署</code> 即可。</li>
+</ul>
+</li>
+<li><p>访问订阅内容：</p>
+<ul>
+<li>访问 <code>https://[YOUR-PAGES-URL]/[YOUR-UUID]</code> 即可获取订阅内容。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd</code> 就是你的通用自适应订阅地址。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sub</code> Base64订阅格式，适用PassWall,SSR+等。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?clash</code> Clash订阅格式，适用OpenClash等。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sb</code> singbox订阅格式，适用singbox等。</li>
+</ul>
+</li>
+</ol>
+<details>
+<summary><code><strong>「 我自己有域名！我要绑定自己的域名！我已经熟练的掌握域名解析！ 」</strong></code></summary>
+
+<ol start="3">
+<li><h2 id="给-Pages绑定-CNAME自定义域：视频教程-在-Pages控制台的-自定义域选项卡，下方点击-设置自定义域。-填入你的自定义次级域名，注意不要使用你的根域名，例如：-您分配到的域名是-fuck-cloudns-biz，则添加自定义域填入-lizi-fuck-cloudns-biz即可；-按照-CF-的要求将返回你的域名DNS服务商，添加-该自定义域-lizi的-CNAME记录-edgetunnel-pages-dev-后，点击-激活域即可。-如果你是小白，那么你的-pages-绑定自定义域之后即可直接起飞，不用再往下看了！！！"><a href="#给-Pages绑定-CNAME自定义域：视频教程-在-Pages控制台的-自定义域选项卡，下方点击-设置自定义域。-填入你的自定义次级域名，注意不要使用你的根域名，例如：-您分配到的域名是-fuck-cloudns-biz，则添加自定义域填入-lizi-fuck-cloudns-biz即可；-按照-CF-的要求将返回你的域名DNS服务商，添加-该自定义域-lizi的-CNAME记录-edgetunnel-pages-dev-后，点击-激活域即可。-如果你是小白，那么你的-pages-绑定自定义域之后即可直接起飞，不用再往下看了！！！" class="headerlink" title="给 Pages绑定 CNAME自定义域：视频教程- 在 Pages控制台的 自定义域选项卡，下方点击 设置自定义域。- 填入你的自定义次级域名，注意不要使用你的根域名，例如：  您分配到的域名是 fuck.cloudns.biz，则添加自定义域填入 lizi.fuck.cloudns.biz即可；- 按照 CF 的要求将返回你的域名DNS服务商，添加 该自定义域 lizi的 CNAME记录 edgetunnel.pages.dev 后，点击 激活域即可。- 如果你是小白，那么你的 pages 绑定自定义域之后即可直接起飞，不用再往下看了！！！"></a>给 Pages绑定 CNAME自定义域：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LeT4jQUh8ok&t=851s">视频教程</a><br>- 在 Pages控制台的 <code>自定义域</code>选项卡，下方点击 <code>设置自定义域</code>。<br>- 填入你的自定义次级域名，注意不要使用你的根域名，例如：<br>  您分配到的域名是 <code>fuck.cloudns.biz</code>，则添加自定义域填入 <code>lizi.fuck.cloudns.biz</code>即可；<br>- 按照 CF 的要求将返回你的域名DNS服务商，添加 该自定义域 <code>lizi</code>的 CNAME记录 <code>edgetunnel.pages.dev</code> 后，点击 <code>激活域</code>即可。<br>- <strong>如果你是小白，那么你的 pages 绑定<code>自定义域</code>之后即可直接起飞，不用再往下看了！！！</strong></h2></details>
+<details>
+<summary><code><strong>「 我不是小白！我真的真的不是小白！我要玩花活！我要开启高端玩法！ 」</strong></code></summary>
+</li>
+<li><p>使用自己的<code>优选域名</code>&#x2F;<code>优选IP</code>的订阅内容：</p>
+<ul>
+<li>如果你想使用自己的优选域名或者是自己的优选IP，可以参考 <a target="_blank" rel="noopener" href="https://github.com/cmliu/WorkerVless2sub">WorkerVless2sub GitHub 仓库</a> 中的部署说明自行搭建。</li>
+<li>在 Pages控制台的 <code>设置</code>选项卡，选择 <code>环境变量</code>&gt; <code>制作</code>&gt; <code>编辑变量</code>&gt; <code>添加变量</code>；</li>
+<li>变量名设置为<code>SUB</code>，对应的值为你部署的订阅生成器地址。例如 <code>sub.cmliussss.workers.dev</code>，后点击 <strong>保存</strong>。</li>
+<li>之后在 Pages控制台的 <code>部署</code>选项卡，选择 <code>所有部署</code>&gt; <code>最新部署最右的 ...</code>&gt; <code>重试部署</code>，即可。</li>
+<li>注意，如果您使用了自己的订阅地址，要求订阅生成器的 <code>SUB</code>域名 和 <code>[YOUR-PAGES-URL]</code>的域名 不同属一个顶级域名，否则会出现异常。您可以在 <code>SUB</code> 变量赋值为 Pages.dev 分配到的域名。</li>
+</ul>
+</li>
+</ol>
+</details>
+
+<h2 id="Pages-GitHub-部署方法-视频教程"><a href="#Pages-GitHub-部署方法-视频教程" class="headerlink" title="Pages GitHub 部署方法 视频教程"></a>Pages GitHub 部署方法 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LeT4jQUh8ok&t=560s">视频教程</a></h2><ol>
+<li><p>部署 CF Pages：</p>
+<ul>
+<li>在 Github 上先 Fork 本项目，并点上 Star !!!</li>
+<li>在 CF Pages 控制台中选择 <code>连接到 Git</code>后，选中 <code>edgetunnel</code>项目后点击 <code>开始设置</code>。</li>
+<li>在 <code>设置构建和部署</code>页面下方，选择 <code>环境变量（高级）</code>后并 <code>添加变量</code><br>变量名称填写<strong>UUID</strong>，值则为你的UUID，后点击 <code>保存并部署</code>即可。</li>
+</ul>
+</li>
+<li><p>访问订阅内容：</p>
+<ul>
+<li>访问 <code>https://[YOUR-PAGES-URL]/[YOUR-UUID]</code> 即可获取订阅内容。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd</code> 就是你的通用自适应订阅地址。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sub</code> Base64订阅格式，适用PassWall,SSR+等。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?clash</code> Clash订阅格式，适用OpenClash等。</li>
+<li>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sb</code> singbox订阅格式，适用singbox等。</li>
+</ul>
+</li>
+<li><p>给 Pages绑定 CNAME自定义域：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=LeT4jQUh8ok&t=851s">视频教程</a></p>
+<ul>
+<li>在 Pages控制台的 <code>自定义域</code>选项卡，下方点击 <code>设置自定义域</code>。</li>
+<li>填入你的自定义次级域名，注意不要使用你的根域名，例如：<br>您分配到的域名是 <code>fuck.cloudns.biz</code>，则添加自定义域填入 <code>lizi.fuck.cloudns.biz</code>即可；</li>
+<li>按照 CF 的要求将返回你的域名DNS服务商，添加 该自定义域 <code>lizi</code>的 CNAME记录 <code>edgetunnel.pages.dev</code> 后，点击 <code>激活域</code>即可。</li>
+<li><strong>如果你是小白，那么你的 pages 绑定<code>自定义域</code>之后即可直接起飞，不用再往下看了！！！</strong></li>
+</ul>
+</li>
+</ol>
+<details>
+<summary><code><strong>「 我不是小白！我真的真的不是小白！我要玩花活！我要开启高端玩法！ 」</strong></code></summary>
+
+<ol start="4">
+<li>使用自己的<code>优选域名</code>&#x2F;<code>优选IP</code>的订阅内容：<ul>
+<li>如果你想使用自己的优选域名或者是自己的优选IP，可以参考 <a target="_blank" rel="noopener" href="https://github.com/cmliu/WorkerVless2sub">WorkerVless2sub GitHub 仓库</a> 中的部署说明自行搭建。</li>
+<li>在 Pages控制台的 <code>设置</code>选项卡，选择 <code>环境变量</code>&gt; <code>制作</code>&gt; <code>编辑变量</code>&gt; <code>添加变量</code>；</li>
+<li>变量名设置为<code>SUB</code>，对应的值为你部署的订阅生成器地址。例如 <code>sub.cmliussss.workers.dev</code>，后点击 <strong>保存</strong>。</li>
+<li>之后在 Pages控制台的 <code>部署</code>选项卡，选择 <code>所有部署</code>&gt; <code>最新部署最右的 ...</code>&gt; <code>重试部署</code>，即可。</li>
+<li>注意，如果您使用了自己的订阅地址，要求订阅生成器的 <code>SUB</code>域名 和 <code>[YOUR-PAGES-URL]</code>的域名 不同属一个顶级域名，否则会出现异常。您可以在 <code>SUB</code> 变量赋值为 Pages.dev 分配到的域名。</li>
+</ul>
+</li>
+</ol>
+</details>
+
+<h2 id="变量说明"><a href="#变量说明" class="headerlink" title="变量说明"></a>变量说明</h2><table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>示例</th>
+<th>必填</th>
+<th>备注</th>
+<th>YT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UUID</td>
+<td><code>5bb2f061-7671-43d7-825d-fd14d1ed89fd</code></td>
+<td>✅</td>
+<td>Powershell -NoExit -Command “[guid]::NewGuid()”</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=72s">Video</a></td>
+</tr>
+<tr>
+<td>PROXYIP</td>
+<td><code>proxyip.fxxk.dedyn.io:443</code></td>
+<td>❌</td>
+<td>备选作为访问CFCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用<code>,</code>或<code>换行</code>作间隔)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=166s">Video</a></td>
+</tr>
+<tr>
+<td>SOCKS5</td>
+<td><code>user:password@127.0.0.1:1080</code></td>
+<td>❌</td>
+<td>优先作为访问CFCDN站点的SOCKS5代理(支持多socks5, socks5之间使用<code>,</code>或<code>换行</code>作间隔)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=826s">Video</a></td>
+</tr>
+<tr>
+<td>GO2SOCKS5</td>
+<td><code>blog.cmliussss.com</code>,<code>*.ip111.cn</code>,<code>*google.com</code></td>
+<td>❌</td>
+<td>设置<code>SOCKS5</code>变量之后，可设置强制使用socks5访问名单(<code>*</code>可作为通配符，<code>换行</code>作多元素间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>ADD</td>
+<td><code>icook.tw:2053#官方优选域名</code></td>
+<td>❌</td>
+<td>本地优选TLS域名&#x2F;优选IP(支持多元素之间<code>,</code>或<code>换行</code>作间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>ADDAPI</td>
+<td><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt">https://raw.github.../addressesapi.txt</a></td>
+<td>❌</td>
+<td>优选IP的API地址(支持多元素之间<code>,</code>或 换行 作间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>ADDNOTLS</td>
+<td><code>icook.hk:8080#官方优选域名</code></td>
+<td>❌</td>
+<td>本地优选noTLS域名&#x2F;优选IP(支持多元素之间<code>,</code>或<code>换行</code>作间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>ADDNOTLSAPI</td>
+<td><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/addressesapi.txt">https://raw.github.../addressesapi.txt</a></td>
+<td>❌</td>
+<td>优选IP的API地址(支持多元素之间<code>,</code>或 换行 作间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>ADDCSV</td>
+<td><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv">https://raw.github.../addressescsv.csv</a></td>
+<td>❌</td>
+<td>iptest测速结果(支持多元素, 元素之间使用<code>,</code>作间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>DLS</td>
+<td><code>8</code></td>
+<td>❌</td>
+<td><code>ADDCSV</code>测速结果满足速度下限</td>
+<td></td>
+</tr>
+<tr>
+<td>TGTOKEN</td>
+<td><code>6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXX</code></td>
+<td>❌</td>
+<td>发送TG通知的机器人token</td>
+<td></td>
+</tr>
+<tr>
+<td>TGID</td>
+<td><code>6946912345</code></td>
+<td>❌</td>
+<td>接收TG通知的账户数字ID</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB</td>
+<td><code>VLESS.fxxk.dedyn.io</code></td>
+<td>❌</td>
+<td>内建域名、IP节点信息的订阅生成器地址</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=1193s">Video</a></td>
+</tr>
+<tr>
+<td>SUBAPI</td>
+<td><code>SUBAPI.fxxk.dedyn.io</code></td>
+<td>❌</td>
+<td>clash、singbox等 订阅转换后端</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=1446s">Video</a></td>
+</tr>
+<tr>
+<td>SUBCONFIG</td>
+<td><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini">https://raw.github.../ACL4SSR_Online_Full_MultiMode.ini</a></td>
+<td>❌</td>
+<td>clash、singbox等 订阅转换配置文件</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=1605s">Video</a></td>
+</tr>
+<tr>
+<td>SUBNAME</td>
+<td><code>edgetunnel</code></td>
+<td>❌</td>
+<td>订阅名称</td>
+<td></td>
+</tr>
+<tr>
+<td>RPROXYIP</td>
+<td><code>false</code></td>
+<td>❌</td>
+<td>设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=s91zjpw3-P8&t=1816s">Video</a></td>
+</tr>
+<tr>
+<td>URL302</td>
+<td><code>https://t.me/CMLiussss</code></td>
+<td>❌</td>
+<td>主页302跳转(支持多url, url之间使用<code>,</code>或<code>换行</code>作间隔, 小白别用)</td>
+<td></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>https://blog.cmliussss.com</code></td>
+<td>❌</td>
+<td>主页反代伪装(支持多url, url之间使用<code>,</code>或<code>换行</code>作间隔, 乱设容易触发反诈)</td>
+<td></td>
+</tr>
+<tr>
+<td>CFEMAIL</td>
+<td><code>admin@gmail.com</code></td>
+<td>❌</td>
+<td>CF账户邮箱(与<code>CFKEY</code>都填上后, 订阅信息将显示请求使用量, 小白别用)</td>
+<td></td>
+</tr>
+<tr>
+<td>CFKEY</td>
+<td><code>c6a944b5c956b6c18c2352880952bced8b85e</code></td>
+<td>❌</td>
+<td>CF账户Global API Key(与<code>CFEMAIL</code>都填上后, 订阅信息将显示请求使用量, 小白别用)</td>
+<td></td>
+</tr>
+<tr>
+<td>CFPORTS</td>
+<td><code>2053</code>,<code>2096</code>,<code>8443</code></td>
+<td>❌</td>
+<td>CF账户标准端口列表</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>注意: 填入<code>SOCKS5</code>后将不再启用<code>PROXYIP</code>！请二选一使用！！！</strong></p>
+<p><strong>注意: 填入<code>SUB</code>后将不再启用<code>ADD*</code>类变量生成的订阅内容！请二选一使用！！！</strong></p>
+<p><strong>注意: 同时填入<code>CFEMAIL</code>和<code>CFKEY</code>才会启用显示请求使用量，但是不推荐使用！没必要给一个Worker项目这么高的权限！后果自负！！！</strong></p>
+<h2 id="实用小技巧"><a href="#实用小技巧" class="headerlink" title="实用小技巧"></a>实用小技巧</h2><p><strong>该项目部署的订阅可通过添加<code>sub</code>键值快速更换优选订阅生成器！</strong> </p>
+<blockquote>
+<p>例如 <code>https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd</code> 是你的通用自适应订阅地址</p>
+</blockquote>
+<ul>
+<li><p>快速更换订阅器为<code>VLESS.fxxk.dedyn.io</code>的订阅地址</p>
+ <figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-db8rqhmf2com4c"></i><span>URL</span><div class="collapse show" id="collapse-db8rqhmf2com4c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs url">https://edgetunnel.pages.dev/5bb2f061-7671-43d7-825d-fd14d1ed89fd?sub=VLESS.fxxk.dedyn.io<br></code></pre></td></tr></table></div></figure></li>
+</ul>
+<p><strong>该项目部署的节点可通过节点PATH(路径)的方式，使用指定的<code>PROXYIP</code>或<code>SOCKS5</code>！！！</strong></p>
+<ul>
+<li><p>指定 <code>PROXYIP</code> 案例</p>
+ <figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-sth9rcmf2com4c"></i><span>URL</span><div class="collapse show" id="collapse-sth9rcmf2com4c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs url">/proxyip=proxyip.fxxk.dedyn.io<br>/?proxyip=proxyip.fxxk.dedyn.io<br>/proxyip.fxxk.dedyn.io (仅限于域名开头为&#x27;proxyip.&#x27;的域名)<br></code></pre></td></tr></table></div></figure>
+</li>
+<li><p>指定 <code>SOCKS5</code> 案例</p>
+ <figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-2rbma8mf2com4c"></i><span>URL</span><div class="collapse show" id="collapse-2rbma8mf2com4c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs url">/socks5=user:password@127.0.0.1:1080<br>/?socks5=user:password@127.0.0.1:1080<br>/socks://dXNlcjpwYXNzd29yZA==@127.0.0.1:1080<br>/socks5://user:password@127.0.0.1:1080<br></code></pre></td></tr></table></div></figure></li>
+</ul>
+<p><strong>当你的<code>ADDAPI</code>可作为<code>PROXYIP</code>时，可在<code>ADDAPI</code>变量末位添加<code>?proxyip=true</code>，即可在生成节点时使用优选IP自身作为<code>PROXYIP</code></strong></p>
+<ul>
+<li>指定 <code>ADDAPI</code> 作为 <code>PROXYIP</code> 案例 <figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-i0gyrhmf2com4c"></i><span>URL</span><div class="collapse show" id="collapse-i0gyrhmf2com4c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs url">https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt?proxyip=true<br></code></pre></td></tr></table></div></figure></li>
+</ul>
+<h2 id="Star-星星走起"><a href="#Star-星星走起" class="headerlink" title="Star 星星走起"></a>Star 星星走起</h2><p><a target="_blank" rel="noopener" href="https://starchart.cc/cmliu/edgetunnel"><img src="https://starchart.cc/cmliu/edgetunnel.svg?variant=adaptive" srcset="/img/loading.gif" lazyload alt="Stargazers over time"></a></p>
+<h2 id="已适配客户端"><a href="#已适配客户端" class="headerlink" title="已适配客户端"></a>已适配客户端</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN">v2rayN</a></li>
+<li>clash.meta（<a target="_blank" rel="noopener" href="https://github.com/chen08209/FlClash">FlClash</a>，<a target="_blank" rel="noopener" href="https://github.com/clash-verge-rev/clash-verge-rev">clash-verge-rev</a>，<a target="_blank" rel="noopener" href="https://github.com/keiko233/clash-nyanpasu">Clash Nyanpasu</a>）</li>
+</ul>
+<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><ul>
+<li>Surge，小火箭</li>
+<li>sing-box（<a target="_blank" rel="noopener" href="https://sing-box.sagernet.org/zh/clients/apple/">SFI</a>）</li>
+</ul>
+<h3 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a>安卓</h3><ul>
+<li>clash.meta（<a target="_blank" rel="noopener" href="https://github.com/MetaCubeX/ClashMetaForAndroid">ClashMetaForAndroid</a>，<a target="_blank" rel="noopener" href="https://github.com/chen08209/FlClash">FlClash</a>）</li>
+<li>sing-box（<a target="_blank" rel="noopener" href="https://github.com/SagerNet/sing-box">SFA</a>）</li>
+</ul>
+<h3 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h3><ul>
+<li>clash.meta（<a target="_blank" rel="noopener" href="https://github.com/chen08209/FlClash">FlClash</a>）</li>
+</ul>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://github.com/zizifn/edgetunnel">zizifn</a>、<a target="_blank" rel="noopener" href="https://github.com/3Kmfi6HP/EDtunnel">3Kmfi6HP</a>、<a target="_blank" rel="noopener" href="https://github.com/Stanley-baby">Stanley-baby</a>、<a target="_blank" rel="noopener" href="https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config">ACL4SSR</a>、<a target="_blank" rel="noopener" href="https://github.com/SHIJS1999/cloudflare-worker-vless-ip">SHIJS1999</a>、<a target="_blank" rel="noopener" href="https://url.cmliussss.com/alice"><img src="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png" srcset="/img/loading.gif" lazyload width="150" height="75" alt="Alice Networks LTD"/></a>、</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CF%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/" class="category-chain-item">CF搭建节点</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CF%E8%8A%82%E7%82%B9/" class="print-no-link">#CF节点</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/16/GPT%E9%97%AE%E7%AD%94%E7%B1%BB/GPT%E5%AD%A6%E4%B9%A0%E4%BF%AE%E6%94%B9Workers%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E6%98%BE%E7%A4%BA/" title="GPT学习修改Workers网页内容显示">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GPT学习修改Workers网页内容显示</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/14/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/Win10%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA%E6%80%8E%E4%B9%88%E8%AE%BE%E7%BD%AE-3%E7%A7%8D%E6%96%B9%E6%B3%95/" title="Win10定时关机怎么设置-3种方法">
+                        <span class="hidden-mobile">Win10定时关机怎么设置-3种方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

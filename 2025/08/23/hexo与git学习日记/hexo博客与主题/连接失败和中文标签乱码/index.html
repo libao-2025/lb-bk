@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Hexo 部署报错分析及解决：SSH 连接失败和中文标签乱码在用 Hexo 部署博客时，有时候会遇到如下报错： SQL12345678910textcreate mode 100644 &quot;tags&#x2F;\350\275\257\350\267\257\347\224\261&#x2F;index.html&quot;create mode 100644 &quot;tags&#x2F;\351\243\236\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo连接失败和中文标签乱码">
+<meta property="og:url" content="https://24.lifu.us.kg/2025/08/23/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E4%B8%8E%E4%B8%BB%E9%A2%98/%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%92%8C%E4%B8%AD%E6%96%87%E6%A0%87%E7%AD%BE%E4%B9%B1%E7%A0%81/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="Hexo 部署报错分析及解决：SSH 连接失败和中文标签乱码在用 Hexo 部署博客时，有时候会遇到如下报错： SQL12345678910textcreate mode 100644 &quot;tags&#x2F;\350\275\257\350\267\257\347\224\261&#x2F;index.html&quot;create mode 100644 &quot;tags&#x2F;\351\243\236\">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-23T07:06:30.000Z">
+<meta property="article:modified_time" content="2025-08-25T07:33:20.257Z">
+<meta property="article:author" content="LI bao">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Hexo连接失败和中文标签乱码 - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo连接失败和中文标签乱码"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-23 15:06" pubdate>
+          2025年8月23日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          629 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hexo连接失败和中文标签乱码</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Hexo-部署报错分析及解决：SSH-连接失败和中文标签乱码"><a href="#Hexo-部署报错分析及解决：SSH-连接失败和中文标签乱码" class="headerlink" title="Hexo 部署报错分析及解决：SSH 连接失败和中文标签乱码"></a>Hexo 部署报错分析及解决：SSH 连接失败和中文标签乱码</h2><p>在用 Hexo 部署博客时，有时候会遇到如下报错：</p>
+<figure class="highlight sql"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-sohubgmf2com4i"></i><span>SQL</span><div class="collapse show" id="collapse-sohubgmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql">textcreate mode <span class="hljs-number">100644</span> &quot;tags/\350\275\257\350\267\257\347\224\261/index.html&quot;<br><span class="hljs-keyword">create</span> mode <span class="hljs-number">100644</span> &quot;tags/\351\243\236\347\211\233OS/index.html&quot;<br><span class="hljs-keyword">create</span> mode <span class="hljs-number">100644</span> xml<span class="hljs-operator">/</span><span class="hljs-keyword">local</span><span class="hljs-operator">-</span>search.xml<br>Connection closed <span class="hljs-keyword">by</span> ::ffff:<span class="hljs-number">0</span>:c612:<span class="hljs-number">35</span> port <span class="hljs-number">22</span><br>fatal: Could <span class="hljs-keyword">not</span> read <span class="hljs-keyword">from</span> remote repository.<br><br>Please make sure you have the correct access rights<br><span class="hljs-keyword">and</span> the repository exists.<br>FATAL Something<span class="hljs-string">&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="hljs-string">Error: Spawn failed</span><br></code></pre></td></tr></table></div></figure>
+
+<p>这个报错主要分为两个部分：<strong>中文文件名乱码</strong>和<strong>SSH 推送失败</strong>。</p>
+<hr>
+<h3 id="1️⃣-中文标签文件名乱码"><a href="#1️⃣-中文标签文件名乱码" class="headerlink" title="1️⃣ 中文标签文件名乱码"></a><strong>1️⃣ 中文标签文件名乱码</strong></h3><p>报错中的类似：</p>
+<figure class="highlight apache"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-h7w50qmf2com4i"></i><span>APACHE</span><div class="collapse show" id="collapse-h7w50qmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">texttags</span>/\<span class="hljs-number">350</span>\<span class="hljs-number">275</span>\<span class="hljs-number">257</span>\<span class="hljs-number">350</span>\<span class="hljs-number">267</span>\<span class="hljs-number">257</span>\<span class="hljs-number">347</span>\<span class="hljs-number">224</span>\<span class="hljs-number">261</span>/index.html<br><span class="hljs-attribute">tags</span>/\<span class="hljs-number">351</span>\<span class="hljs-number">243</span>\<span class="hljs-number">236</span>\<span class="hljs-number">347</span>\<span class="hljs-number">211</span>\<span class="hljs-number">233</span>OS/index.html<br></code></pre></td></tr></table></div></figure>
+
+<ul>
+<li><p>这是 Hexo 在生成 <code>tags</code> 或 <code>categories</code> 时，中文名称被转成了 UTF-8 的 octal 码。</p>
+</li>
+<li><p>原因：</p>
+<ul>
+<li>Hexo 目录下有中文标签或分类名。</li>
+<li>Git &#x2F; 终端没有正确显示 UTF-8。</li>
+</ul>
+</li>
+<li><p><strong>解决方法</strong>：</p>
+<ul>
+<li>确保仓库支持 UTF-8 文件名（现代 Git 默认支持）。</li>
+<li>如果想彻底避免乱码，可以把标签或分类改成英文或拼音。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>⚠️ 一般情况下，这个问题不会阻止部署，只是显示上会有乱码。</p>
+</blockquote>
+<hr>
+<h3 id="2️⃣-SSH-连接失败"><a href="#2️⃣-SSH-连接失败" class="headerlink" title="2️⃣ SSH 连接失败"></a><strong>2️⃣ SSH 连接失败</strong></h3><p>报错核心信息：</p>
+<figure class="highlight apache"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ht5uyumf2com4i"></i><span>APACHE</span><div class="collapse show" id="collapse-ht5uyumf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">textConnection</span> closed by ::ffff:<span class="hljs-number">0</span>:c612:<span class="hljs-number">35</span> port <span class="hljs-number">22</span><br><span class="hljs-attribute">fatal</span>: Could not read from remote repository.<br></code></pre></td></tr></table></div></figure>
+
+<p>原因通常是：</p>
+<ol>
+<li><p><strong>远程仓库地址写错</strong><br>很多用户 <code>_config.yml</code> 里可能写成：</p>
+<figure class="highlight dts"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-llgs60mf2com4i"></i><span>DTS</span><div class="collapse show" id="collapse-llgs60mf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">yamldeploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> git@lb.github.com:lifuaini2019/<span class="hljs-number">2024</span>bk.git<br><span class="hljs-symbol">  branch:</span> main<br></code></pre></td></tr></table></div></figure>
+
+<p>这显然错误，因为 GitHub SSH 地址应该是：</p>
+<figure class="highlight scss"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-lmh9tpmf2com4i"></i><span>SCSS</span><div class="collapse show" id="collapse-lmh9tpmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">textgit<span class="hljs-keyword">@github</span>.<span class="hljs-attribute">com</span>:用户名/仓库名.git<br></code></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>多账号 SSH key 冲突</strong></p>
+<ul>
+<li>Mac 上默认 SSH key 是 <code>~/.ssh/id_rsa</code>。</li>
+<li>如果之前有多个 GitHub 账号使用不同 key，可能导致 Hexo 推送失败。</li>
+</ul>
+</li>
+<li><p><strong>SSH Key 没加到 GitHub 或权限不足</strong></p>
+<ul>
+<li>确认你在 GitHub → Settings → SSH Keys 中添加了公钥。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3️⃣-解决方案"><a href="#3️⃣-解决方案" class="headerlink" title="3️⃣ 解决方案"></a><strong>3️⃣ 解决方案</strong></h3><h4 id="步骤一：修改-config-yml"><a href="#步骤一：修改-config-yml" class="headerlink" title="步骤一：修改 _config.yml"></a><strong>步骤一：修改 <code>_config.yml</code></strong></h4><figure class="highlight dts"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-z4talxmf2com4i"></i><span>DTS</span><div class="collapse show" id="collapse-z4talxmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">yamldeploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> git@github.com:lifuaini2019/<span class="hljs-number">2024</span>bk.git<br><span class="hljs-symbol">  branch:</span> main<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>注意：如果有多个 GitHub 账号，可通过 <code>~/.ssh/config</code> 指定不同的 key。</p>
+</blockquote>
+<h4 id="步骤二：生成-SSH-Key（如果还没生成）"><a href="#步骤二：生成-SSH-Key（如果还没生成）" class="headerlink" title="步骤二：生成 SSH Key（如果还没生成）"></a><strong>步骤二：生成 SSH Key（如果还没生成）</strong></h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-klxfhkmf2com4i"></i><span>BASH</span><div class="collapse show" id="collapse-klxfhkmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">bashssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;你的邮箱&quot;</span> -f ~/.ssh/id_rsa_2024bk<br><span class="hljs-built_in">eval</span> <span class="hljs-string">&quot;<span class="hljs-subst">$(ssh-agent -s)</span>&quot;</span><br>ssh-add ~/.ssh/id_rsa_2024bk<br></code></pre></td></tr></table></div></figure>
+
+<h4 id="步骤三：配置-SSH-多账号（可选）"><a href="#步骤三：配置-SSH-多账号（可选）" class="headerlink" title="步骤三：配置 SSH 多账号（可选）"></a><strong>步骤三：配置 SSH 多账号（可选）</strong></h4><p>编辑 <code>~/.ssh/config</code>：</p>
+<figure class="highlight crmsh"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-f3p5qnmf2com4i"></i><span>CRMSH</span><div class="collapse show" id="collapse-f3p5qnmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">textHost github.com-<span class="hljs-number">2024</span>bk<br>  HostName github.com<br>  <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>  IdentityFile ~/.ssh/id_rsa_2024bk<br></code></pre></td></tr></table></div></figure>
+
+<p>然后 <code>_config.yml</code> 对应修改：</p>
+<figure class="highlight apache"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-t098nvmf2com4i"></i><span>APACHE</span><div class="collapse show" id="collapse-t098nvmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">yamlrepo</span>: git@github.com-<span class="hljs-number">2024</span>bk:lifuaini2019/<span class="hljs-number">2024</span>bk.git<br><span class="hljs-attribute">branch</span>: main<br></code></pre></td></tr></table></div></figure>
+
+<h4 id="步骤四：测试-SSH-连接"><a href="#步骤四：测试-SSH-连接" class="headerlink" title="步骤四：测试 SSH 连接"></a><strong>步骤四：测试 SSH 连接</strong></h4><figure class="highlight markdown"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-su0g69mf2com4i"></i><span>MARKDOWN</span><div class="collapse show" id="collapse-su0g69mf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">bashssh -T git@github.com<br><br><span class="hljs-section"># 或者如果用多账号</span><br><br>ssh -T git@github.com-2024bk<br></code></pre></td></tr></table></div></figure>
+
+<ul>
+<li>成功会显示：</li>
+</ul>
+<figure class="highlight ada"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-kjpbcwmf2com4i"></i><span>ADA</span><div class="collapse show" id="collapse-kjpbcwmf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">vbnetHi 用户名! You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></div></figure>
+
+<h4 id="步骤五：Hexo-部署"><a href="#步骤五：Hexo-部署" class="headerlink" title="步骤五：Hexo 部署"></a><strong>步骤五：Hexo 部署</strong></h4><figure class="highlight css"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-38ivs7mf2com4i"></i><span>CSS</span><div class="collapse show" id="collapse-38ivs7mf2com4i"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">bashhexo clean<br>hexo <span class="hljs-selector-tag">g</span><br>hexo d<br></code></pre></td></tr></table></div></figure>
+
+<hr>
+<h3 id="4️⃣-总结"><a href="#4️⃣-总结" class="headerlink" title="4️⃣ 总结"></a><strong>4️⃣ 总结</strong></h3><ol>
+<li><p>中文标签文件名显示成转义符是正常现象，可通过英文标签避免。</p>
+</li>
+<li><p>SSH 推送失败的根本原因是：</p>
+<ul>
+<li>仓库地址错误</li>
+<li>SSH Key 没配置或权限不足</li>
+<li>多账号 SSH 冲突</li>
+</ul>
+</li>
+<li><p>通过正确配置 <code>_config.yml</code> + SSH Key + <code>~/.ssh/config</code>，就能顺利部署 Hexo 到 GitHub。</p>
+</li>
+</ol>
+<hr>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/23/%E7%BD%91%E9%A1%B5%E4%BB%A3%E7%A0%81/md%E5%91%BD%E4%BB%A4/Mac%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Mac新建文件与常用命令">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Mac新建文件与常用命令</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/23/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/macOS%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%80%9F%E6%9F%A5%E8%A1%A8/" title="macOS常用快捷键速查表">
+                        <span class="hidden-mobile">macOS常用快捷键速查表</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

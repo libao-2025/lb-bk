@@ -1,0 +1,830 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LI bao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="20元的玩客云刷CasaOS加装jellyfin20块的NAS，支持海报墙？xiaoya+alist+内网穿透+jellyfin硬解视频地址： 20块的NAS，支持docker xiaoya alist 内网穿透 jellyfin 解码部署教程 理论上支持所有 armhf 架构的各类盒子，至于硬解嘛，要看机器性能了~ 一、拆机 重点讲一下： 吹热把胶软化后，从SD卡口横向插入摆动下，慢慢来，就像对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20元的玩客云刷CasaOS加装jellyfin">
+<meta property="og:url" content="https://24.lifu.us.kg/2024/10/19/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/20%E5%85%83%E7%9A%84%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7CasaOS%E5%8A%A0%E8%A3%85jellyfin/index.html">
+<meta property="og:site_name" content="保持微笑">
+<meta property="og:description" content="20元的玩客云刷CasaOS加装jellyfin20块的NAS，支持海报墙？xiaoya+alist+内网穿透+jellyfin硬解视频地址： 20块的NAS，支持docker xiaoya alist 内网穿透 jellyfin 解码部署教程 理论上支持所有 armhf 架构的各类盒子，至于硬解嘛，要看机器性能了~ 一、拆机 重点讲一下： 吹热把胶软化后，从SD卡口横向插入摆动下，慢慢来，就像对">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/115a9463ec5a7ac52f86fb4ba9a779d5.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/7a189e08a78a59e510134f736b80678e.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/1e41b6f9ca8a549a6d29f9391bda477c.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/abf250318837c782ab1a44b08869e0d6.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/a683be7dad7e69a03434197eb5d9fd30.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/5ae56fbcc2dc071cf41175a936e4ea15.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/ed9aae3e03c9f8f234f3a8f11f67c25c.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/7cefed91ad34d982a7285c6aa7f9001c.avif">
+<meta property="og:image" content="https://app.fekepj.com/list-tu/2024/10/19/b27f756ee77c1cb98d6a09eb046a8743.avif">
+<meta property="article:published_time" content="2024-10-19T03:31:27.000Z">
+<meta property="article:modified_time" content="2025-03-19T08:46:12.828Z">
+<meta property="article:author" content="LI bao">
+<meta property="article:tag" content="玩客云">
+<meta property="article:tag" content="玩客云刷机">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://app.fekepj.com/list-tu/2024/10/19/115a9463ec5a7ac52f86fb4ba9a779d5.avif">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>20元的玩客云刷CasaOS加装jellyfin - 保持微笑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/macpanel.css">
+<link rel="stylesheet" href="/css/code-pretty.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>保持微笑</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-github-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>学习</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://n.lifu.us.kg/" target="_self">
+                    <i class="iconfont icon-docker"></i>
+                    <span>no笔记博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    <i class="iconfont icon-twitter-fill"></i>
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="20元的玩客云刷CasaOS加装jellyfin"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-19 11:31" pubdate>
+          2024年10月19日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">20元的玩客云刷CasaOS加装jellyfin</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="20元的玩客云刷CasaOS加装jellyfin"><a href="#20元的玩客云刷CasaOS加装jellyfin" class="headerlink" title="20元的玩客云刷CasaOS加装jellyfin"></a>20元的玩客云刷CasaOS加装jellyfin</h1><h2 id="20块的NAS，支持海报墙？xiaoya-alist-内网穿透-jellyfin硬解"><a href="#20块的NAS，支持海报墙？xiaoya-alist-内网穿透-jellyfin硬解" class="headerlink" title="20块的NAS，支持海报墙？xiaoya+alist+内网穿透+jellyfin硬解"></a>20块的NAS，支持海报墙？xiaoya+alist+内网穿透+jellyfin硬解</h2><p>视频地址： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dM4m1f7t9">20块的NAS，支持docker xiaoya alist 内网穿透 jellyfin 解码部署教程</a></p>
+<p><strong>理论上支持所有 armhf 架构的各类盒子</strong>，至于硬解嘛，要看机器性能了~</p>
+<p><strong>一、拆机</strong></p>
+<p>重点讲一下：</p>
+<p>吹热把胶软化后，从SD卡口横向插入摆动下，慢慢来，就像对待你的女朋友一样~</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/115a9463ec5a7ac52f86fb4ba9a779d5.avif" srcset="/img/loading.gif" lazyload alt="img">吹热软化胶板</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/7a189e08a78a59e510134f736b80678e.avif" srcset="/img/loading.gif" lazyload alt="img">从SD卡处插入</p>
+<p><strong>二、刷机</strong></p>
+<p>烧录最新armbian底包到eMMC，你可以在GitHub的armbian官网上找到它，并下载下来，当然我也在分享里也提供给了大家。</p>
+<p>需要注意的是，第一次刷机的时候请先连接号USB数据线，然后选择img底包，勾选擦除flash和bootloader，点击开始后，短接刷机触点，然后接通电源。</p>
+<p>**<br>**</p>
+<p><strong>三、安装CasaOS（面板管理工具）</strong></p>
+<p><strong>1、finashell（或其他远程终端）连接到设备后，修改系统时区：</strong></p>
+<p>输入timedatectl                        #可以看到当前时区信息</p>
+<p>输入timedatectl list-timezones             #可查看可选时区</p>
+<p>输入timedatectl set-timezone Asia&#x2F;Shanghai #将时区设置为中国标准时间</p>
+<p><strong>2、终端输入：</strong></p>
+<p>nano &#x2F;etc&#x2F;apt&#x2F;sources.list</p>
+<p>用#注释掉自带的软件源，在文件最后添加清华大学镜像源地址</p>
+<p>deb <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/</a> jammy main restricted universe multiverse</p>
+<p># deb-src <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/</a> jammy main restricted universe multiverse</p>
+<p>deb <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/</a> jammy-updates main restricted universe multiverse</p>
+<p># deb-src <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/</a> jammy-updates main restricted universe multiverse</p>
+<p>deb <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/</a> jammy-backports main restricted universe multiverse</p>
+<p># deb-src <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/</a> jammy-backports main restricted universe multiverse</p>
+<p>deb <a target="_blank" rel="noopener" href="http://ports.ubuntu.com/ubuntu-ports/">http://ports.ubuntu.com/ubuntu-ports/</a> jammy-security main restricted universe multiverse</p>
+<p># deb-src <a target="_blank" rel="noopener" href="http://ports.ubuntu.com/ubuntu-ports/">http://ports.ubuntu.com/ubuntu-ports/</a> jammy-security main restricted universe multiverse</p>
+<p>按ctrl+x键退出编辑，输入y保存，回车</p>
+<p><strong>3、更新软件源数据：</strong></p>
+<p>apt-get update</p>
+<p><strong>4、更新完成后使用casaos一键安装命令，完成部署：</strong></p>
+<p>curl -fsSL <a target="_blank" rel="noopener" href="https://get.casaos.io/">https://get.casaos.io</a> | sudo bash</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/1e41b6f9ca8a549a6d29f9391bda477c.avif" srcset="/img/loading.gif" lazyload alt="img">CasaOS系统（管理面板）</p>
+<p>**<br>**</p>
+<p><strong>四、xiaoya影音超集部署</strong></p>
+<p><strong>1、新建&#x2F;mnt&#x2F;docker&#x2F;xiaoya文件夹；</strong></p>
+<p><strong>2、根据mytoken.txt、myopentoken.txt、temp_transfer_folder_id.txt 内的连接，用手机扫码获得到对应的配置数据，覆盖掉原来的txt文档内容保存，docker_address.txt不用变动，然后上传到新建好的xiaoya文件夹内；</strong></p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/abf250318837c782ab1a44b08869e0d6.avif" srcset="/img/loading.gif" lazyload alt="img">配置文件</p>
+<p><strong>3、终端输入命令对docker文件夹提权：</strong></p>
+<p>chmod -R 777 &#x2F;mnt&#x2F;docker</p>
+<p><strong>4、执行xiaoya-alist一键安装命令完成安装：</strong></p>
+<p>docker run -d –restart&#x3D;always –name&#x3D;”xiaoya” -p 5678:80 -p 2345:2345 -p 2346:2346 -v &#x2F;mnt&#x2F;docker&#x2F;xiaoya:&#x2F;data xiaoyaliu&#x2F;alist:latest</p>
+<p><strong>5、xiaoya启动情况查看：</strong></p>
+<p>docker logs -f xiaoya   #查看xiaoya容器运行日志，等待日志显示xx@版本后以后说明加载完成，就可以通过设备IP:5678 访问xiaoya-alist了，此时已经可以在网页上进行播放了。</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/a683be7dad7e69a03434197eb5d9fd30.avif" srcset="/img/loading.gif" lazyload alt="img">xiaoya-alist网页端</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/5ae56fbcc2dc071cf41175a936e4ea15.avif" srcset="/img/loading.gif" lazyload alt="img">播放测速</p>
+<p>模式0：每天自动清理一次。如果系统重启需要手动重新运行或把命令加入系统启动</p>
+<p>bash -c “$(curl -s <a target="_blank" rel="noopener" href="https://xiaoyahelper.ddsrem.com/aliyun_clear.sh">https://xiaoyahelper.ddsrem.com/aliyun_clear.sh</a> | tail -n +2)” -s 0</p>
+<p>模式1：一次性清理，一般用于测试效果</p>
+<p>bash -c “$(curl -s <a target="_blank" rel="noopener" href="https://xiaoyahelper.ddsrem.com/aliyun_clear.sh">https://xiaoyahelper.ddsrem.com/aliyun_clear.sh</a> | tail -n +2)” -s 1</p>
+<p>模式2：已废弃，不再支持</p>
+<p>模式3：创建一个名为 xiaoyakeeper 的docker定时运行小雅转存清理并升级小雅镜像</p>
+<p>bash -c “$(curl -s <a target="_blank" rel="noopener" href="https://xiaoyahelper.ddsrem.com/aliyun_clear.sh">https://xiaoyahelper.ddsrem.com/aliyun_clear.sh</a> | tail -n +2)” -s 3</p>
+<p>模式4：同模式3</p>
+<p>模式5：与模式3的区别是实时清理，只要产生了播放缓存一分钟内立即清理。签到和定时升级同模式3</p>
+<p>bash -c “$(curl -s <a target="_blank" rel="noopener" href="https://xiaoyahelper.ddsrem.com/aliyun_clear.sh">https://xiaoyahelper.ddsrem.com/aliyun_clear.sh</a> | tail -n +2)” -s 5</p>
+<p><strong>7、在CasaOS中，使用Appstore中安装alist，并根据视频操作完成xiaoya的套娃挂载。</strong></p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/ed9aae3e03c9f8f234f3a8f11f67c25c.avif" srcset="/img/loading.gif" lazyload alt="img">alist挂载xiaoya-alist</p>
+<p><strong>五、免费内网穿透，实现外网访问设备</strong></p>
+<p><strong>1、访问cpolar官网：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.cpolar.com/">https://www.cpolar.com/</a>  注册账号并登录</p>
+<p><strong>2、下载linux arm的安装程序，并解压缩的到cpolar；</strong></p>
+<p><strong>3、上传 cpolar到 &#x2F;mnt 目录；</strong></p>
+<p><strong>4、终端依次执行：</strong></p>
+<p>cd &#x2F;mnt</p>
+<p>chmod -R 777 cpolar</p>
+<p><strong>5、回到colar个人页面，获得带有账号密钥的执行命令，并在SSH终端执行该命令；</strong></p>
+<p><strong>6、将内cpolar加入到系统自启：</strong></p>
+<p>systemctl start cpolar    #cpolar添加到系统</p>
+<p>systemctl enable cpolar  #cpolar添加到系统启动项</p>
+<p><strong>六、TV-box挂载xiaoya-alist</strong></p>
+<p>1、安装影视仓.apk（tvbox二次开发版本）</p>
+<p>2、配置地址</p>
+<p>小雅：http:&#x2F;&#x2F;设备IP:5678&#x2F;tvbox&#x2F;my.json</p>
+<p>多仓聚合：http:&#x2F;&#x2F;设备IP:5678&#x2F;tvbox&#x2F;my_ext.json</p>
+<p>！xiaoya-alist内置了多条线路，大家按需使用~</p>
+<p>守护进程的的运行除了会清楚网盘缓存外，还会自动更新很多配置地址</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/7cefed91ad34d982a7285c6aa7f9001c.avif" srcset="/img/loading.gif" lazyload alt="img">tvbox挂载xiaoya-alist</p>
+<p><strong>七、jellyfin挂载xiaoya影视库</strong></p>
+<p><strong>1、浏览访问xiaoya网页，将 &#x2F;元数据&#x2F;jellyfin&#x2F;all_if.mp4 影视库数据下载下来（也可以是&#x2F;元数据all.mp4）;</strong></p>
+<p><strong>2、用7z解压缩工具根据自己的需求解压缩影视文件；</strong></p>
+<p><strong>3、SSH格式化硬盘（U盘）：</strong></p>
+<p>fdisk -l            #查看硬盘系统路径，我这里是在&#x2F;dev&#x2F;sda</p>
+<p>mkfs.ext4 &#x2F;dev&#x2F;sda  #将硬盘格式化为linux系统的Ext4格式</p>
+<p><strong>4、格式化完成后，将硬盘（U盘）插入PC，打开diskgenius，依次新建&#x2F;xiaoya&#x2F;media文件夹，并将解压好的数据文件夹复制到&#x2F;xiaoya&#x2F;media文件夹内后，插回设备；</strong></p>
+<p><strong>5、硬盘开启自动挂载：</strong></p>
+<p>新建 &#x2F;mnt&#x2F;devdata 文件夹</p>
+<p>ssh输入</p>
+<p>blkid           #查看硬盘UUID号</p>
+<p>nano &#x2F;etc&#x2F;fstab   #编辑开机挂载文件</p>
+<p>UUID&#x3D;你设备的UUID号 &#x2F;mnt&#x2F;devdata ext4 noatime,acl,user_xattr 0 2   #将开机挂载命令填入文件底部</p>
+<p>ctrl+x y 回车</p>
+<p>mount -a       #挂载所有硬盘设备</p>
+<p>nano &#x2F;etc&#x2F;hosts  #编辑hosts文件</p>
+<p>127.0.0.1   xiaoya.host  #填入文件底部</p>
+<p>ctrl+x y 回车</p>
+<p><strong>6、jellyfin部署准备</strong></p>
+<p>新建 &#x2F;mnt&#x2F;devdata&#x2F;docker&#x2F;jellyfin 文件夹，并在jellyfin文件夹下新建 config cache 两个文件夹，上传assfonts和fonts文件夹，再上传ffmpeg的arm解码包</p>
+<p><strong>7、解码包安装：</strong></p>
+<p>chmod -R 777 &#x2F;mnt&#x2F;devdata&#x2F;docker   #提权</p>
+<p>chmod -R 777 &#x2F;dev&#x2F;dri             #提权</p>
+<p>apt-get install -f                   #依赖修复命令</p>
+<p>执行命令，安装解码依赖：</p>
+<p>apt-get install libbluray2 libdrm2 libmp3lame0 libopenmpt0 libopus0 libtheora0 libvorbis0a libvorbisenc2 libvpx7 libwebp7 libwebpmux3 libx264-163 libx265-199 libzvbi0 ocl-icd-libopencl1 libopencl1 libopencl-1.2-1</p>
+<p>转到ffmpeg安装文件在路径</p>
+<p>cd &#x2F;mnt&#x2F;docker&#x2F;jellyfin</p>
+<p>dpkg -i jellyfin-ffmpeg6_6.0.1-6-jammy_armhf.deb  #安装ffmpeg解码包</p>
+<p><strong>8、部署官方jellyfin：</strong></p>
+<p>docker run -d –name&#x3D;jellyfin \</p>
+<p>–device &#x2F;dev&#x2F;dri&#x2F;renderD128:&#x2F;dev&#x2F;dri&#x2F;renderD128 \</p>
+<p>-v &#x2F;mnt&#x2F;devdata&#x2F;docker&#x2F;jellyfin&#x2F;config:&#x2F;config:rw \</p>
+<p>-v &#x2F;mnt&#x2F;devdata&#x2F;docker&#x2F;jellyfin&#x2F;cache:&#x2F;cache:rw \</p>
+<p>-v &#x2F;mnt&#x2F;devdata&#x2F;docker&#x2F;jellyfin&#x2F;fonts:&#x2F;usr&#x2F;share&#x2F;fonts&#x2F;truetype&#x2F;dejavu \</p>
+<p>-v &#x2F;mnt&#x2F;devdata&#x2F;docker&#x2F;jellyfin&#x2F;assfonts:&#x2F;assfont \</p>
+<p>-v &#x2F;mnt:&#x2F;mnt \</p>
+<p>–net&#x3D;host \</p>
+<p>–restart&#x3D;always \</p>
+<p>jellyfin&#x2F;jellyfin</p>
+<p><img src="https://app.fekepj.com/list-tu/2024/10/19/b27f756ee77c1cb98d6a09eb046a8743.avif" srcset="/img/loading.gif" lazyload alt="a">jellyfin部署完成</p>
+<p>相关软件包和工具详见：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dM4m1f7t9/?spm_id_from=333.976.0.0">20块的NAS，支持docker xiaoya alist 内网穿透 jellyfin 解码部署教程</a> 置顶评论</p>
+<p><strong>感谢你的一键三连+关注哦</strong></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/" class="category-chain-item">软路由专栏</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/" class="print-no-link">#玩客云</a>
+      
+        <a href="/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7%E6%9C%BA/" class="print-no-link">#玩客云刷机</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/19/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E7%8E%A9%E5%AE%A2%E4%BA%91%E5%88%B7%E6%9C%BA%EF%BC%88%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E7%A8%8B%EF%BC%89ArmBian-Casaos/" title="玩客云刷机（保姆级教程）ArmBian+Casaos">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">玩客云刷机（保姆级教程）ArmBian+Casaos</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/18/CF%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/%E6%88%91%E7%9A%84%E8%8A%82%E7%82%B9%E8%AE%A2%E9%98%85%E8%AF%B4%E6%98%8E-%E6%9C%8B%E5%8F%8B%E4%B8%93%E5%B1%9E/" title="我的节点订阅说明-朋友专属">
+                        <span class="hidden-mobile">我的节点订阅说明-朋友专属</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://zuyu.us.kg" target="_blank" rel="nofollow noopener"><span>祖宇博客</span></a> <i class="iconfont icon-love"></i>    <i class="iconfont icon-love"></i> <i class="iconfont icon-love"></i> <a href="https://23.lifu.us.kg" target="_blank" rel="nofollow noopener"><span>2023旧博客</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/typing-effect.js"></script>
+<script src="/js/stars.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
