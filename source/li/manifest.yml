@@ -1,6 +1,0 @@
-﻿applications:
-  - name: li
-    memory: 512M
-    buildpacks:
-      - nodejs_buildpack
-    command: node server.js
