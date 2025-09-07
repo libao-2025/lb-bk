@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保叔立凿乱出词</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ffafbd, #ffc3a0); /* 渐变背景 */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        #nameDisplay {
+            font-size: 30px;
+            margin: 20px;
+            display: none;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #completionMessage {
+            font-size: 28px;
+            margin: 20px;
+            display: none;
+            color: green;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 8px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #ff4e60; /* 按钮悬停时变色 */
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #e05a60; /* 按钮点击时变色 */
+            transform: scale(0.98);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #inputNames {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        /* 添加一个容器来让按钮排列更整齐 */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>保叔立凿乱出词</h1>
+
+        <!-- 输入框：输入单词，使用逗号分隔 -->
+        <div id="nameInputContainer">
+            <textarea id="inputNames" placeholder="请输入单词，使用逗号隔开"></textarea>
+            <button onclick="loadNamesFromInput()">加载单词</button>
+        </div>
+        
+        <!-- 上传文件功能 -->
+        <div>
+            <input type="file" id="fileInput" accept=".txt">
+            <button onclick="loadNamesFromFile()">导入单词文件</button>
+        </div>
+
+        <!-- 显示单词列表按钮 -->
+        <button id="showListButton" onclick="showNameList()" style="display: none;">显示单词列表</button>
+
+        <div id="nameDisplay"></div>
+        <div id="completionMessage">恭喜你，完成任务！</div>
+
+        <!-- 按钮排列容器 -->
+        <div class="button-container">
+            <button onclick="startSpeaking()">开始</button>
+            <button onclick="pauseSpeaking()">暂停</button>
+            <button onclick="showName()">显示单词</button>
+            <button onclick="nextName()">下一个</button>
+        </div>
+    </div>
+
+    <script>
+        let names = [];
+        let shuffledNames = [];
+        let currentIndex = 0;
+        let isPaused = false;
+        let isNameVisible = false;
+        let synth = window.speechSynthesis;
+        let speakingInterval;
+
+        let isComplete = false;  // 用于标记是否完成所有任务
+
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        // 加载手动输入的单词
+        function loadNamesFromInput() {
+            let inputText = document.getElementById("inputNames").value;
+            if (inputText.trim() === "") {
+                alert("请输入一些单词");
+                return;
+            }
+            names = inputText.split(",").map(name => name.trim());
+            document.getElementById("nameInputContainer").style.display = "none"; // 隐藏输入框
+            document.getElementById("showListButton").style.display = "inline"; // 显示“显示单词列表”按钮
+            alert("单词加载成功！");
+        }
+
+        // 从文件加载单词
+        function loadNamesFromFile() {
+            let fileInput = document.getElementById("fileInput");
+            let file = fileInput.files[0];
+            if (!file) {
+                alert("请先选择一个文件！");
+                return;
+            }
+
+            let reader = new FileReader();
+            reader.onload = function(event) {
+                let fileContent = event.target.result;
+                names = fileContent.split(",").map(name => name.trim());
+                alert("单词从文件加载成功！");
+                document.getElementById("showListButton").style.display = "inline"; // 显示“显示单词列表”按钮
+            };
+            reader.readAsText(file);
+        }
+
+        // 显示单词列表
+        function showNameList() {
+            alert("当前单词列表：" + names.join(", "));
+        }
+
+        function startSpeaking() {
+            if (names.length === 0) {
+                alert("请先加载单词！");
+                return;
+            }
+            isPaused = false;
+            shuffledNames = shuffleArray([...names]); // 随机打乱单词
+            currentIndex = 0;
+            isComplete = false; // 任务未完成
+            document.getElementById("completionMessage").style.display = "none"; // 隐藏完成消息
+            speakCurrentName(); // 播放第一个单词
+            speakingInterval = setInterval(speakCurrentName, 3000); // 每隔3秒播放当前单词
+        }
+
+        function pauseSpeaking() {
+            isPaused = true;
+            if (speakingInterval) clearInterval(speakingInterval); // 停止语音播放
+        }
+
+        function showName() {
+            isNameVisible = !isNameVisible;
+            document.getElementById("nameDisplay").style.display = isNameVisible ? "block" : "none";
+        }
+
+        function nextName() {
+            if (isComplete) return;  // 如果任务已经完成，则不再执行
+
+            if (currentIndex < shuffledNames.length - 1) {
+                currentIndex++;
+                speakCurrentName();  // 播放下一个单词
+            } else {
+                // 所有单词播放完后，显示并播放“恭喜你，完成任务”的语音
+                document.getElementById("completionMessage").style.display = "block";  
+                let utterance = new SpeechSynthesisUtterance("恭喜你，完成任务！");
+                utterance.lang = "zh-CN";
+                synth.speak(utterance);  // 播放完成任务的语音
+                isComplete = true;  // 设置任务完成标志
+                clearInterval(speakingInterval); // 停止语音播放
+            }
+        }
+
+        function speakCurrentName() {
+            if (!isPaused && currentIndex < shuffledNames.length) {
+                let name = shuffledNames[currentIndex];
+                if (isNameVisible) {
+                    document.getElementById("nameDisplay").innerText = name;
+                }
+                let utterance = new SpeechSynthesisUtterance(name);
+                utterance.lang = "zh-CN";
+                synth.speak(utterance); // 播放当前单词
+            }
+        }
+    </script>
+</body>
+</html>

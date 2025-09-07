@@ -1,0 +1,18 @@
+.highlight {
+    background: #21252b; /* 设置代码块的背景颜色为深灰色 */
+    border-radius: 5px; /* 设置代码块的边框圆角为5像素 */
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4); /* 设置代码块的阴影效果，使代码块看起来更加立体 */
+    padding-top: 30px; /* 设置代码块上内边距为30像素 */
+}
+
+.highlight::before {
+    background: #fc625d; /* 设置一个半圆形的背景颜色为红色 */
+    border-radius: 50%; /* 设置背景为圆形 */
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b; /* 设置额外的阴影效果，为半圆形背景添加两种颜色的高亮效果 */
+    content: ' '; /* 由于::before 是一个伪元素，这里使用content: ' '; 表示它是一个占位符 */
+    height: 12px; /* 设置半圆形的高度为12像素 */
+    left: 12px; /* 设置半圆形相对于代码块左边的偏移量 */
+    margin-top: -20px; /* 设置半圆形相对于顶部的外边距为-20像素，以使其居中 */
+    position: absolute; /* 设置绝对定位，使其相对于最近的定位祖先元素定位 */
+    width: 12px; /* 设置半圆形的宽度为12像素 */
+}
