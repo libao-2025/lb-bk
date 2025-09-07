@@ -22,7 +22,7 @@
     <meta name="description" content="CloudFlare R2 搭建个人图床教程 本文探讨了为何选择CloudFlareR2作为自建图床解决方案，强调了其免费额度、无需备案、易于设置的优点，以及与国内厂商如七牛云、腾讯云和阿里云的对比。作者提供了详细的步骤，包括创建R2存储桶、绑定域名和使用PicGo工具上传图片。   为什么搭建自己的图床 平时写博客都是使用 md 格式，要在多个平台发布时，图片需要有外链 后续如果博客迁移时，国内">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CloudFlare-R2-搭建个人图床">
-<meta property="og:url" content="https://24.lifu.us.kg/2024/09/30/%E7%BD%91%E9%A1%B5%E4%BB%A3%E7%A0%81/CloudFlare%E5%AD%A6%E4%B9%A0/CloudFlare-R2-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:url" content="https://akak.lifu.eu.org/2024/09/30/%E7%BD%91%E9%A1%B5%E4%BB%A3%E7%A0%81/CloudFlare%E5%AD%A6%E4%B9%A0/CloudFlare-R2-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/index.html">
 <meta property="og:site_name" content="保持微笑">
 <meta property="og:description" content="CloudFlare R2 搭建个人图床教程 本文探讨了为何选择CloudFlareR2作为自建图床解决方案，强调了其免费额度、无需备案、易于设置的优点，以及与国内厂商如七牛云、腾讯云和阿里云的对比。作者提供了详细的步骤，包括创建R2存储桶、绑定域名和使用PicGo工具上传图片。   为什么搭建自己的图床 平时写博客都是使用 md 格式，要在多个平台发布时，图片需要有外链 后续如果博客迁移时，国内">
 <meta property="og:locale" content="zh_CN">
@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://app.fekepj.com/list-tu/2024/09/30/daf4dd91509028bc24af7f970d279f44.webp">
 <meta property="og:image" content="https://app.fekepj.com/list-tu/2024/09/30/e57975eeeac43cd124bbbf7c359b78b3.png">
 <meta property="article:published_time" content="2024-09-30T17:01:29.000Z">
-<meta property="article:modified_time" content="2025-09-07T15:19:34.137Z">
+<meta property="article:modified_time" content="2025-09-07T15:21:10.132Z">
 <meta property="article:author" content="LI bao">
 <meta property="article:tag" content="图床">
 <meta property="article:tag" content="免费图床">
@@ -100,7 +100,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"akak.lifu.eu.org","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;

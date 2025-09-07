@@ -22,13 +22,13 @@
     <meta name="description" content="OpenWrt 编译 LuCI —&gt; Applications 添加插件应用说明 【人人为我，我为人人】  2022.11.28 更新 ！！！ make menuconfig 进入定制界面进入编译选项配置界面,.按照需要配置.( ‘*’ 代表编入固件，‘M’ 表示编译成模块或者IPK包， ‘空’不编译 ) 非常感谢大佬”L有大雕“更正补充，20181121大佬源码仓库：https:&#x2F;&#x2F;git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenWrt编译App插件应用说明-L大">
-<meta property="og:url" content="https://24.lifu.us.kg/2024/10/22/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/OpenWrt%E7%BC%96%E8%AF%91App%E6%8F%92%E4%BB%B6%E5%BA%94%E7%94%A8%E8%AF%B4%E6%98%8E-L%E5%A4%A7/index.html">
+<meta property="og:url" content="https://akak.lifu.eu.org/2024/10/22/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/OpenWrt%E7%BC%96%E8%AF%91App%E6%8F%92%E4%BB%B6%E5%BA%94%E7%94%A8%E8%AF%B4%E6%98%8E-L%E5%A4%A7/index.html">
 <meta property="og:site_name" content="保持微笑">
 <meta property="og:description" content="OpenWrt 编译 LuCI —&gt; Applications 添加插件应用说明 【人人为我，我为人人】  2022.11.28 更新 ！！！ make menuconfig 进入定制界面进入编译选项配置界面,.按照需要配置.( ‘*’ 代表编入固件，‘M’ 表示编译成模块或者IPK包， ‘空’不编译 ) 非常感谢大佬”L有大雕“更正补充，20181121大佬源码仓库：https:&#x2F;&#x2F;git">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.right.com.cn/forum/static/image/filetype/zip.gif">
 <meta property="article:published_time" content="2024-10-22T13:50:28.000Z">
-<meta property="article:modified_time" content="2025-09-07T15:19:34.137Z">
+<meta property="article:modified_time" content="2025-09-07T15:21:10.133Z">
 <meta property="article:author" content="LI bao">
 <meta property="article:tag" content="OpenWrt 编译">
 <meta name="twitter:card" content="summary_large_image">
@@ -81,7 +81,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"24.lifu.us.kg","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"akak.lifu.eu.org","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
