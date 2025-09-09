@@ -27,7 +27,7 @@
 <meta property="og:description" content="LAN-to-go 局域网共享服务器🚀 轻量级局域网文件和消息共享解决方案 一个使用Go语言开发的现代化局域网共享服务器，支持文件传输、消息共享、模板管理等功能。无需复杂配置，一键启动即可在局域网内快速分享内容。 ✨ 特性 🌐 现代Web界面：响应式设计，支持PC和移动端 📱 二维码访问：自动生成局域网访问二维码，扫码即用 🔄 实时同步：WebSocket技术实现多设备实时同步 📁 文件">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-02T14:43:34.000Z">
-<meta property="article:modified_time" content="2025-09-09T18:04:19.556Z">
+<meta property="article:modified_time" content="2025-09-09T18:05:27.447Z">
 <meta property="article:author" content="LI bao">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -362,12 +362,12 @@
 <h3 id="📡-玩客云路由器使用"><a href="#📡-玩客云路由器使用" class="headerlink" title="📡 玩客云路由器使用"></a>📡 玩客云路由器使用</h3><ol>
 <li>下载 <code>lan-to-go-openwrt-armv7.tar.gz</code> 并解压</li>
 <li>上传到玩客云的 <code>/root/</code> 目录</li>
-<li>SSH登录玩客云：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c6htthmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-c6htthmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /root/openwrt-package<br><span class="hljs-built_in">chmod</span> +x install_autostart.sh<br>./install_autostart.sh<br></code></pre></td></tr></table></div></figure></li>
+<li>SSH登录玩客云：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v0q1qjmfcv2yxi"></i><span>BASH</span><div class="collapse show" id="collapse-v0q1qjmfcv2yxi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /root/openwrt-package<br><span class="hljs-built_in">chmod</span> +x install_autostart.sh<br>./install_autostart.sh<br></code></pre></td></tr></table></div></figure></li>
 <li>选择自动启动，即可在浏览器访问 <code>http://路由器IP:9405</code></li>
 </ol>
 <h3 id="🐧-Linux-使用"><a href="#🐧-Linux-使用" class="headerlink" title="🐧 Linux 使用"></a>🐧 Linux 使用</h3><ol>
 <li>下载并解压 <code>lan-to-go-linux-amd64.tar.gz</code></li>
-<li>运行启动脚本：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bziq30mfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-bziq30mfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> linux-package<br>./start.sh<br></code></pre></td></tr></table></div></figure></li>
+<li>运行启动脚本：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-308jvamfcv2yxi"></i><span>BASH</span><div class="collapse show" id="collapse-308jvamfcv2yxi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> linux-package<br>./start.sh<br></code></pre></td></tr></table></div></figure></li>
 </ol>
 <h2 id="📱-功能介绍"><a href="#📱-功能介绍" class="headerlink" title="📱 功能介绍"></a>📱 功能介绍</h2><h3 id="🏠-文字共享"><a href="#🏠-文字共享" class="headerlink" title="🏠 文字共享"></a>🏠 文字共享</h3><ul>
 <li>快速发送文字消息到局域网内所有设备</li>
@@ -415,9 +415,9 @@
 <li>Go 1.21+</li>
 <li>现代浏览器</li>
 </ul>
-<h3 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h3><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-k8vtc8mfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-k8vtc8mfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/yourusername/lan-to-go.git<br><span class="hljs-built_in">cd</span> lan-to-go<br>go mod download<br>go run main.go<br></code></pre></td></tr></table></div></figure>
+<h3 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h3><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-7fz1pamfcv2yxi"></i><span>BASH</span><div class="collapse show" id="collapse-7fz1pamfcv2yxi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/yourusername/lan-to-go.git<br><span class="hljs-built_in">cd</span> lan-to-go<br>go mod download<br>go run main.go<br></code></pre></td></tr></table></div></figure>
 
-<h3 id="构建发布版"><a href="#构建发布版" class="headerlink" title="构建发布版"></a>构建发布版</h3><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-3je3d4mfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-3je3d4mfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x build_release.sh<br>./build_release.sh<br></code></pre></td></tr></table></div></figure>
+<h3 id="构建发布版"><a href="#构建发布版" class="headerlink" title="构建发布版"></a>构建发布版</h3><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-cm9bwbmfcv2yxi"></i><span>BASH</span><div class="collapse show" id="collapse-cm9bwbmfcv2yxi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x build_release.sh<br>./build_release.sh<br></code></pre></td></tr></table></div></figure>
 
 <h2 id="📝-使用场景"><a href="#📝-使用场景" class="headerlink" title="📝 使用场景"></a>📝 使用场景</h2><ul>
 <li><strong>家庭网络</strong>：家庭成员间快速分享照片、文档</li>
