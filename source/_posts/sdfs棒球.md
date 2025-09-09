@@ -1,10 +1,7 @@
----
-title: sdfs棒球
-date: 2025-09-09 02:26:37
-tags: []
-categories: []
----
+# 你帮我认真检索一下A和B两
 
-# sdfs棒球
+个程序有什么不同的地方分析出来告诉我.
 
-在这里开始写作...
+https://shy.cfapps.us10-001.hana.ondemand.com
+
+https://shy.cfapps.us10-001.hana.ondemand.com
