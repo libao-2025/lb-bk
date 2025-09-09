@@ -27,12 +27,12 @@
 <meta property="og:description" content="电脑本地新建一个仓库到摄推送成功 以下是一个详细的 Git 教程，适用于在一台电脑绑定多个 Git 仓库的情况，涵盖从 git init 到推送代码的完整流程，带示例和错误排查提示。  1. 初始化本地仓库  步骤 进入你的项目目录：  BASH1cd &#x2F;path&#x2F;to&#x2F;your&#x2F;project  初始化 Git 仓库：  BASH1git init  添加项目文件并提交：  BASH12git">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-21T18:43:03.000Z">
-<meta property="article:modified_time" content="2025-09-09T18:26:47.982Z">
+<meta property="article:modified_time" content="2025-09-09T18:27:18.889Z">
 <meta property="article:author" content="LI bao">
-<meta property="article:tag" content="GPT学习">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="git仓库">
 <meta property="article:tag" content="git命令">
+<meta property="article:tag" content="GPT学习">
 <meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -346,30 +346,30 @@
 <h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol>
 <li>进入你的项目目录：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-7qvk5rmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-7qvk5rmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /path/to/your/project<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c3ag44mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-c3ag44mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /path/to/your/project<br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li>初始化 Git 仓库：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-d708k3mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-d708k3mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ijf6wlmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-ijf6wlmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li>添加项目文件并提交：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-yvwgwhmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-yvwgwhmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;Initial commit&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-73w785mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-73w785mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;Initial commit&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>2. 配置 SSH 多账户支持</strong> 在 <code>.ssh</code> 目录中为每个账户生成不同的密钥对（如果尚未生成）</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-e759b2mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-e759b2mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-auarb3mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-auarb3mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 <p>为每个账户指定文件名，例如：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-s38nmomfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-s38nmomfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">~/.ssh/id_rsa_github_one<br>~/.ssh/id_rsa_github_two<br>~/.ssh/id_rsa_gitlab<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wryk3jmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-wryk3jmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">~/.ssh/id_rsa_github_one<br>~/.ssh/id_rsa_github_two<br>~/.ssh/id_rsa_gitlab<br></code></pre></td></tr></table></div></figure>
 <p>编辑 <code>~/.ssh/config</code>在 <code>~/.ssh/config</code> 中配置多账户，示例如下：</p>
-<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wl1l4imfcvugj3"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-wl1l4imfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># GitHub 账户 One<br>Host github_one<br>    HostName github.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_github_one<br><br># GitHub 账户 Two<br>Host github_two<br>    HostName github.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_github_two<br><br># GitLab 账户<br>Host gitlab<br>    HostName gitlab.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_gitlab<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-sb38bfmfcvv28g"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-sb38bfmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># GitHub 账户 One<br>Host github_one<br>    HostName github.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_github_one<br><br># GitHub 账户 Two<br>Host github_two<br>    HostName github.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_github_two<br><br># GitLab 账户<br>Host gitlab<br>    HostName gitlab.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_gitlab<br></code></pre></td></tr></table></div></figure>
 
 <p>使用以下命令测试：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pup1cbmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-pup1cbmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github_one<br>ssh -T git@github_two<br>ssh -T git@gitlab<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-62ji22mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-62ji22mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github_one<br>ssh -T git@github_two<br>ssh -T git@gitlab<br></code></pre></td></tr></table></div></figure>
 <p><strong>输出示例：</strong> </p>
-<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ham5bsmfcvugj3"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-ham5bsmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Welcome to GitHub, @yourusername!<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-fflrutmfcvv28g"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-fflrutmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Welcome to GitHub, @yourusername!<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -377,38 +377,38 @@
 <ol>
 <li>添加远程仓库：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-vlfo21mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-vlfo21mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin git@&lt;<span class="hljs-built_in">alias</span>&gt;:&lt;username&gt;/&lt;repository&gt;.git<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-qewer7mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-qewer7mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin git@&lt;<span class="hljs-built_in">alias</span>&gt;:&lt;username&gt;/&lt;repository&gt;.git<br></code></pre></td></tr></table></div></figure>
 
 <p>示例：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-jjq79tmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-jjq79tmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin git@gitlab:&lt;username&gt;/&lt;repository&gt;.git<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-4mfd2amfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-4mfd2amfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin git@gitlab:&lt;username&gt;/&lt;repository&gt;.git<br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li>检查绑定是否成功：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tec459mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-tec459mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote -v<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9etj17mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-9etj17mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote -v<br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li><strong>常见错误</strong> ：</li>
 </ol>
 <ul>
 <li><strong><code>remote origin already exists</code></strong> ：表示远程仓库已存在，可以重新设置：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pnbwn5mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-pnbwn5mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote set-url origin git@&lt;<span class="hljs-built_in">alias</span>&gt;:&lt;username&gt;/&lt;repository&gt;.git<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-w4e116mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-w4e116mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote set-url origin git@&lt;<span class="hljs-built_in">alias</span>&gt;:&lt;username&gt;/&lt;repository&gt;.git<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>4. 获取远程仓库内容</strong><br>如果远程仓库已有内容（例如 README 文件），需同步：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-y8s2pemfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-y8s2pemfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git pull origin main --rebase<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-kgvhcqmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-kgvhcqmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git pull origin main --rebase<br></code></pre></td></tr></table></div></figure>
 <p><strong>常见错误</strong> ： </p>
 <ul>
 <li><strong><code>error: pathspec &#39;main&#39; did not match</code></strong> ：可能远程分支是 <code>master</code> 而不是 <code>main</code>，先列出远程分支：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-cmm0c9mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-cmm0c9mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -r<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-jiovcbmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-jiovcbmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -r<br></code></pre></td></tr></table></div></figure>
 <p>切换到正确分支：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c1uqz6mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-c1uqz6mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -M main<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-3lua70mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-3lua70mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -M main<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>5. 合并本地和远程内容</strong><br>若有冲突，会显示类似以下内容：</p>
-<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-slfji6mfcvugj3"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-slfji6mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">CONFLICT (content): Merge conflict in &lt;file&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-egu7ptmfcvv28g"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-egu7ptmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">CONFLICT (content): Merge conflict in &lt;file&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>解决冲突后：</p>
 <ol>
@@ -417,24 +417,24 @@
 <li><p>标记冲突已解决：</p>
 </li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-83mazzmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-83mazzmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add &lt;file&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-uko007mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-uko007mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add &lt;file&gt;<br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li>完成合并：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-nqrsbbmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-nqrsbbmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ncxhtymfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-ncxhtymfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>6. 推送代码到远程仓库</strong><br>首次推送时，需设置本地分支与远程分支关联：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-vvi5momfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-vvi5momfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push -u origin main<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-xpq490mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-xpq490mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push -u origin main<br></code></pre></td></tr></table></div></figure>
 
 <p>后续推送可直接使用：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-szls65mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-szls65mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-50tazfmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-50tazfmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>7. 总结完整流程</strong><br>以下是完整流程代码示例：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-s8jqhumfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-s8jqhumfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入项目目录</span><br><span class="hljs-built_in">cd</span> /path/to/your/project<br><br><span class="hljs-comment"># 初始化 Git 仓库</span><br>git init<br><br><span class="hljs-comment"># 添加项目文件并提交</span><br>git add .<br>git commit -m <span class="hljs-string">&quot;Initial commit&quot;</span><br><br><span class="hljs-comment"># 配置远程仓库</span><br>git remote add origin git@gitlab:&lt;username&gt;/&lt;repository&gt;.git<br><br><span class="hljs-comment"># 获取远程仓库内容并合并</span><br>git pull origin main --rebase<br><br><span class="hljs-comment"># 推送本地代码到远程</span><br>git push -u origin main<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-b83fzbmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-b83fzbmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入项目目录</span><br><span class="hljs-built_in">cd</span> /path/to/your/project<br><br><span class="hljs-comment"># 初始化 Git 仓库</span><br>git init<br><br><span class="hljs-comment"># 添加项目文件并提交</span><br>git add .<br>git commit -m <span class="hljs-string">&quot;Initial commit&quot;</span><br><br><span class="hljs-comment"># 配置远程仓库</span><br>git remote add origin git@gitlab:&lt;username&gt;/&lt;repository&gt;.git<br><br><span class="hljs-comment"># 获取远程仓库内容并合并</span><br>git pull origin main --rebase<br><br><span class="hljs-comment"># 推送本地代码到远程</span><br>git push -u origin main<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -445,22 +445,22 @@
 <ul>
 <li>GitLab 默认分支为 <code>main</code>，但有时会是 <code>master</code>。检查远程分支：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ct70m5mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-ct70m5mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -r<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ft1alimfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-ft1alimfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -r<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>统一分支名称：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1e5htvmfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-1e5htvmfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -M main<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-n9oysumfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-n9oysumfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -M main<br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li><strong>SSH 密钥未加载</strong> ：</li>
 </ol>
 <ul>
 <li>确保已加载正确的 SSH 密钥：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-46zwkumfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-46zwkumfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa_gitlab<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-10x3ximfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-10x3ximfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa_gitlab<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>检查已加载的密钥：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-uz1cu7mfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-uz1cu7mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add -l<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-jv2ma1mfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-jv2ma1mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add -l<br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li><strong>权限问题</strong> ：</li>
 </ol>
@@ -475,12 +475,12 @@
 </ul>
 <hr>
 <h3 id="示例输出"><a href="#示例输出" class="headerlink" title="示例输出"></a>示例输出</h3><p><strong>测试 SSH 连接：</strong> </p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-vf4pmomfcvugj3"></i><span>BASH</span><div class="collapse show" id="collapse-vf4pmomfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@gitlab<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v2tkvqmfcvv28g"></i><span>BASH</span><div class="collapse show" id="collapse-v2tkvqmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@gitlab<br></code></pre></td></tr></table></div></figure>
 
 <p>输出：</p>
-<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-yiuchomfcvugj3"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-yiuchomfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Welcome to GitLab, @yourusername!<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-krvextmfcvv28g"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-krvextmfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Welcome to GitLab, @yourusername!<br></code></pre></td></tr></table></div></figure>
 <p><strong>推送成功：</strong> </p>
-<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-i32q11mfcvugj3"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-i32q11mfcvugj3"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Enumerating objects: 5, done.<br>Counting objects: 100% (5/5), done.<br>Writing objects: 100% (5/5), 500 bytes | 500.00 KiB/s, done.<br>Total 5 (delta 0), reused 0 (delta 0), pack-reused 0<br>To git@gitlab.com:&lt;username&gt;/&lt;repository&gt;.git<br> * [new branch]      main -&gt; main<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-gp9yy4mfcvv28g"></i><span>PLAINTEXT</span><div class="collapse show" id="collapse-gp9yy4mfcvv28g"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Enumerating objects: 5, done.<br>Counting objects: 100% (5/5), done.<br>Writing objects: 100% (5/5), 500 bytes | 500.00 KiB/s, done.<br>Total 5 (delta 0), reused 0 (delta 0), pack-reused 0<br>To git@gitlab.com:&lt;username&gt;/&lt;repository&gt;.git<br> * [new branch]      main -&gt; main<br></code></pre></td></tr></table></div></figure>
 
 <p>希望这个教程能帮助到您！</p>
 
@@ -516,13 +516,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/GPT%E5%AD%A6%E4%B9%A0/" class="print-no-link">#GPT学习</a>
-      
         <a href="/tags/git/" class="print-no-link">#git</a>
       
         <a href="/tags/git%E4%BB%93%E5%BA%93/" class="print-no-link">#git仓库</a>
       
         <a href="/tags/git%E5%91%BD%E4%BB%A4/" class="print-no-link">#git命令</a>
+      
+        <a href="/tags/GPT%E5%AD%A6%E4%B9%A0/" class="print-no-link">#GPT学习</a>
       
         <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
       
