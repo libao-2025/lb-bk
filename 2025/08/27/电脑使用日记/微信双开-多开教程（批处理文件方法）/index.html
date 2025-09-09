@@ -27,7 +27,7 @@
 <meta property="og:description" content="微信双开-多开教程（批处理文件方法）在日常工作或生活中，我们经常需要同时登录多个微信账号，例如分开处理工作和个人事务。微信官方客户端默认只允许单账号登录，但通过 批处理文件（.bat），可以轻松实现微信的双开或多开。 下面我将详细说明操作方法，并提供示例。  一、原理Windows 系统默认不允许同一程序重复运行，但通过批处理文件中的 start 命令，可以让系统启动 多个微信进程，从而实现多账号">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-27T21:02:39.000Z">
-<meta property="article:modified_time" content="2025-09-09T18:26:43.276Z">
+<meta property="article:modified_time" content="2025-09-09T18:26:47.990Z">
 <meta property="article:author" content="LI bao">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -347,15 +347,15 @@
 <hr>
 <h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h2><ol>
 <li><p><strong>确认微信安装路径</strong><br>默认路径一般为：</p>
-<figure class="highlight livescript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-06gpmjmfcvuamc"></i><span>LIVESCRIPT</span><div class="collapse show" id="collapse-06gpmjmfcvuamc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livescript">C:<span class="hljs-string">\Program</span> Files<span class="hljs-string">\Tencent\WeChat\WeChat.exe</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight livescript"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zoqxtnmfcvugj6"></i><span>LIVESCRIPT</span><div class="collapse show" id="collapse-zoqxtnmfcvugj6"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livescript">C:<span class="hljs-string">\Program</span> Files<span class="hljs-string">\Tencent\WeChat\WeChat.exe</span><br></code></pre></td></tr></table></div></figure>
 <p>如果你安装在其他位置，请根据实际路径修改。</p>
 </li>
 <li><p><strong>创建批处理文件</strong><br>打开记事本，新建文件，并将文件保存为 <code>.bat</code> 后缀，例如：</p>
-<figure class="highlight jboss-cli"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5sz5ubmfcvuamc"></i><span>JBOSS-CLI</span><div class="collapse show" id="collapse-5sz5ubmfcvuamc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">微信多开<span class="hljs-string">.bat</span><br></code></pre></td></tr></table></div></figure></li>
+<figure class="highlight jboss-cli"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-552umymfcvugj6"></i><span>JBOSS-CLI</span><div class="collapse show" id="collapse-552umymfcvugj6"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">微信多开<span class="hljs-string">.bat</span><br></code></pre></td></tr></table></div></figure></li>
 </ol>
 <hr>
 <h2 id="三、示例（双开微信）"><a href="#三、示例（双开微信）" class="headerlink" title="三、示例（双开微信）"></a>三、示例（双开微信）</h2><p>如果你想打开 <strong>两个微信账号</strong>，在批处理文件中输入以下内容，每行对应一个微信实例：</p>
-<figure class="highlight bat"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-vj9leomfcvuamc"></i><span>BAT</span><div class="collapse show" id="collapse-vj9leomfcvuamc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">echo</span> 微信已启动双开，可以登录两个账号<br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bat"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-byhf5rmfcvugj6"></i><span>BAT</span><div class="collapse show" id="collapse-byhf5rmfcvugj6"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">echo</span> 微信已启动双开，可以登录两个账号<br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></div></figure>
 
 <h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><ul>
 <li>每行 <code>start &quot;&quot; &quot;路径&quot;</code> 就是一个微信实例。</li>
@@ -363,7 +363,7 @@
 </ul>
 <hr>
 <h2 id="四、示例（多开微信）"><a href="#四、示例（多开微信）" class="headerlink" title="四、示例（多开微信）"></a>四、示例（多开微信）</h2><p>如果你想打开 <strong>三个或更多微信账号</strong>，只需要增加行数即可：</p>
-<figure class="highlight bat"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-nerm6mmfcvuamc"></i><span>BAT</span><div class="collapse show" id="collapse-nerm6mmfcvuamc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">echo</span> 微信已启动三开，可以登录三个账号<br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bat"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-20zme2mfcvugj6"></i><span>BAT</span><div class="collapse show" id="collapse-20zme2mfcvugj6"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bat">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">start</span> &quot;&quot; &quot;C:\Program Files\Tencent\WeChat\WeChat.exe&quot;<br><span class="hljs-built_in">echo</span> 微信已启动三开，可以登录三个账号<br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></div></figure>
 
 <blockquote>
 <p>每增加一行 <code>start</code> 命令，就可以多开一个微信账号，想开多少就写多少行。</p>
