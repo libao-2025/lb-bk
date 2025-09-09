@@ -19,25 +19,23 @@
   <meta name="author" content="LI bao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="飞牛OS 安装配置 ZeroTier 教程（含常见错误解决）ZeroTier 是一个开源虚拟局域网（VPN）工具，可以让不同网络下的设备像在同一局域网中互联。特点是无需公网 IP，无需复杂路由配置，适合远程办公、NAS 互联、家庭内网穿透等。本文基于飞牛OS（Debian 衍生）系统整理。 准备工作 系统环境：飞牛OS（可通过 uname -r 查看内核版本，如 6.12.18-trim） 权限要">
+    <meta name="description" content="测试终端输入命令curl -s “http:&#x2F;&#x2F;127.0.0.1:9405&#x2F;“ | grep -A 3 -B 3 “qr-image” | head -15 启动玩客云用到的命令 chmod +x lan-to-go-openwrt-armv7.&#x2F;lan-to-go-openwrt-armv7 chmod +x lan-to-go-openwrt-armv7-fixed.&#x2F;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装zerotier的过程-飞牛os系统">
-<meta property="og:url" content="https://akak.lifu.eu.org/2024/10/29/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E5%AE%89%E8%A3%85ZeroTier%E6%8C%87%E5%8D%97%E9%A3%9E%E7%89%9BOS/index.html">
+<meta property="og:title" content="测试终端输入命令">
+<meta property="og:url" content="https://akak.lifu.eu.org/2025/09/09/%E6%B5%8B%E8%AF%95%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="保持微笑">
-<meta property="og:description" content="飞牛OS 安装配置 ZeroTier 教程（含常见错误解决）ZeroTier 是一个开源虚拟局域网（VPN）工具，可以让不同网络下的设备像在同一局域网中互联。特点是无需公网 IP，无需复杂路由配置，适合远程办公、NAS 互联、家庭内网穿透等。本文基于飞牛OS（Debian 衍生）系统整理。 准备工作 系统环境：飞牛OS（可通过 uname -r 查看内核版本，如 6.12.18-trim） 权限要">
+<meta property="og:description" content="测试终端输入命令curl -s “http:&#x2F;&#x2F;127.0.0.1:9405&#x2F;“ | grep -A 3 -B 3 “qr-image” | head -15 启动玩客云用到的命令 chmod +x lan-to-go-openwrt-armv7.&#x2F;lan-to-go-openwrt-armv7 chmod +x lan-to-go-openwrt-armv7-fixed.&#x2F;l">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-29T17:13:31.000Z">
-<meta property="article:modified_time" content="2025-09-09T18:04:19.557Z">
+<meta property="article:published_time" content="2025-09-09T02:03:50.000Z">
+<meta property="article:modified_time" content="2025-09-09T18:04:19.554Z">
 <meta property="article:author" content="LI bao">
-<meta property="article:tag" content="飞牛OS">
-<meta property="article:tag" content="软路由">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>安装zerotier的过程-飞牛os系统 - 保持微笑</title>
+  <title>测试终端输入命令 - 保持微笑</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -260,7 +258,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="安装zerotier的过程-飞牛os系统"></span>
+            <span id="subtitle" data-typed-text="测试终端输入命令"></span>
           
         </div>
 
@@ -271,8 +269,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-29 17:13" pubdate>
-          2024年10月29日 下午
+        <time datetime="2025-09-09 02:03" pubdate>
+          2025年9月9日 凌晨
         </time>
       </span>
     
@@ -283,7 +281,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          558 字
+          131 字
         
       </span>
     
@@ -294,7 +292,7 @@
         
         
         
-          5 分钟
+          2 分钟
         
       </span>
     
@@ -331,72 +329,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">安装zerotier的过程-飞牛os系统</h1>
+            <h1 id="seo-header">测试终端输入命令</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="飞牛OS-安装配置-ZeroTier-教程（含常见错误解决）"><a href="#飞牛OS-安装配置-ZeroTier-教程（含常见错误解决）" class="headerlink" title="飞牛OS 安装配置 ZeroTier 教程（含常见错误解决）"></a>飞牛OS 安装配置 ZeroTier 教程（含常见错误解决）</h1><p>ZeroTier 是一个开源虚拟局域网（VPN）工具，可以让不同网络下的设备像在同一局域网中互联。特点是无需公网 IP，无需复杂路由配置，适合远程办公、NAS 互联、家庭内网穿透等。本文基于飞牛OS（Debian 衍生）系统整理。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>系统环境：飞牛OS（可通过 <code>uname -r</code> 查看内核版本，如 <code>6.12.18-trim</code>）</li>
-<li>权限要求：root</li>
-<li>工具要求：curl（系统默认自带）</li>
-</ul>
-<h2 id="安装-ZeroTier"><a href="#安装-ZeroTier" class="headerlink" title="安装 ZeroTier"></a>安装 ZeroTier</h2><ol>
-<li>更新系统包<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-77obyzmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-77obyzmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update &amp;&amp; <span class="hljs-built_in">sudo</span> apt upgrade -y<br></code></pre></td></tr></table></div></figure></li>
-<li>执行官方安装脚本<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-jlrmjvmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-jlrmjvmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -s https://install.zerotier.com | <span class="hljs-built_in">sudo</span> bash<br></code></pre></td></tr></table></div></figure></li>
-<li>启动 ZeroTier 并设置开机自启<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bch3nsmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-bch3nsmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl start zerotier-one<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> zerotier-one<br><span class="hljs-built_in">sudo</span> systemctl status zerotier-one<br></code></pre></td></tr></table></div></figure>
-如果看到 <code>Active: active (running)</code> 表示启动成功。</li>
-</ol>
-<h2 id="加入-ZeroTier-网络"><a href="#加入-ZeroTier-网络" class="headerlink" title="加入 ZeroTier 网络"></a>加入 ZeroTier 网络</h2><ol>
-<li>在官网创建网络：打开 <a target="_blank" rel="noopener" href="https://my.zerotier.com/">ZeroTier 官网</a>，注册账号并创建网络，记下 Network ID。</li>
-<li>在飞牛OS 加入网络<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-x6ts5mmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-x6ts5mmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> zerotier-cli <span class="hljs-built_in">join</span> &lt;你的网络ID&gt;<br></code></pre></td></tr></table></div></figure>
-示例：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-k00ii6mfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-k00ii6mfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> zerotier-cli <span class="hljs-built_in">join</span> 115ea290854bf04a<br></code></pre></td></tr></table></div></figure></li>
-<li>授权设备：登录 ZeroTier 管理后台，在 Members 中找到新设备，勾选 Authorized，可设置设备名称或固定 IP。</li>
-<li>查看状态<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-t6b5sxmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-t6b5sxmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> zerotier-cli info<br></code></pre></td></tr></table></div></figure>
-输出类似：<figure class="highlight basic"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-inyaytmfcv1ise"></i><span>BASIC</span><div class="collapse show" id="collapse-inyaytmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">200 </span>info &lt;设备ID&gt; <span class="hljs-number">1.14</span>.<span class="hljs-number">0</span> ONLINE<br></code></pre></td></tr></table></div></figure></li>
-</ol>
-<h2 id="常见错误及解决方法"><a href="#常见错误及解决方法" class="headerlink" title="常见错误及解决方法"></a>常见错误及解决方法</h2><ol>
-<li><p>curl 未安装</p>
-<figure class="highlight avrasm"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-uqwcaqmfcv1ise"></i><span>AVRASM</span><div class="collapse show" id="collapse-uqwcaqmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">curl:</span> command not found<br></code></pre></td></tr></table></div></figure>
-<p>解决：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ygygvkmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-ygygvkmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install curl -y<br></code></pre></td></tr></table></div></figure>
-</li>
-<li><p>zerotier-cli 未找到</p>
-<figure class="highlight avrasm"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5z05okmfcv1ise"></i><span>AVRASM</span><div class="collapse show" id="collapse-5z05okmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">zerotier-<span class="hljs-keyword">cli</span>: command not found<br></code></pre></td></tr></table></div></figure>
-<p>解决：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-a5v4igmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-a5v4igmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -s https://install.zerotier.com | <span class="hljs-built_in">sudo</span> bash<br></code></pre></td></tr></table></div></figure>
-</li>
-<li><p>systemctl 未找到</p>
-<figure class="highlight avrasm"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-dvlla2mfcv1ise"></i><span>AVRASM</span><div class="collapse show" id="collapse-dvlla2mfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">systemctl:</span> command not found<br></code></pre></td></tr></table></div></figure>
-<p>解决：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-scizwumfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-scizwumfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">service zerotier-one start<br>service zerotier-one status<br></code></pre></td></tr></table></div></figure>
-</li>
-<li><p>join 后显示 REQUESTING_CONFIGURATION<br>原因：设备未授权<br>解决：登录后台 Members 列表，勾选 Authorized</p>
-</li>
-<li><p>Ping 不通对方设备<br>排查：</p>
-</li>
-</ol>
-<ul>
-<li>对方未加入同一网络 → <code>zerotier-cli listnetworks</code></li>
-<li>防火墙阻拦 → 检查 iptables&#x2F;ufw</li>
-<li>没分配 IP → 在管理后台手动分配 IP</li>
-</ul>
-<h2 id="清理与维护"><a href="#清理与维护" class="headerlink" title="清理与维护"></a>清理与维护</h2><ul>
-<li>卸载 Debian 官方 headers（防止与飞牛OS定制内核冲突）：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9j6imamfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-9j6imamfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt remove --purge linux-headers-amd64 linux-headers-6.1.0-* -y<br></code></pre></td></tr></table></div></figure></li>
-<li>查看飞牛OS内核头文件：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5394sxmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-5394sxmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt search linux-headers-6.12<br></code></pre></td></tr></table></div></figure></li>
-<li>安装对应内核 headers（若有）：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-48yxhvmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-48yxhvmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install linux-headers-6.12.18-trim -y<br></code></pre></td></tr></table></div></figure></li>
-<li>清理无用包：<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zm4oa4mfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-zm4oa4mfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt autoremove -y<br><span class="hljs-built_in">sudo</span> apt clean<br></code></pre></td></tr></table></div></figure></li>
-</ul>
-<h2 id="连接测试"><a href="#连接测试" class="headerlink" title="连接测试"></a>连接测试</h2><p>在同一 ZeroTier 网络的其他设备上：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-03f96kmfcv1ise"></i><span>BASH</span><div class="collapse show" id="collapse-03f96kmfcv1ise"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ping &lt;ZeroTier 虚拟 IP&gt;<br></code></pre></td></tr></table></div></figure>
-<p>若有响应表示连接成功。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>飞牛OS 使用 ZeroTier 非常方便，可实现异地设备互联</li>
-<li>核心步骤：安装 ZeroTier → 加入网络 → 授权 → 测试</li>
-<li>常见问题可参考第五部分解决</li>
-</ul>
-<p><strong>作者</strong>：整理自官方文档与飞牛OS实测<br><strong>日期</strong>：2025-08-28</p>
+                <h1 id="测试终端输入命令"><a href="#测试终端输入命令" class="headerlink" title="测试终端输入命令"></a>测试终端输入命令</h1><p>curl -s “<a target="_blank" rel="noopener" href="http://127.0.0.1:9405/">http://127.0.0.1:9405/</a>“ | grep -A 3 -B 3 “qr-image” | head -15</p>
+<p>启动玩客云用到的命令</p>
+<p>chmod +x lan-to-go-openwrt-armv7<br>.&#x2F;lan-to-go-openwrt-armv7</p>
+<p>chmod +x lan-to-go-openwrt-armv7-fixed<br>.&#x2F;lan-to-go-openwrt-armv7-fixed</p>
+<p>setsid &#x2F;root&#x2F;lan-to-go-openwrt-armv7-fixed &gt; &#x2F;root&#x2F;lan-to-go.log 2&gt;&amp;1 &amp;<br>后台可用上面这行</p>
+<h1 id="Put-your-custom-commands-here-that-should-be-executed-once"><a href="#Put-your-custom-commands-here-that-should-be-executed-once" class="headerlink" title="Put your custom commands here that should be executed once"></a>Put your custom commands here that should be executed once</h1><h1 id="the-system-init-finished-By-default-this-file-does-nothing"><a href="#the-system-init-finished-By-default-this-file-does-nothing" class="headerlink" title="the system init finished. By default this file does nothing."></a>the system init finished. By default this file does nothing.</h1><p>#!&#x2F;bin&#x2F;sh</p>
+<h1 id="延迟启动-10-秒，防止被系统清理"><a href="#延迟启动-10-秒，防止被系统清理" class="headerlink" title="延迟启动 10 秒，防止被系统清理"></a>延迟启动 10 秒，防止被系统清理</h1><p>cd &#x2F;root<br>(sleep 10; setsid &#x2F;root&#x2F;lan-to-go-openwrt-armv7-fixed &gt; &#x2F;root&#x2F;lan-to-go.log 2&gt;&amp;1) &amp;<br>exit 0</p>
 
                 
               </div>
@@ -405,36 +349,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/" class="category-chain-item">软路由专栏</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E9%A3%9E%E7%89%9BOS/" class="print-no-link">#飞牛OS</a>
-      
-        <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" class="print-no-link">#软路由</a>
-      
-    </div>
   
 </div>
 
@@ -446,9 +360,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/31/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FZeroTier%E5%92%8C%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8A%E8%BF%9B%E8%A1%8C%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/" title="内网穿透ZeroTier和路由器上进行一些配置">
+                      <a href="/2025/09/09/GPT%E9%97%AE%E7%AD%94%E7%B1%BB/%E7%AC%AC%E5%85%AB%E6%AC%A1%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/" title="第八次修改记录">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">内网穿透ZeroTier和路由器上进行一些配置</span>
+                        <span class="hidden-mobile">第八次修改记录</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -456,8 +370,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/24/%E8%BD%AF%E8%B7%AF%E7%94%B1%E4%B8%93%E6%A0%8F/%E4%B8%80%E9%94%AE%E9%87%8D%E5%90%AF%E8%B7%AF%E7%94%B1%E5%99%A8%E8%84%9A%E6%9C%AC%E6%B7%BB%E5%8A%A0%E5%AD%A6%E4%B9%A0/" title="一键重启路由器脚本添加学习">
-                        <span class="hidden-mobile">一键重启路由器脚本添加学习</span>
+                      <a href="/2025/09/09/12345/" title="12345">
+                        <span class="hidden-mobile">12345</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
