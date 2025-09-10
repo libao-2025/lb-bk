@@ -27,7 +27,7 @@
 <meta property="og:description" content="在 SAP BTP Cloud Foundry 部署静态网站（以“上院李村庄查询系统”为例）很多朋友拿到 SAP BTP 的 Trial 账号后，都希望把自己的前端网页部署到云端，供别人访问。这里介绍一个最简单、最稳定的方法 —— 使用 Staticfile Buildpack 来托管纯静态网站。  一、准备工作 一个 SAP BTP trial 账号（Cloud Foundry 环境）   一个">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-25T12:24:42.000Z">
-<meta property="article:modified_time" content="2025-09-10T04:41:01.608Z">
+<meta property="article:modified_time" content="2025-09-10T05:08:30.810Z">
 <meta property="article:author" content="LI bao">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -342,7 +342,7 @@
 <li>一个空白文件 <code>Staticfile</code>（注意大小写，必须是这个名字）</li>
 </ul>
 <p>项目目录结构如下：</p>
-<figure class="highlight text"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-viwlfdmfdhs9fs"></i><span>TEXT</span><div class="collapse show" id="collapse-viwlfdmfdhs9fs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">shy/<br> ├── index.html      ← 你的网站主页<br> └── Staticfile      ← 告诉 Cloud Foundry 使用 staticfile_buildpack<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight text"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-y34bp9mfdiroct"></i><span>TEXT</span><div class="collapse show" id="collapse-y34bp9mfdiroct"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">shy/<br> ├── index.html      ← 你的网站主页<br> └── Staticfile      ← 告诉 Cloud Foundry 使用 staticfile_buildpack<br></code></pre></td></tr></table></div></figure>
 
 <p>📌 <strong>提示</strong>：<code>Staticfile</code> 文件可以为空，它只是告诉 CF 使用静态文件 buildpack。</p>
 <hr>
@@ -361,7 +361,7 @@
 </li>
 <li>点击 <strong>部署</strong>，完成后系统会生成一个访问地址，比如：</li>
 </ol>
-<figure class="highlight dts"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-m4091dmfdhs9fs"></i><span>DTS</span><div class="collapse show" id="collapse-m4091dmfdhs9fs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">https:</span><span class="hljs-comment">//shy.cfapps.us10-001.hana.ondemand.com</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight dts"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ny5ytymfdiroct"></i><span>DTS</span><div class="collapse show" id="collapse-ny5ytymfdiroct"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">https:</span><span class="hljs-comment">//shy.cfapps.us10-001.hana.ondemand.com</span><br></code></pre></td></tr></table></div></figure>
 
 <p>在浏览器中打开，即可访问你的网站。</p>
 <hr>
@@ -373,14 +373,14 @@
 </ul>
 </li>
 <li><p>登录 Cloud Foundry  </p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-reqx3umfdhs9fs"></i><span>BASH</span><div class="collapse show" id="collapse-reqx3umfdhs9fs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cf login -a https://api.cf.us10.hana.ondemand.com<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9k14i2mfdiroct"></i><span>BASH</span><div class="collapse show" id="collapse-9k14i2mfdiroct"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cf login -a https://api.cf.us10.hana.ondemand.com<br></code></pre></td></tr></table></div></figure>
 <p>按提示输入邮箱、密码、Org 和 Space。</p>
 </li>
 <li><p>切换到项目目录  </p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-mzsisymfdhs9fs"></i><span>BASH</span><div class="collapse show" id="collapse-mzsisymfdhs9fs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> shy<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-0iepahmfdiroct"></i><span>BASH</span><div class="collapse show" id="collapse-0iepahmfdiroct"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> shy<br></code></pre></td></tr></table></div></figure>
 </li>
 <li><p>执行部署命令  </p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ibxd0emfdhs9fs"></i><span>BASH</span><div class="collapse show" id="collapse-ibxd0emfdhs9fs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cf push shy -b staticfile_buildpack -m 256M -k 256M<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-66792ymfdiroct"></i><span>BASH</span><div class="collapse show" id="collapse-66792ymfdiroct"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cf push shy -b staticfile_buildpack -m 256M -k 256M<br></code></pre></td></tr></table></div></figure>
 
 <ul>
 <li><code>-b staticfile_buildpack</code> 指定使用静态文件 buildpack  </li>
@@ -391,7 +391,7 @@
 <li><p>部署完成后，cf CLI 会输出访问 URL，例如：</p>
 </li>
 </ol>
-<figure class="highlight stylus"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-kep19hmfdhs9fs"></i><span>STYLUS</span><div class="collapse show" id="collapse-kep19hmfdhs9fs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">routes:<br>  shy<span class="hljs-selector-class">.cfapps</span><span class="hljs-selector-class">.us10-001</span><span class="hljs-selector-class">.hana</span><span class="hljs-selector-class">.ondemand</span>.com<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight stylus"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6r3iymmfdiroct"></i><span>STYLUS</span><div class="collapse show" id="collapse-6r3iymmfdiroct"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">routes:<br>  shy<span class="hljs-selector-class">.cfapps</span><span class="hljs-selector-class">.us10-001</span><span class="hljs-selector-class">.hana</span><span class="hljs-selector-class">.ondemand</span>.com<br></code></pre></td></tr></table></div></figure>
 
 <p>在浏览器中访问该地址，即可看到你的网站。</p>
 <hr>
