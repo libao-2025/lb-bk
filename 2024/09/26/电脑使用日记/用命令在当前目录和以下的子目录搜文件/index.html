@@ -27,7 +27,7 @@
 <meta property="og:description" content="用命令在当前目录和以下的子目录搜文件 如果你想在当前目录及其所有子目录中搜索包含copy-btn字段的文件，你可以使用Git Bash或Git for Windows中的grep命令，并且不需要指定目录路径。以下是相应的命令：ERLANG12grep -r &quot;copy-btn&quot; . 这里解释一下：   grep：这是文本搜索工具。 -r：表示递归搜索子目录。 &quot;cop">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-26T21:14:24.000Z">
-<meta property="article:modified_time" content="2025-09-10T04:26:31.855Z">
+<meta property="article:modified_time" content="2025-09-10T04:30:43.417Z">
 <meta property="article:author" content="LI bao">
 <meta property="article:tag" content="电脑日常">
 <meta name="twitter:card" content="summary_large_image">
@@ -336,7 +336,7 @@
               <div class="markdown-body">
                 
                 <h1 id="用命令在当前目录和以下的子目录搜文件"><a href="#用命令在当前目录和以下的子目录搜文件" class="headerlink" title="用命令在当前目录和以下的子目录搜文件"></a>用命令在当前目录和以下的子目录搜文件</h1><ul>
-<li>如果你想在当前目录及其所有子目录中搜索包含<code>copy-btn</code>字段的文件，你可以使用Git Bash或Git for Windows中的<code>grep</code>命令，并且不需要指定目录路径。以下是相应的命令：<figure class="highlight erlang"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-oy2rgcmfdh9q67"></i><span>ERLANG</span><div class="collapse show" id="collapse-oy2rgcmfdh9q67"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs erlang">grep -r <span class="hljs-string">&quot;copy-btn&quot;</span> .<br><br></code></pre></td></tr></table></div></figure>
+<li>如果你想在当前目录及其所有子目录中搜索包含<code>copy-btn</code>字段的文件，你可以使用Git Bash或Git for Windows中的<code>grep</code>命令，并且不需要指定目录路径。以下是相应的命令：<figure class="highlight erlang"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-g9ix4smfdhez8d"></i><span>ERLANG</span><div class="collapse show" id="collapse-g9ix4smfdhez8d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs erlang">grep -r <span class="hljs-string">&quot;copy-btn&quot;</span> .<br><br></code></pre></td></tr></table></div></figure>
 这里解释一下：</li>
 </ul>
 <ul>
@@ -347,7 +347,7 @@
 </ul>
 <p>这个命令会在当前目录以及其所有子目录中搜索所有包含<code>copy-btn</code>文本的文件。搜索结果将直接显示在终端或命令提示符窗口中。</p>
 <ul>
-<li>如果你想要将搜索结果保存到文件中，可以使用重定向操作符：<figure class="highlight gradle"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-69dvmimfdh9q67"></i><span>GRADLE</span><div class="collapse show" id="collapse-69dvmimfdh9q67"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">grep</span> -r <span class="hljs-string">&quot;copy-btn&quot;</span> . &gt; search_results.txt<br></code></pre></td></tr></table></div></figure>
+<li>如果你想要将搜索结果保存到文件中，可以使用重定向操作符：<figure class="highlight gradle"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-txgwh7mfdhez8d"></i><span>GRADLE</span><div class="collapse show" id="collapse-txgwh7mfdhez8d"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">grep</span> -r <span class="hljs-string">&quot;copy-btn&quot;</span> . &gt; search_results.txt<br></code></pre></td></tr></table></div></figure>
 这将搜索结果保存到当前目录下名为<code>search_results.txt</code>的文件中。</li>
 </ul>
 <p>如果你使用的是Git Bash，上述命令应该可以直接使用。如果你使用的是Git for Windows的命令提示符，可能需要确保你的环境变量配置正确，以便正确使用<code>grep</code>命令。如果<code>grep</code>命令在命令提示符中不可用，你可能需要安装Git Bash或者安装并配置<code>grep</code>命令。</p>

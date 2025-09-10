@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://files.oaiusercontent.com/file-UAVKudGDgcHPnmjAHJ4KYQ?se=2024-11-26T15:24:27Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age=299,%20immutable,%20private&rscd=attachment;%20filename=image.png&sig=21JsJuzyoANy7P4vnajTH7EYDHSow48s0mkJYr6O1h0=">
 <meta property="article:published_time" content="2024-11-26T23:33:11.000Z">
-<meta property="article:modified_time" content="2025-09-10T04:26:31.846Z">
+<meta property="article:modified_time" content="2025-09-10T04:30:43.409Z">
 <meta property="article:author" content="LI bao">
 <meta property="article:tag" content="GPT学习">
 <meta property="article:tag" content="git">
@@ -347,23 +347,23 @@
 <p>你可以通过 Git 来管理 <code>123.py</code> 文件的版本，记录每次修改的变化，并在需要时回退到之前的版本。以下是操作步骤：</p>
 <hr>
 <p><strong>1. 初始化 Git 仓库</strong><br>如果当前目录还没有被 Git 管理：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-hs4qqpmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-hs4qqpmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c74iilmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-c74iilmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>2. 添加文件并提交</strong> 将 <code>123.py</code> 添加到版本控制中，并提交：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tbjbcmmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-tbjbcmmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add 123.py<br>git commit -m <span class="hljs-string">&quot;Initial version of 123.py&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v6d454mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-v6d454mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add 123.py<br>git commit -m <span class="hljs-string">&quot;Initial version of 123.py&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 <p>每次修改文件后，记得提交：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-x3txl6mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-x3txl6mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add 123.py<br>git commit -m <span class="hljs-string">&quot;Describe what you changed in this version&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-uo3kctmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-uo3kctmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add 123.py<br>git commit -m <span class="hljs-string">&quot;Describe what you changed in this version&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>3. 查看版本历史</strong> 查看 <code>123.py</code> 的提交历史：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c56dbimfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-c56dbimfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> -- 123.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-gsd43rmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-gsd43rmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> -- 123.py<br></code></pre></td></tr></table></div></figure>
 
 <p>会显示类似下面的信息：</p>
-<figure class="highlight ruby"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-xnbqakmfdh9q64"></i><span>RUBY</span><div class="collapse show" id="collapse-xnbqakmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby">commit abc1234567890<span class="hljs-keyword">def</span><br><span class="hljs-title function_">Author</span>: <span class="hljs-title class_">Your</span> <span class="hljs-title class_">Name</span> &lt;your.email<span class="hljs-variable">@example</span>.com&gt;<br><span class="hljs-title class_">Date</span>:   <span class="hljs-variable constant_">YYYY</span>-<span class="hljs-variable constant_">MM</span>-<span class="hljs-variable constant_">DD</span> <span class="hljs-variable constant_">HH</span><span class="hljs-symbol">:MM</span><span class="hljs-symbol">:SS</span><br><br>    <span class="hljs-title class_">Describe</span> what you changed <span class="hljs-keyword">in</span> this version<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight ruby"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wirce2mfdhez8a"></i><span>RUBY</span><div class="collapse show" id="collapse-wirce2mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby">commit abc1234567890<span class="hljs-keyword">def</span><br><span class="hljs-title function_">Author</span>: <span class="hljs-title class_">Your</span> <span class="hljs-title class_">Name</span> &lt;your.email<span class="hljs-variable">@example</span>.com&gt;<br><span class="hljs-title class_">Date</span>:   <span class="hljs-variable constant_">YYYY</span>-<span class="hljs-variable constant_">MM</span>-<span class="hljs-variable constant_">DD</span> <span class="hljs-variable constant_">HH</span><span class="hljs-symbol">:MM</span><span class="hljs-symbol">:SS</span><br><br>    <span class="hljs-title class_">Describe</span> what you changed <span class="hljs-keyword">in</span> this version<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -374,22 +374,22 @@
 <li><p>使用 <code>git checkout</code> 回退：</p>
 </li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-241mhzmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-241mhzmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout abc1234567890def -- 123.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-iuaxigmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-iuaxigmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout abc1234567890def -- 123.py<br></code></pre></td></tr></table></div></figure>
 <p>这会将 <code>123.py</code> 回退到指定版本的内容。</p>
 <ol start="3">
 <li>如果确认需要保持回退的内容，提交新版本：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-mufop8mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-mufop8mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add 123.py<br>git commit -m <span class="hljs-string">&quot;Reverted to a previous better version&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-auc5dhmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-auc5dhmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add 123.py<br>git commit -m <span class="hljs-string">&quot;Reverted to a previous better version&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>5. 比较两个版本</strong> 你可以比较 <code>123.py</code> 当前版本和某个历史版本的区别：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-06etktmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-06etktmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git diff abc1234567890def -- 123.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9tzfqdmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-9tzfqdmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git diff abc1234567890def -- 123.py<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>6. 恢复到最新版本</strong><br>如果你误操作了回退，可以恢复到最新提交的版本：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-r1r38mmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-r1r38mmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout HEAD -- 123.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tp0ks6mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-tp0ks6mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout HEAD -- 123.py<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -410,7 +410,7 @@
 <p>从错误信息来看，你的系统未正确安装 Git，或环境变量未正确配置。以下是解决方法：</p>
 <hr>
 <p><strong>1. 检查是否已安装 Git</strong><br>在 PowerShell 中运行以下命令：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5fr44amfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-5fr44amfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bqg99imfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-bqg99imfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li><p>如果显示类似 <code>git version 2.xx.x</code> 的版本信息，说明 Git 已安装。</p>
 </li>
@@ -440,7 +440,7 @@
 <ul>
 <li>安装完成后，重新打开 PowerShell，运行以下命令检查版本：</li>
 </ul>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6ipw1wmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-6ipw1wmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pis692mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-pis692mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -451,7 +451,7 @@
 <ul>
 <li>在 Git 的安装目录中找到 <code>git.exe</code>，通常路径是：</li>
 </ul>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-w0xx2lmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-w0xx2lmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">C:\Program Files\Git\bin\git.exe</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-dvqaz2mfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-dvqaz2mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">C:\Program Files\Git\bin\git.exe</span><br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li><strong>添加到环境变量：</strong></li>
 </ol>
@@ -463,14 +463,14 @@
 <li><p>添加 Git 的路径，如：</p>
 </li>
 </ul>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pdmhrlmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-pdmhrlmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">C:\Program Files\Git\bin</span><br><span class="hljs-section">C:\Program Files\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-r9veg4mfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-r9veg4mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">C:\Program Files\Git\bin</span><br><span class="hljs-section">C:\Program Files\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li><strong>保存设置并重新打开 PowerShell</strong> ：</li>
 </ol>
 <ul>
 <li>输入以下命令验证：</li>
 </ul>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-rzdyuamfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-rzdyuamfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8q4iotmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-8q4iotmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -478,7 +478,7 @@
 <ul>
 <li>在开始菜单搜索 <strong>Git Bash</strong> ，打开后运行 Git 命令：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-96wqjfmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-96wqjfmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-g2tpe9mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-g2tpe9mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -495,7 +495,7 @@
 <li><p>在打开的 Git Bash 窗口中输入：</p>
 </li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-p4bai3mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-p4bai3mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-taka09mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-taka09mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br></code></pre></td></tr></table></div></figure>
 <p>如果显示 Git 的版本信息，则 Git 安装是正确的。</p>
 <hr>
 <p><strong>2. 配置 PowerShell 的环境变量</strong> 为了在 PowerShell 中直接使用 <code>git</code> 命令，你需要将 Git 的路径添加到系统环境变量 <code>PATH</code> 中。<strong>步骤：</strong>  </p>
@@ -517,7 +517,7 @@
 <li><p>添加以下路径（根据你安装的位置）：</p>
 </li>
 </ul>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-21uqjvmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-21uqjvmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-thn24cmfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-thn24cmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li><strong>保存设置并关闭：</strong></li>
 </ol>
@@ -530,11 +530,11 @@
 <ul>
 <li>关闭当前的 PowerShell，重新打开，再运行：</li>
 </ul>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-2ck751mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-2ck751mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tp6desmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-tp6desmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 <p>如果显示 Git 的版本信息，则配置已完成。</p>
 <hr>
 <p><strong>3. 快速测试是否已配置好</strong><br>在 PowerShell 中运行：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-dcgo5nmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-dcgo5nmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> += <span class="hljs-string">&quot;;D:\Program Files\Git\Git\bin;D:\Program Files\Git\Git\cmd&quot;</span><br>git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-jlxreamfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-jlxreamfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> += <span class="hljs-string">&quot;;D:\Program Files\Git\Git\bin;D:\Program Files\Git\Git\cmd&quot;</span><br>git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 <p>如果能正常显示 Git 版本，说明路径已正确添加。这种方法只对当前会话有效，建议仍通过 <strong>环境变量</strong>  方法做永久配置。</p>
 <hr>
 <p><strong>4. 如果仍有问题，检查路径是否准确</strong><br>确认以下目录下是否有这些文件：</p>
@@ -572,7 +572,7 @@
 <li><p>检查是否包含以下路径（根据你的安装位置）：</p>
 </li>
 </ul>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-rk4aipmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-rk4aipmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tszdpvmfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-tszdpvmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
 <p>如果没有，点击 <strong>新建</strong>  添加这些路径。</p>
 <ol start="3">
 <li><strong>保存并退出：</strong></li>
@@ -584,17 +584,17 @@
 <p><strong>2. 重启 PowerShell</strong><br>环境变量的更改需要重新启动 PowerShell 才能生效。关闭所有 PowerShell 窗口，然后重新打开一个新的窗口。</p>
 <hr>
 <p><strong>3. 测试 PowerShell 中的 Git</strong><br>在 PowerShell 中输入以下命令：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1ww1m0mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-1ww1m0mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ros6jqmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-ros6jqmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 
 <p>如果返回 Git 的版本信息，则配置成功。</p>
 <hr>
 <p><strong>4. 如果仍无法识别 Git</strong><br>尝试以下方法进行手动调试：<br><strong>方法 1：临时添加 Git 路径</strong><br>在 PowerShell 中直接添加路径（仅当前会话有效）：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-nvoj3nmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-nvoj3nmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> += <span class="hljs-string">&quot;;D:\Program Files\Git\Git\bin;D:\Program Files\Git\Git\cmd&quot;</span><br>git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-hmnmktmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-hmnmktmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> += <span class="hljs-string">&quot;;D:\Program Files\Git\Git\bin;D:\Program Files\Git\Git\cmd&quot;</span><br>git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 <p>如果此方法可用，则说明问题出在永久环境变量配置上，重复第 1 步确保 <code>Path</code> 正确设置。<strong>方法 2：检查是否有冲突的 Git 配置</strong><br>如果安装了多个 Git 版本或软件，请确保调用的是正确版本的 Git。使用以下命令查看 Git 的路径：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-05rgjwmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-05rgjwmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">where</span> git<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-0igvcamfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-0igvcamfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">where</span> git<br></code></pre></td></tr></table></div></figure>
 
 <p>应返回：</p>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zjc3phmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-zjc3phmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\cmd\git.exe</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-oa75elmfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-oa75elmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\cmd\git.exe</span><br></code></pre></td></tr></table></div></figure>
 <p>如果路径不对，可以通过修改 <code>Path</code> 环境变量来优先使用正确的 Git。</p>
 <hr>
 <p><strong>5. 使用 Git Bash 替代</strong> 如果你不需要在 PowerShell 中运行 <code>git</code> 命令，可以直接用 Git Bash，因为它已配置好所有环境变量，能直接使用 Git。</p>
@@ -616,7 +616,7 @@
 <li><p>检查 <code>Path</code> 是否包含以下条目：</p>
 </li>
 </ol>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-saii8cmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-saii8cmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-g0j4pfmfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-g0j4pfmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>如果没有，点击 <strong>新建</strong> ，将上述路径逐一添加。</li>
 </ul>
@@ -627,21 +627,21 @@
 <p><strong>2. 确保 PowerShell 使用最新的环境变量</strong><br>修改环境变量后，你需要重新启动 PowerShell 或重启系统，确保它能加载新的变量。</p>
 <hr>
 <p><strong>3. 验证 Git 路径</strong><br>重新打开 PowerShell，运行以下命令验证 Git 是否被识别：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-z6o6oxmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-z6o6oxmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ph7i6vmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-ph7i6vmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>4. 手动指定 Git 路径</strong><br>如果上述步骤仍无法解决问题，可以临时手动指定 Git 路径：<br><strong>方法：临时修改环境变量</strong><br>在 PowerShell 中运行：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v7jy48mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-v7jy48mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> += <span class="hljs-string">&quot;;D:\Program Files\Git\Git\bin;D:\Program Files\Git\Git\cmd&quot;</span><br>git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-53fnphmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-53fnphmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:Path</span> += <span class="hljs-string">&quot;;D:\Program Files\Git\Git\bin;D:\Program Files\Git\Git\cmd&quot;</span><br>git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 
 <p>这将立即生效（仅当前 PowerShell 会话有效）。</p>
 <hr>
 <p><strong>5. 检查冲突的 Git 安装</strong><br>如果仍无法运行 Git，有可能你的系统中存在其他冲突的 Git 或路径配置。使用以下命令查找：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-mm4247mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-mm4247mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">where</span> git<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-rlbxnbmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-rlbxnbmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">where</span> git<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>正常情况下，应该显示：</li>
 </ul>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-4o8mzrmfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-4o8mzrmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin\git.exe</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6c2045mfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-6c2045mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin\git.exe</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>如果显示其他路径，说明有冲突的 Git 安装，可以通过修改 <code>Path</code> 优先级解决问题。</li>
 </ul>
@@ -662,7 +662,7 @@
 <ul>
 <li>按照以下路径永久配置：</li>
 </ul>
-<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-50jbf7mfdh9q64"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-50jbf7mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight makefile"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pg9ce9mfdhez8a"></i><span>MAKEFILE</span><div class="collapse show" id="collapse-pg9ce9mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">D:\Program Files\Git\Git\bin</span><br><span class="hljs-section">D:\Program Files\Git\Git\cmd</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>参考之前的步骤在系统环境变量 <code>Path</code> 中添加上述路径。</li>
 </ul>
@@ -672,7 +672,7 @@
 <ul>
 <li>重启 PowerShell，然后再次运行：</li>
 </ul>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-4ip28tmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-4ip28tmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5fkttymfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-5fkttymfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></div></figure>
 
 <ul>
 <li>如果成功显示版本信息，说明永久配置生效。</li>
@@ -682,23 +682,23 @@
 <ol>
 <li><strong>初始化 Git 仓库</strong> ：<br>在 <code>123.py</code> 文件所在目录运行：</li>
 </ol>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-r65dqomfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-r65dqomfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git init<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-i9o058mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-i9o058mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git init<br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li><strong>添加文件到 Git</strong> ：<br>添加 <code>123.py</code> 文件：</li>
 </ol>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ociqp0mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-ociqp0mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git add <span class="hljs-number">123</span>.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1xqyoqmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-1xqyoqmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git add <span class="hljs-number">123</span>.py<br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li><strong>提交更改</strong> ：<br>提交当前更改并添加描述：</li>
 </ol>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tyq3qwmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-tyq3qwmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;描述当前更改内容&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pjjx6kmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-pjjx6kmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;描述当前更改内容&quot;</span><br></code></pre></td></tr></table></div></figure>
 <ol start="4">
 <li><strong>查看提交历史</strong> ：<br>查看 <code>123.py</code> 的所有历史提交：</li>
 </ol>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1ta5bdmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-1ta5bdmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git log <span class="hljs-literal">--</span> <span class="hljs-number">123</span>.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-f4vxn4mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-f4vxn4mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git log <span class="hljs-literal">--</span> <span class="hljs-number">123</span>.py<br></code></pre></td></tr></table></div></figure>
 <ol start="5">
 <li><strong>回退到特定版本</strong> ：<br>根据提交记录的 <code>commit id</code> 回退到指定版本：</li>
 </ol>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-hjpvj3mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-hjpvj3mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git checkout &lt;commit id&gt; <span class="hljs-number">123</span>.py<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6d55j9mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-6d55j9mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git checkout &lt;commit id&gt; <span class="hljs-number">123</span>.py<br></code></pre></td></tr></table></div></figure>
 <p><strong>注意</strong> ：这会让文件恢复到特定版本，但不会影响仓库的其他部分。</p>
 <p>如果有其他问题或需要更详细的帮助，可以继续向我提问！</p>
 <p>You: </p>
@@ -708,23 +708,23 @@
 <p>以下是几种方法：</p>
 <hr>
 <p><strong>1. 手动输入当前日期和时间</strong> 直接在 <code>git commit</code> 的描述信息中手动添加时间，例如：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-gewnqzmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-gewnqzmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新文件，时间：2024-11-07 15:30&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zy9umdmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-zy9umdmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新文件，时间：2024-11-07 15:30&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>2. 自动插入当前日期和时间</strong><br>如果你希望自动生成包含当前日期和时间的提交信息，可以使用以下命令：<br>方法 1：通过 <code>date</code> 命令获取时间<br>在 PowerShell 中：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pkld7emfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-pkld7emfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新文件，时间：<span class="hljs-variable">$</span>(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-hh42q8mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-hh42q8mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新文件，时间：<span class="hljs-variable">$</span>(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)&quot;</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>输出示例：</li>
 </ul>
-<figure class="highlight subunit"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-oxdqeymfdh9q64"></i><span>SUBUNIT</span><div class="collapse show" id="collapse-oxdqeymfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit">更新文件，时间：2024<span class="hljs-string">-11</span><span class="hljs-string">-07</span> 15:30:45<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight subunit"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-5zbeo0mfdhez8a"></i><span>SUBUNIT</span><div class="collapse show" id="collapse-5zbeo0mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit">更新文件，时间：2024<span class="hljs-string">-11</span><span class="hljs-string">-07</span> 15:30:45<br></code></pre></td></tr></table></div></figure>
 
 <h4 id="方法-2：在-Git-Bash-中"><a href="#方法-2：在-Git-Bash-中" class="headerlink" title="方法 2：在 Git Bash 中"></a>方法 2：在 Git Bash 中</h4><p>Git Bash 中可以使用 <code>date</code> 命令：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-3qtb32mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-3qtb32mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新文件，时间：<span class="hljs-subst">$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-g5j2o0mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-g5j2o0mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新文件，时间：<span class="hljs-subst">$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>输出示例：</li>
 </ul>
-<figure class="highlight subunit"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ftedvnmfdh9q64"></i><span>SUBUNIT</span><div class="collapse show" id="collapse-ftedvnmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit">更新文件，时间：2024<span class="hljs-string">-11</span><span class="hljs-string">-07</span> 15:30:45<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight subunit"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c51t25mfdhez8a"></i><span>SUBUNIT</span><div class="collapse show" id="collapse-c51t25mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit">更新文件，时间：2024<span class="hljs-string">-11</span><span class="hljs-string">-07</span> 15:30:45<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -735,11 +735,11 @@
 <ul>
 <li>在 <code>D:\</code> 中创建文件 <code>commit-template.txt</code>，内容如下：</li>
 </ul>
-<figure class="highlight handlebars"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-nr05xpmfdh9q64"></i><span>HANDLEBARS</span><div class="collapse show" id="collapse-nr05xpmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">更新文件，时间：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">datetime</span>&#125;&#125;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight handlebars"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v3vxd5mfdhez8a"></i><span>HANDLEBARS</span><div class="collapse show" id="collapse-v3vxd5mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">更新文件，时间：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">datetime</span>&#125;&#125;</span><br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li>配置 Git 使用此模板：</li>
 </ol>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-3sqd7vmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-3sqd7vmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git config <span class="hljs-literal">--global</span> commit.template <span class="hljs-string">&quot;D:/commit-template.txt&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-t74wq9mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-t74wq9mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git config <span class="hljs-literal">--global</span> commit.template <span class="hljs-string">&quot;D:/commit-template.txt&quot;</span><br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li>修改模板内容时动态插入时间：<br>在每次提交时，可以编辑模板并手动插入时间。</li>
 </ol>
@@ -794,27 +794,27 @@
 </ol>
 <hr>
 <p><strong>解决方法</strong> 1. 确认是否修改了 <code>123.py</code> 文件** 确保 <code>123.py</code> 文件已经被修改，如果没有任何更改，Git 不会重新提交。可以运行以下命令确认文件状态：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-x0bfgtmfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-x0bfgtmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git status<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-x5a68zmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-x5a68zmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git status<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>如果 <code>123.py</code> 在 <code>Changes not staged for commit</code> 列表中，说明文件有改动但未添加到索引区，需要用 <code>git add</code> 添加。<br><strong>2. 添加所有文件（如果需要）</strong><br>如果你想同时提交所有文件（包括新文件和已修改文件），可以运行：</li>
 </ul>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pc4hqemfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-pc4hqemfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git add .<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-tn50uzmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-tn50uzmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git add .<br></code></pre></td></tr></table></div></figure>
 
 <p>然后再提交：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-szpcq3mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-szpcq3mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新文件，时间：<span class="hljs-variable">$</span>(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9eda3lmfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-9eda3lmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新文件，时间：<span class="hljs-variable">$</span>(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)&quot;</span><br></code></pre></td></tr></table></div></figure>
 <p><strong>3. 单独提交特定文件</strong> 如果你只想提交 <code>123.py</code> 文件，不涉及其他文件，确保文件已正确添加到索引区：</p>
-<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-79cuw2mfdh9q64"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-79cuw2mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git add <span class="hljs-number">123</span>.py<br>git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-variable">$</span>(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight powershell"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-acjtc5mfdhez8a"></i><span>POWERSHELL</span><div class="collapse show" id="collapse-acjtc5mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git add <span class="hljs-number">123</span>.py<br>git commit <span class="hljs-literal">-m</span> <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-variable">$</span>(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)&quot;</span><br></code></pre></td></tr></table></div></figure>
 <p><strong>4. 文件名乱码问题</strong><br>对于中文文件名导致的乱码问题，可以尝试以下方法解决：</p>
 <ol>
 <li>确保 Git 使用 UTF-8 编码：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pftxjymfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-pftxjymfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global core.quotepath <span class="hljs-literal">false</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-qptg9cmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-qptg9cmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global core.quotepath <span class="hljs-literal">false</span><br></code></pre></td></tr></table></div></figure>
 
 <p>这将使文件名显示为可读的中文。</p>
 <ol start="2">
 <li>如果乱码仍然存在，确认你的终端（PowerShell 或 Git Bash）是否支持 UTF-8。<br><strong>5. 检查 Git 忽略文件</strong> 某些文件可能被 <code>.gitignore</code> 文件排除在版本控制之外，运行以下命令检查忽略规则：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-l431nfmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-l431nfmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git check-ignore -v *<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-gaq9y1mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-gaq9y1mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git check-ignore -v *<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -835,40 +835,40 @@
 <p>要回退到指定的时间版本，Git 提供了几种方式可以实现版本的回退。你需要找到符合指定时间的提交记录，然后回退到该版本。</p>
 <hr>
 <p><strong>1. 查看历史提交记录</strong><br>使用以下命令查看提交记录，以找到对应时间的提交：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6qpml7mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-6qpml7mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">&quot;%h - %an, %ar : %s&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6tu4y2mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-6tu4y2mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">&quot;%h - %an, %ar : %s&quot;</span><br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>输出示例：</li>
 </ul>
-<figure class="highlight yaml"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bqs0dbmfdh9q64"></i><span>YAML</span><div class="collapse show" id="collapse-bqs0dbmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">3f47c2d</span> <span class="hljs-bullet">-</span> <span class="hljs-string">用户名,</span> <span class="hljs-attr">2 hours ago :</span> <span class="hljs-string">更新文件</span><br><span class="hljs-string">1a2b3c4</span> <span class="hljs-bullet">-</span> <span class="hljs-string">用户名,</span> <span class="hljs-attr">1 day ago :</span> <span class="hljs-string">修复</span> <span class="hljs-string">bug</span><br><span class="hljs-string">9d8f7g6</span> <span class="hljs-bullet">-</span> <span class="hljs-string">用户名,</span> <span class="hljs-attr">3 days ago :</span> <span class="hljs-string">初始化项目</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight yaml"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c9vgprmfdhez8a"></i><span>YAML</span><div class="collapse show" id="collapse-c9vgprmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">3f47c2d</span> <span class="hljs-bullet">-</span> <span class="hljs-string">用户名,</span> <span class="hljs-attr">2 hours ago :</span> <span class="hljs-string">更新文件</span><br><span class="hljs-string">1a2b3c4</span> <span class="hljs-bullet">-</span> <span class="hljs-string">用户名,</span> <span class="hljs-attr">1 day ago :</span> <span class="hljs-string">修复</span> <span class="hljs-string">bug</span><br><span class="hljs-string">9d8f7g6</span> <span class="hljs-bullet">-</span> <span class="hljs-string">用户名,</span> <span class="hljs-attr">3 days ago :</span> <span class="hljs-string">初始化项目</span><br></code></pre></td></tr></table></div></figure>
 
 <p>如果需要更详细的信息（包括时间戳），可以运行：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-htykknmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-htykknmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;2024-11-06&quot;</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;2024-11-07&quot;</span> --pretty=fuller<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-o4zn6qmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-o4zn6qmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;2024-11-06&quot;</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;2024-11-07&quot;</span> --pretty=fuller<br></code></pre></td></tr></table></div></figure>
 <p>通过提交的时间戳，找到匹配时间的提交哈希值（例如：<code>3f47c2d</code>）。</p>
 <hr>
 <p><strong>2. 回退到指定版本的方法</strong> <strong>方法 1：回退到指定版本（HEAD 指针回退，保持历史）</strong><br>如果你想保留所有历史，但将项目内容恢复到某个版本，可以使用以下命令：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-j4hqitmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-j4hqitmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-t89qz2mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-t89qz2mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>例如：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v7cwo9mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-v7cwo9mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout 3f47c2d<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wthvxrmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-wthvxrmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout 3f47c2d<br></code></pre></td></tr></table></div></figure>
 
 <p>这会切换到一个“分离的 HEAD 状态”，项目文件将恢复到指定版本的状态，但不会更改当前分支。</p>
 <ul>
 <li><strong>注意</strong> ：如果需要对恢复后的内容进行修改或提交，记得创建一个新分支：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-g7g2vfmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-g7g2vfmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout -b 新分支名<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-w4xko8mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-w4xko8mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout -b 新分支名<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>方法 2：回退并覆盖当前分支（历史仍然保留）</strong> 如果你希望当前分支的状态直接恢复到指定版本，可以使用 <code>reset</code> 命令：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-fv2dptmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-fv2dptmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-fp5hz5mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-fp5hz5mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>例如：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-w7gyt9mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-w7gyt9mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard 3f47c2d<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6t0evwmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-6t0evwmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard 3f47c2d<br></code></pre></td></tr></table></div></figure>
 
 <p>这会将当前分支指向指定版本，并覆盖工作区和索引区的内容。</p>
 <hr>
 <p><strong>方法 3：回退并保留变更</strong><br>如果你想回退到某个版本，但保留之后的修改作为未提交的变更：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-h7hzbsmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-h7hzbsmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --soft &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-4z1cegmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-4z1cegmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --soft &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li><strong>区别</strong> ： <ul>
 <li><p><code>--soft</code>: 仅回退 Git 历史记录，保留所有文件的改动（在暂存区）。</p>
@@ -882,30 +882,30 @@
 </ul>
 <hr>
 <p><strong>3. 回退到时间点附近的提交</strong><br>如果只知道时间而非具体提交哈希，可以结合时间筛选提交：</p>
-<h4 id="查看指定时间附近的提交："><a href="#查看指定时间附近的提交：" class="headerlink" title="查看指定时间附近的提交："></a>查看指定时间附近的提交：</h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-eyyy7xmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-eyyy7xmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;2024-11-06 10:00&quot;</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;2024-11-07 18:00&quot;</span><br></code></pre></td></tr></table></div></figure>
+<h4 id="查看指定时间附近的提交："><a href="#查看指定时间附近的提交：" class="headerlink" title="查看指定时间附近的提交："></a>查看指定时间附近的提交：</h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bstcm5mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-bstcm5mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;2024-11-06 10:00&quot;</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;2024-11-07 18:00&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 <h4 id="回退到最接近的提交："><a href="#回退到最接近的提交：" class="headerlink" title="回退到最接近的提交："></a>回退到最接近的提交：</h4><p>找到时间点最近的哈希值后，使用 <code>reset</code> 或 <code>checkout</code> 命令切换到该版本。</p>
 <hr>
 <p><strong>4. 强制回退到时间点</strong> 如果希望直接强制 Git 回退到一个时间点的最新提交，可以结合 <code>reflog</code>（Git 引用日志）找到目标版本：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-3d7oscmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-3d7oscmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reflog<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-sgap6umfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-sgap6umfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reflog<br></code></pre></td></tr></table></div></figure>
 
 <p>输出示例：</p>
-<figure class="highlight kotlin"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-vzyudymfdh9q64"></i><span>KOTLIN</span><div class="collapse show" id="collapse-vzyudymfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">3f47c2d (HEAD -&gt; master) <span class="hljs-symbol">HEAD@</span>&#123;<span class="hljs-number">0</span>&#125;: commit: 更新文件<br>1a2b3c4 <span class="hljs-symbol">HEAD@</span>&#123;<span class="hljs-number">1</span>&#125;: commit: 修复 bug<br>9d8f7g6 <span class="hljs-symbol">HEAD@</span>&#123;<span class="hljs-number">2</span>&#125;: commit: 初始化项目<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight kotlin"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8ke6x1mfdhez8a"></i><span>KOTLIN</span><div class="collapse show" id="collapse-8ke6x1mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">3f47c2d (HEAD -&gt; master) <span class="hljs-symbol">HEAD@</span>&#123;<span class="hljs-number">0</span>&#125;: commit: 更新文件<br>1a2b3c4 <span class="hljs-symbol">HEAD@</span>&#123;<span class="hljs-number">1</span>&#125;: commit: 修复 bug<br>9d8f7g6 <span class="hljs-symbol">HEAD@</span>&#123;<span class="hljs-number">2</span>&#125;: commit: 初始化项目<br></code></pre></td></tr></table></div></figure>
 
 <p>然后执行以下命令回退：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-c4gdwlmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-c4gdwlmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard HEAD@&#123;1&#125;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pi2tfmmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-pi2tfmmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard HEAD@&#123;1&#125;<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>5. 提交一个回退点的快照</strong><br>如果你不希望破坏分支历史，可以在回退之前创建一个新的分支：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-61jipmmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-61jipmmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch backup-branch<br>git reset --hard &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-cvsjpbmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-cvsjpbmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch backup-branch<br>git reset --hard &lt;commit-hash&gt;<br></code></pre></td></tr></table></div></figure>
 <p>这样，即使回退了，原始的提交历史仍然可以从 <code>backup-branch</code> 中找到。</p>
 <hr>
 <p><strong>总结</strong>  </p>
 <ol>
 <li>找到提交记录：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-23rxnimfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-23rxnimfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;指定时间&quot;</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;指定时间&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-16q91emfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-16q91emfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;指定时间&quot;</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;指定时间&quot;</span><br></code></pre></td></tr></table></div></figure>
 <ol start="2">
 <li>根据需要选择回退方法：</li>
 </ol>
@@ -957,24 +957,24 @@
 <li><p>重新启动 PowerShell 并输入以下命令，验证 Git 是否可用：</p>
 </li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-w6pq9ymfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-w6pq9ymfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8sfi0rmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-8sfi0rmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>2. PowerShell 命令解析问题</strong> 在 PowerShell 中，<code>$(...)</code> 是子表达式的语法，用于运行命令并将其输出嵌入到字符串中。你的命令中：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8bop81mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-8bop81mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-v8qbflmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-v8qbflmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
 <p>PowerShell 会先运行 <code>$(Get-Date -Format &#39;yyyy-MM-dd HH:mm:ss&#39;)</code>，将结果嵌入到字符串中。<br>如果 Git 无法识别，可能是环境变量未正确配置或者子表达式解析出错。</p>
 <h4 id="解决方法：-1"><a href="#解决方法：-1" class="headerlink" title="解决方法："></a>解决方法：</h4><p>使用双引号内的子表达式，在 PowerShell 中执行以下命令：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-innbu6mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-innbu6mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-k1w2p0mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-k1w2p0mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 <p>如果问题仍然存在，可以改为手动插入时间：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-weyp95mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-weyp95mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：2024-11-07 12:34:56&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-7bzc5bmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-7bzc5bmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：2024-11-07 12:34:56&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
 <p><strong>3. Git 未正确安装</strong> 如果 <code>git --version</code> 显示正确版本，但在 PowerShell 中提示 <code>CommandNotFoundException</code>，可能是安装路径问题导致的 PowerShell 环境不兼容。</p>
 <h4 id="解决方法：-2"><a href="#解决方法：-2" class="headerlink" title="解决方法："></a>解决方法：</h4><p>尝试运行 <code>git</code> 的完整路径：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zmiht7mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-zmiht7mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">&quot;D:\Program Files\Git\Git\cmd\git.exe&quot;</span> commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-89k4unmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-89k4unmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">&quot;D:\Program Files\Git\Git\cmd\git.exe&quot;</span> commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(Get-Date -Format &#x27;yyyy-MM-dd HH:mm:ss&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 <p>如果这条命令成功，说明 PowerShell 未能正确识别 Git 的路径。请返回第 1 步，检查路径设置。</p>
 <hr>
@@ -988,11 +988,11 @@
 <ol start="2">
 <li>切换到项目目录：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-caa1r2mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-caa1r2mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /d/AI开发软件文件夹/20241107多版本调试<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bu9a56mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-bu9a56mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /d/AI开发软件文件夹/20241107多版本调试<br></code></pre></td></tr></table></div></figure>
 <ol start="3">
 <li>手动运行提交命令：</li>
 </ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-2huju2mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-2huju2mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8xwvjpmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-8xwvjpmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m <span class="hljs-string">&quot;更新 123.py，时间：<span class="hljs-subst">$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)</span>&quot;</span><br></code></pre></td></tr></table></div></figure>
 
 
 <hr>
@@ -1007,10 +1007,10 @@
 </ol>
 <p>试完以上方法后，如果问题依旧，请告诉我你的具体尝试情况和输出，我会进一步帮你排查！</p>
 <p>You: </p>
-<p>commit be187f4cd870d11cbb2a55d298d9fc521879a461 (HEAD -&gt; master)<br>Author: lifuaini2019 <a href="mailto:&#108;&#105;&#102;&#117;&#x61;&#x69;&#x6e;&#105;&#x32;&#48;&#x31;&#57;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#108;&#105;&#102;&#117;&#x61;&#x69;&#x6e;&#105;&#x32;&#48;&#x31;&#57;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a><br>Date:   Tue Nov 26 17:27:30 2024 +0800</p>
+<p>commit be187f4cd870d11cbb2a55d298d9fc521879a461 (HEAD -&gt; master)<br>Author: lifuaini2019 <a href="mailto:&#108;&#x69;&#x66;&#117;&#97;&#105;&#x6e;&#x69;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#108;&#x69;&#x66;&#117;&#97;&#105;&#x6e;&#x69;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a><br>Date:   Tue Nov 26 17:27:30 2024 +0800</p>
 <pre><code class="hljs">更新 123.py，时间：2024-11-26 17:27:30
 </code></pre>
-<p>commit 049cb9aa756d14ec07961d522c443e61cede5cda<br>Author: lifuaini2019 <a href="mailto:&#108;&#105;&#102;&#117;&#x61;&#x69;&#110;&#105;&#x32;&#48;&#49;&#x39;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#108;&#105;&#102;&#117;&#x61;&#x69;&#110;&#105;&#x32;&#48;&#49;&#x39;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a><br>Date:   Tue Nov 26 17:21:06 2024 +0800</p>
+<p>commit 049cb9aa756d14ec07961d522c443e61cede5cda<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#x69;&#x66;&#117;&#x61;&#x69;&#110;&#x69;&#50;&#48;&#49;&#x39;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x6c;&#x69;&#x66;&#117;&#x61;&#x69;&#110;&#x69;&#50;&#48;&#49;&#x39;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a><br>Date:   Tue Nov 26 17:21:06 2024 +0800</p>
 <p>:这两个，我想回到Date:   Tue Nov 26 17:21:06 2024 +0800这个怎样操作写命令</p>
 <p>ChatGPT: </p>
 <p>要回退到某个特定的提交，可以使用 <code>git reset</code> 命令。具体操作如下：</p>
@@ -1020,11 +1020,11 @@
 <li><p><strong>使用 <code>git reset</code> 命令回退到该提交</strong> ：<br>你可以选择使用 <code>--hard</code> 或 <code>--soft</code> 参数来回退。</p>
 </li>
 </ol>
-<h4 id="回退到指定提交（完全回退）："><a href="#回退到指定提交（完全回退）：" class="headerlink" title="回退到指定提交（完全回退）："></a>回退到指定提交（完全回退）：</h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-x7z491mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-x7z491mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard 049cb9aa756d14ec07961d522c443e61cede5cda<br></code></pre></td></tr></table></div></figure>
+<h4 id="回退到指定提交（完全回退）："><a href="#回退到指定提交（完全回退）：" class="headerlink" title="回退到指定提交（完全回退）："></a>回退到指定提交（完全回退）：</h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-2uoy8omfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-2uoy8omfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard 049cb9aa756d14ec07961d522c443e61cede5cda<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>这样会<strong>完全回退</strong> 到 <code>049cb9aa</code> 提交的状态，所有在此之后的更改将会丢失（包括工作区的更改）。</li>
 </ul>
-<h4 id="回退到指定提交（保留工作区更改）："><a href="#回退到指定提交（保留工作区更改）：" class="headerlink" title="回退到指定提交（保留工作区更改）："></a>回退到指定提交（保留工作区更改）：</h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wk5ezhmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-wk5ezhmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --soft 049cb9aa756d14ec07961d522c443e61cede5cda<br></code></pre></td></tr></table></div></figure>
+<h4 id="回退到指定提交（保留工作区更改）："><a href="#回退到指定提交（保留工作区更改）：" class="headerlink" title="回退到指定提交（保留工作区更改）："></a>回退到指定提交（保留工作区更改）：</h4><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-drclq3mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-drclq3mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --soft 049cb9aa756d14ec07961d522c443e61cede5cda<br></code></pre></td></tr></table></div></figure>
 <ul>
 <li>这会将历史回退到 <code>049cb9aa</code> 提交，但<strong>保留当前文件的修改</strong> （即不丢失工作区的更改）。</li>
 </ul>
@@ -1036,7 +1036,7 @@
 </li>
 </ul>
 <p>例如：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-qbz0m7mfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-qbz0m7mfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push --force<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-cq2n0lmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-cq2n0lmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push --force<br></code></pre></td></tr></table></div></figure>
 
 <p>这个命令将会把本地仓库的历史强制推送到远程仓库，注意这可能会影响其他协作开发者。</p>
 <hr>
@@ -1049,34 +1049,34 @@
 </ul>
 <p>如果有其他问题，随时告诉我！</p>
 <p>You: </p>
-<p>commit 049cb9aa756d14ec07961d522c443e61cede5cda<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#105;&#102;&#117;&#97;&#x69;&#110;&#105;&#x32;&#x30;&#49;&#57;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x6c;&#105;&#102;&#117;&#97;&#x69;&#110;&#105;&#x32;&#x30;&#49;&#57;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a><br>Date:   Tue Nov 26 17:21:06 2024 +0800</p>
+<p>commit 049cb9aa756d14ec07961d522c443e61cede5cda<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#x69;&#102;&#x75;&#x61;&#105;&#x6e;&#x69;&#50;&#48;&#49;&#x39;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x6c;&#x69;&#102;&#x75;&#x61;&#105;&#x6e;&#x69;&#50;&#48;&#49;&#x39;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a><br>Date:   Tue Nov 26 17:21:06 2024 +0800</p>
 <pre><code class="hljs">更新 123.py，时间：2024-11-26 17:21:06
 </code></pre>
-<p>commit 8ae44f72e5e1040720e3f8637d83482c36dacb8a<br>Author: lifuaini2019 <a href="mailto:&#108;&#105;&#x66;&#x75;&#97;&#x69;&#110;&#105;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#108;&#105;&#x66;&#x75;&#97;&#x69;&#110;&#105;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a><br>:为何一直停在这个页面？</p>
+<p>commit 8ae44f72e5e1040720e3f8637d83482c36dacb8a<br>Author: lifuaini2019 <a href="mailto:&#108;&#x69;&#102;&#117;&#x61;&#105;&#x6e;&#x69;&#50;&#48;&#x31;&#x39;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#x69;&#102;&#117;&#x61;&#105;&#x6e;&#x69;&#50;&#48;&#x31;&#x39;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a><br>:为何一直停在这个页面？</p>
 <p>ChatGPT: </p>
 <p>如果你在执行 <code>git reset</code> 命令时遇到停留在某个页面，可能是因为某些原因导致命令没有正确执行。我们可以检查以下几个方面：</p>
 <h3 id="1-确保命令执行成功："><a href="#1-确保命令执行成功：" class="headerlink" title="1. 确保命令执行成功："></a>1. 确保命令执行成功：</h3><p>首先，你可以确认是否执行了正确的 <code>git reset</code> 命令。例如： </p>
 <ul>
 <li>回退到提交 <code>049cb9aa</code>：</li>
 </ul>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9k2sklmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-9k2sklmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard 049cb9aa756d14ec07961d522c443e61cede5cda<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-k50n4bmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-k50n4bmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard 049cb9aa756d14ec07961d522c443e61cede5cda<br></code></pre></td></tr></table></div></figure>
 <p>如果使用 <code>git reset --hard</code>，请确保本地没有未保存的更改，否则它会丢失工作区内容。</p>
 <h3 id="2-查看-Git-状态："><a href="#2-查看-Git-状态：" class="headerlink" title="2. 查看 Git 状态："></a>2. 查看 Git 状态：</h3><p>如果你已经回退到指定提交，可以使用 <code>git status</code> 查看当前状态。它会告诉你是否有未提交的更改或者暂存的文件。例如：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wkaz0kmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-wkaz0kmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git status<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-zfigoumfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-zfigoumfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git status<br></code></pre></td></tr></table></div></figure>
 
 <p>如果有未提交的更改，Git 会提醒你。</p>
 <h3 id="3-检查是否有未解决的冲突："><a href="#3-检查是否有未解决的冲突：" class="headerlink" title="3. 检查是否有未解决的冲突："></a>3. 检查是否有未解决的冲突：</h3><p>如果你在执行回退过程中遇到冲突，Git 会暂停并要求你解决冲突。你可以通过以下命令查看当前的状态并解决冲突：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-0hqv9rmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-0hqv9rmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git status<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-czu1a0mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-czu1a0mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git status<br></code></pre></td></tr></table></div></figure>
 
 <p>如果有冲突文件，需要手动解决并使用以下命令继续：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1avwbimfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-1avwbimfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add &lt;冲突文件&gt;<br>git reset --hard<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-yq2gq2mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-yq2gq2mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add &lt;冲突文件&gt;<br>git reset --hard<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="4-检查是否是在正确的命令行界面："><a href="#4-检查是否是在正确的命令行界面：" class="headerlink" title="4. 检查是否是在正确的命令行界面："></a>4. 检查是否是在正确的命令行界面：</h3><p>确保你在正确的 Git 命令行环境下（例如 Git Bash 或者 PowerShell）。有时，命令行可能因为环境问题无法执行某些 Git 命令。</p>
 <h3 id="5-确保没有挂起的合并或操作："><a href="#5-确保没有挂起的合并或操作：" class="headerlink" title="5. 确保没有挂起的合并或操作："></a>5. 确保没有挂起的合并或操作：</h3><p>如果在执行 <code>git reset</code> 时出现挂起的合并操作（比如之前执行过 <code>git merge</code>），可以使用以下命令取消合并并继续：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-0465aymfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-0465aymfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git merge --abort<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-nkjnr5mfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-nkjnr5mfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git merge --abort<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="6-Git-日志查看："><a href="#6-Git-日志查看：" class="headerlink" title="6. Git 日志查看："></a>6. Git 日志查看：</h3><p>你可以通过 <code>git log</code> 查看当前提交历史，确认是否已经回退到目标提交：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-hmr6qbmfdh9q64"></i><span>BASH</span><div class="collapse show" id="collapse-hmr6qbmfdh9q64"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --oneline<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-7odrvlmfdhez8a"></i><span>BASH</span><div class="collapse show" id="collapse-7odrvlmfdhez8a"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> --oneline<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
 <li><p>使用 <code>git reset --hard</code> 确保完全回退。</p>
@@ -1088,16 +1088,16 @@
 </ol>
 <p>如果你仍然停留在同一页面或遇到问题，请提供更多信息，我将进一步帮助你解决！</p>
 <p>You: </p>
-<p>Administrator@LIBAO MINGW64 &#x2F;d&#x2F;AI开发软件文件夹&#x2F;20241107多版本调试 (master)<br>$ git log – 123.py<br>commit 081890373af0454bb90a988df623927424973fd0 (HEAD -&gt; master)<br>Author: lifuaini2019 <a href="mailto:&#108;&#x69;&#102;&#x75;&#97;&#x69;&#110;&#x69;&#50;&#48;&#49;&#57;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#108;&#x69;&#102;&#x75;&#97;&#x69;&#110;&#x69;&#50;&#48;&#49;&#57;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;</a><br>Date:   Tue Nov 26 18:13:06 2024 +0800</p>
+<p>Administrator@LIBAO MINGW64 &#x2F;d&#x2F;AI开发软件文件夹&#x2F;20241107多版本调试 (master)<br>$ git log – 123.py<br>commit 081890373af0454bb90a988df623927424973fd0 (HEAD -&gt; master)<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#x69;&#102;&#x75;&#97;&#105;&#110;&#105;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#x6c;&#x69;&#102;&#x75;&#97;&#105;&#110;&#105;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a><br>Date:   Tue Nov 26 18:13:06 2024 +0800</p>
 <pre><code class="hljs">更新 123.py，时间：2024-11-26 18:13:06
 </code></pre>
-<p>commit 7a4b2ee777a9b9528208afbd10ad4baebc3ab0f9<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#105;&#102;&#x75;&#x61;&#105;&#x6e;&#x69;&#50;&#x30;&#49;&#57;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#105;&#102;&#x75;&#x61;&#105;&#x6e;&#x69;&#50;&#x30;&#49;&#57;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a><br>Date:   Tue Nov 26 17:55:28 2024 +0800</p>
+<p>commit 7a4b2ee777a9b9528208afbd10ad4baebc3ab0f9<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#x69;&#x66;&#x75;&#x61;&#105;&#110;&#105;&#50;&#48;&#49;&#x39;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#x6c;&#x69;&#x66;&#x75;&#x61;&#105;&#110;&#105;&#50;&#48;&#49;&#x39;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;</a><br>Date:   Tue Nov 26 17:55:28 2024 +0800</p>
 <pre><code class="hljs">更新 123.py，时间：2024-11-26 17:55:28
 </code></pre>
-<p>commit 049cb9aa756d14ec07961d522c443e61cede5cda<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#105;&#x66;&#117;&#97;&#x69;&#110;&#x69;&#x32;&#48;&#49;&#57;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x6c;&#105;&#x66;&#117;&#97;&#x69;&#110;&#x69;&#x32;&#48;&#49;&#57;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a><br>Date:   Tue Nov 26 17:21:06 2024 +0800</p>
+<p>commit 049cb9aa756d14ec07961d522c443e61cede5cda<br>Author: lifuaini2019 <a href="mailto:&#108;&#x69;&#x66;&#117;&#97;&#105;&#x6e;&#x69;&#x32;&#x30;&#x31;&#57;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#108;&#x69;&#x66;&#117;&#97;&#105;&#x6e;&#x69;&#x32;&#x30;&#x31;&#57;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a><br>Date:   Tue Nov 26 17:21:06 2024 +0800</p>
 <pre><code class="hljs">更新 123.py，时间：2024-11-26 17:21:06
 </code></pre>
-<p>commit 8ae44f72e5e1040720e3f8637d83482c36dacb8a<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#x69;&#x66;&#x75;&#97;&#x69;&#x6e;&#x69;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x6c;&#x69;&#x66;&#x75;&#97;&#x69;&#x6e;&#x69;&#x32;&#48;&#x31;&#x39;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a><br>Date:   Tue Nov 26 16:52:00 2024 +0800</p>
+<p>commit 8ae44f72e5e1040720e3f8637d83482c36dacb8a<br>Author: lifuaini2019 <a href="mailto:&#x6c;&#x69;&#102;&#117;&#97;&#105;&#110;&#105;&#x32;&#x30;&#49;&#57;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x6c;&#x69;&#102;&#117;&#97;&#105;&#110;&#105;&#x32;&#x30;&#49;&#57;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a><br>Date:   Tue Nov 26 16:52:00 2024 +0800</p>
 <pre><code class="hljs">Initial version of 123.py
 </code></pre>
 <p>: 出现这个页面，我想取消操作 ，按哪个键？</p>
