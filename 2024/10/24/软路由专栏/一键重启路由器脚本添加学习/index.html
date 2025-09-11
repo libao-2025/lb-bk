@@ -27,7 +27,7 @@
 <meta property="og:description" content="方案 1：在本地生成密钥并手动复制既然远程设备上没有这些工具，你可以在 本地机器（比如你正在用的 MINGW64 环境）上生成 SSH 密钥，然后手动将公钥复制到远程设备。 第一步：在本地生成 SSH 密钥在你的本地终端（MINGW64 或 Git）执行以下命令： APACHE1ssh-keygen -t rsa -b 4096  生成密钥对后，公钥通常保存在 ~&#x2F;.ssh&#x2F;id_rsa_wky1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-24T21:21:21.000Z">
-<meta property="article:modified_time" content="2025-09-11T02:54:12.376Z">
+<meta property="article:modified_time" content="2025-09-11T09:02:38.938Z">
 <meta property="article:author" content="LI bao">
 <meta property="article:tag" content="sh脚本">
 <meta property="article:tag" content="路由器">
@@ -339,36 +339,36 @@
                 
                 <h3 id="方案-1：在本地生成密钥并手动复制"><a href="#方案-1：在本地生成密钥并手动复制" class="headerlink" title="方案 1：在本地生成密钥并手动复制"></a>方案 1：在本地生成密钥并手动复制</h3><p>既然远程设备上没有这些工具，你可以在 <strong>本地机器</strong>（比如你正在用的 MINGW64 环境）上生成 SSH 密钥，然后手动将公钥复制到远程设备。</p>
 <h4 id="第一步：在本地生成-SSH-密钥"><a href="#第一步：在本地生成-SSH-密钥" class="headerlink" title="第一步：在本地生成 SSH 密钥"></a>第一步：在本地生成 SSH 密钥</h4><p>在你的本地终端（MINGW64 或 Git）执行以下命令：</p>
-<figure class="highlight apache"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bvml2qmfetespn"></i><span>APACHE</span><div class="collapse show" id="collapse-bvml2qmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ssh</span>-keygen -t rsa -b <span class="hljs-number">4096</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight apache"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-1qolmamff6kjne"></i><span>APACHE</span><div class="collapse show" id="collapse-1qolmamff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ssh</span>-keygen -t rsa -b <span class="hljs-number">4096</span><br></code></pre></td></tr></table></div></figure>
 
 <p>生成密钥对后，公钥通常保存在 <code>~/.ssh/id_rsa_wky101.pub</code></p>
 <h4 id="第二步：手动将公钥复制到远程设备"><a href="#第二步：手动将公钥复制到远程设备" class="headerlink" title="第二步：手动将公钥复制到远程设备"></a>第二步：手动将公钥复制到远程设备</h4><ol>
 <li><p>通过 </p>
-<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-mdjpn5mfetespn"></i><span>EBNF</span><div class="collapse show" id="collapse-mdjpn5mfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ssh</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-wfkj25mff6kjne"></i><span>EBNF</span><div class="collapse show" id="collapse-wfkj25mff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ssh</span><br></code></pre></td></tr></table></div></figure>
 
 <p> 登录到你的远程设备：</p>
-<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-o6jkrvmfetespn"></i><span>NGINX</span><div class="collapse show" id="collapse-o6jkrvmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> root@<span class="hljs-number">192.168.3.101</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-8uiajdmff6kjne"></i><span>NGINX</span><div class="collapse show" id="collapse-8uiajdmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> root@<span class="hljs-number">192.168.3.101</span><br></code></pre></td></tr></table></div></figure>
 </li>
 <li><p>在远程设备上，检查 </p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-dkk103mfetespn"></i><span>BASH</span><div class="collapse show" id="collapse-dkk103mfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">~/.ssh<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pi3nwfmff6kjne"></i><span>BASH</span><div class="collapse show" id="collapse-pi3nwfmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">~/.ssh<br></code></pre></td></tr></table></div></figure>
 
 <p> 目录是否存在。如果不存在，创建该目录：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-n2kicrmfetespn"></i><span>BASH</span><div class="collapse show" id="collapse-n2kicrmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -p ~/.ssh<br><span class="hljs-built_in">chmod</span> 700 ~/.ssh<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-n8j6tjmff6kjne"></i><span>BASH</span><div class="collapse show" id="collapse-n8j6tjmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -p ~/.ssh<br><span class="hljs-built_in">chmod</span> 700 ~/.ssh<br></code></pre></td></tr></table></div></figure>
 </li>
 <li><p>在本地机器上，使用 </p>
-<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-r7e97rmfetespn"></i><span>EBNF</span><div class="collapse show" id="collapse-r7e97rmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">scp</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-cpzn44mff6kjne"></i><span>EBNF</span><div class="collapse show" id="collapse-cpzn44mff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">scp</span><br></code></pre></td></tr></table></div></figure>
 
 <p> 将公钥复制到远程设备：</p>
-<figure class="highlight ruby"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-03bujnmfetespn"></i><span>RUBY</span><div class="collapse show" id="collapse-03bujnmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby">scp ~<span class="hljs-regexp">/.ssh/id</span>_rsa_wky101.pub root<span class="hljs-variable">@192</span>.<span class="hljs-number">168.3</span>.<span class="hljs-number">101</span><span class="hljs-symbol">:/tmp/id_rsa_wky101</span>.pub<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight ruby"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-y9urdbmff6kjne"></i><span>RUBY</span><div class="collapse show" id="collapse-y9urdbmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby">scp ~<span class="hljs-regexp">/.ssh/id</span>_rsa_wky101.pub root<span class="hljs-variable">@192</span>.<span class="hljs-number">168.3</span>.<span class="hljs-number">101</span><span class="hljs-symbol">:/tmp/id_rsa_wky101</span>.pub<br></code></pre></td></tr></table></div></figure>
 </li>
 <li><p>回到远程设备，将公钥添加到 </p>
-<figure class="highlight arcade"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-yo4lo0mfetespn"></i><span>ARCADE</span><div class="collapse show" id="collapse-yo4lo0mfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">~<span class="hljs-regexp">/.ssh/</span>authorized_keys<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight arcade"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-3jlfg4mff6kjne"></i><span>ARCADE</span><div class="collapse show" id="collapse-3jlfg4mff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">~<span class="hljs-regexp">/.ssh/</span>authorized_keys<br></code></pre></td></tr></table></div></figure>
 
 <p> 文件中：</p>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-845wmkmfetespn"></i><span>BASH</span><div class="collapse show" id="collapse-845wmkmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /tmp/id_rsa_wky101.pub &gt;&gt; ~/.ssh/authorized_keys<br><span class="hljs-built_in">chmod</span> 600 ~/.ssh/authorized_keys<br><span class="hljs-built_in">rm</span> /tmp/id_rsa_wky101.pub<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-bqc6aemff6kjne"></i><span>BASH</span><div class="collapse show" id="collapse-bqc6aemff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /tmp/id_rsa_wky101.pub &gt;&gt; ~/.ssh/authorized_keys<br><span class="hljs-built_in">chmod</span> 600 ~/.ssh/authorized_keys<br><span class="hljs-built_in">rm</span> /tmp/id_rsa_wky101.pub<br></code></pre></td></tr></table></div></figure>
 </li>
 <li><p>退出 SSH，并尝试重新登录：</p>
-<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-0oop8rmfetespn"></i><span>NGINX</span><div class="collapse show" id="collapse-0oop8rmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> root@<span class="hljs-number">192.168.3.101</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ncov8vmff6kjne"></i><span>NGINX</span><div class="collapse show" id="collapse-ncov8vmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> root@<span class="hljs-number">192.168.3.101</span><br></code></pre></td></tr></table></div></figure>
 
 <p>如果一切设置正确，应该无需密码即可登录。</p>
 </li>
@@ -376,7 +376,7 @@
 <h3 id="方案-2：安装-dropbear-工具"><a href="#方案-2：安装-dropbear-工具" class="headerlink" title="方案 2：安装 dropbear 工具"></a>方案 2：安装 <code>dropbear</code> 工具</h3><p>如果你的远程设备使用的是 OpenWrt 或类似系统，可以考虑安装 <code>dropbear</code>（轻量级 SSH 服务器工具），它自带密钥管理功能。</p>
 <ol>
 <li><p>在远程设备上执行以下命令安装 <code>dropbear</code>（假设该系统有包管理器支持）：</p>
-<figure class="highlight cmake"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ygzkcdmfetespn"></i><span>CMAKE</span><div class="collapse show" id="collapse-ygzkcdmfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake"> opkg update<br>opkg <span class="hljs-keyword">install</span> dropbear<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight cmake"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-56fq30mff6kjne"></i><span>CMAKE</span><div class="collapse show" id="collapse-56fq30mff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake"> opkg update<br>opkg <span class="hljs-keyword">install</span> dropbear<br></code></pre></td></tr></table></div></figure>
 
 <p>安装后，<code>dropbear</code> 自带的 SSH 服务器应该可以使用密钥认证。</p>
 </li>
@@ -385,10 +385,10 @@
 </ol>
 <h3 id="方案-3：使用-sshpass"><a href="#方案-3：使用-sshpass" class="headerlink" title="方案 3：使用 sshpass"></a>方案 3：使用 <code>sshpass</code></h3><p>如果你确实不想通过密钥认证方式，可以在本地机器上安装 <code>sshpass</code> 工具，在脚本中使用它来自动输入密码。</p>
 <p>在 MINGW64 环境下，使用包管理器（如 <code>pacman</code>）安装 <code>sshpass</code>：</p>
-<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-w4y8d4mfetespn"></i><span>EBNF</span><div class="collapse show" id="collapse-w4y8d4mfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">pacman -S sshpass</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight ebnf"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ci768mmff6kjne"></i><span>EBNF</span><div class="collapse show" id="collapse-ci768mmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">pacman -S sshpass</span><br></code></pre></td></tr></table></div></figure>
 
 <p>然后，你可以在脚本里这样写：</p>
-<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-um7ah6mfetespn"></i><span>NGINX</span><div class="collapse show" id="collapse-um7ah6mfetespn"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sshpass</span> -p <span class="hljs-string">&#x27;ab7878771&#x27;</span> ssh root@<span class="hljs-number">192.168.3.101</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight nginx"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6yu3ijmff6kjne"></i><span>NGINX</span><div class="collapse show" id="collapse-6yu3ijmff6kjne"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sshpass</span> -p <span class="hljs-string">&#x27;ab7878771&#x27;</span> ssh root@<span class="hljs-number">192.168.3.101</span><br></code></pre></td></tr></table></div></figure>
 
 <p>此方法虽然方便，但存在密码暴露的安全风险。</p>
 
