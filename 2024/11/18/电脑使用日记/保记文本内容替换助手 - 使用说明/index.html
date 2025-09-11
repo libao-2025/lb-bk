@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/c3b75dc1a58c1f2004faec0bf011337f.png">
 <meta property="og:image" content="https://app.fekepj.com/list-tu/2024/11/19/baf2f54823ff8097dcd8b32e217da746.png">
 <meta property="article:published_time" content="2024-11-18T16:29:24.000Z">
-<meta property="article:modified_time" content="2025-09-11T09:02:48.092Z">
+<meta property="article:modified_time" content="2025-09-11T09:03:30.693Z">
 <meta property="article:author" content="LI bao">
 <meta property="article:tag" content="md命令">
 <meta property="article:tag" content="md代码">
@@ -377,10 +377,10 @@
 <li><strong>计数逻辑</strong>：起始值由配置文件决定或手动设置，适合用于列出带有中文编号的任务或步骤。</li>
 </ul>
 <h4 id="示例图"><a href="#示例图" class="headerlink" title="示例图"></a>示例图</h4><p><img src="https://app.fekepj.com/list-tu/2024/11/19/fc2eb7e262e75e67cecb8fad77ce31c4.png" srcset="/img/loading.gif" lazyload alt="image-20241119124354338"></p>
-<figure class="highlight dust"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ej699pmff6kqi5"></i><span>DUST</span><div class="collapse show" id="collapse-ej699pmff6kqi5"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码</span><br><span class="language-xml">第 -</span><span class="hljs-template-variable">&#123;countzhcn&#125;</span><span class="language-xml"> 项任务。</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight dust"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-6jz1n5mff6lq1h"></i><span>DUST</span><div class="collapse show" id="collapse-6jz1n5mff6lq1h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码</span><br><span class="language-xml">第 -</span><span class="hljs-template-variable">&#123;countzhcn&#125;</span><span class="language-xml"> 项任务。</span><br></code></pre></td></tr></table></div></figure>
 
 <p>替换结果：</p>
-<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-palk43mff6kqi5"></i><span>DUST</span><div class="collapse show" id="collapse-palk43mff6kqi5"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码<br>第一项任务。<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-ddc6ycmff6lq1h"></i><span>DUST</span><div class="collapse show" id="collapse-ddc6ycmff6lq1h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码<br>第一项任务。<br></code></pre></td></tr></table></figure>
 
 <h3 id="counter"><a href="#counter" class="headerlink" title="-{counter}"></a><code>-&#123;counter&#125;</code></h3><p>此变量用于以阿拉伯数字格式进行计数，非常适合需要精确数字的场景。</p>
 <ul>
@@ -391,7 +391,7 @@
 <figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码</span><br><span class="language-xml">编号：-</span><span class="hljs-template-variable">&#123;counter&#125;</span><br></code></pre></td></tr></table></div></figure>
 
 <p>替换结果：</p>
-<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-nm1h7wmff6kqi5"></i><span>DIFF</span><div class="collapse show" id="collapse-nm1h7wmff6kqi5"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码<br>编号：1<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-rkyaromff6lq1h"></i><span>DIFF</span><div class="collapse show" id="collapse-rkyaromff6lq1h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码<br>编号：1<br></code></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="批量变量替换"><a href="#批量变量替换" class="headerlink" title="批量变量替换"></a>批量变量替换</h3><p>允许在同一文本中使用多个相同或不同的变量标记，程序会逐个识别并替换，极大提高了文本处理效率。</p>
@@ -401,7 +401,7 @@
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="任务清单示例"><a href="#任务清单示例" class="headerlink" title="任务清单示例"></a>任务清单示例</h3><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs diff">diff复制代码任务清单：<br><span class="hljs-deletion">-&#123;countzhcn&#125;：准备数据</span><br><span class="hljs-deletion">-&#123;countzhcn&#125;：编写文档</span><br><span class="hljs-deletion">-&#123;countzhcn&#125;：代码测试</span><br></code></pre></td></tr></table></div></figure>
 
 <p>替换后：</p>
-<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-cjg0jsmff6kqi5"></i><span>DUST</span><div class="collapse show" id="collapse-cjg0jsmff6kqi5"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码任务清单：<br>一：准备数据<br>二：编写文档<br>三：代码测试<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-d2croqmff6lq1h"></i><span>DUST</span><div class="collapse show" id="collapse-d2croqmff6lq1h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">复制代码任务清单：<br>一：准备数据<br>二：编写文档<br>三：代码测试<br></code></pre></td></tr></table></figure>
 
 <h3 id="项目序号示例"><a href="#项目序号示例" class="headerlink" title="项目序号示例"></a>项目序号示例</h3><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">复制代码项目 -</span><span class="hljs-template-variable">&#123;counter&#125;</span><span class="language-xml">：完成需求分析</span><br><span class="language-xml">项目 -</span><span class="hljs-template-variable">&#123;counter&#125;</span><span class="language-xml">：开始开发</span><br><span class="language-xml">项目 -</span><span class="hljs-template-variable">&#123;counter&#125;</span><span class="language-xml">：测试部署</span><br></code></pre></td></tr></table></div></figure>
 
