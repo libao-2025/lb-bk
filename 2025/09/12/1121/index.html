@@ -19,27 +19,23 @@
   <meta name="author" content="LI bao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo 部署 Git 仓库 SSH 多账号问题解决指南在使用 Hexo 部署博客时，如果本机有多个 GitHub 或 GitLab 账号，可能会遇到如下错误： SUBUNIT1234Please make sure you have the correct access rightsand the repository exists.FATAL Something&#x27;s wrong. M">
+    <meta name="description" content="1121在这里开始写作…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 部署 Git 仓库 SSH 多账号问题解决指南">
-<meta property="og:url" content="https://akak.lifu.eu.org/2025/08/27/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/Hexo%20%E9%83%A8%E7%BD%B2%20Git%20%E4%BB%93%E5%BA%93%20SSH%20%E5%A4%9A%E8%B4%A6%E5%8F%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:title" content="1121">
+<meta property="og:url" content="https://akak.lifu.eu.org/2025/09/12/1121/index.html">
 <meta property="og:site_name" content="保持微笑">
-<meta property="og:description" content="Hexo 部署 Git 仓库 SSH 多账号问题解决指南在使用 Hexo 部署博客时，如果本机有多个 GitHub 或 GitLab 账号，可能会遇到如下错误： SUBUNIT1234Please make sure you have the correct access rightsand the repository exists.FATAL Something&#x27;s wrong. M">
+<meta property="og:description" content="1121在这里开始写作…">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-27T20:20:26.000Z">
+<meta property="article:published_time" content="2025-09-12T11:44:29.000Z">
 <meta property="article:modified_time" content="2025-09-12T03:44:41.401Z">
 <meta property="article:author" content="LI bao">
-<meta property="article:tag" content="GPT学习">
-<meta property="article:tag" content="GitHub">
-<meta property="article:tag" content="git命令">
-<meta property="article:tag" content="hexo博客">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo 部署 Git 仓库 SSH 多账号问题解决指南 - 保持微笑</title>
+  <title>1121 - 保持微笑</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -262,7 +258,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo 部署 Git 仓库 SSH 多账号问题解决指南"></span>
+            <span id="subtitle" data-typed-text="1121"></span>
           
         </div>
 
@@ -273,8 +269,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-27 20:20" pubdate>
-          2025年8月27日 晚上
+        <time datetime="2025-09-12 11:44" pubdate>
+          2025年9月12日 中午
         </time>
       </span>
     
@@ -285,7 +281,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          562 字
+          8 字
         
       </span>
     
@@ -296,7 +292,7 @@
         
         
         
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -333,76 +329,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hexo 部署 Git 仓库 SSH 多账号问题解决指南</h1>
+            <h1 id="seo-header">1121</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo-部署-Git-仓库-SSH-多账号问题解决指南"><a href="#Hexo-部署-Git-仓库-SSH-多账号问题解决指南" class="headerlink" title="Hexo 部署 Git 仓库 SSH 多账号问题解决指南"></a>Hexo 部署 Git 仓库 SSH 多账号问题解决指南</h1><p>在使用 Hexo 部署博客时，如果本机有多个 GitHub 或 GitLab 账号，可能会遇到如下错误：</p>
-<figure class="highlight subunit"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-d5geykmfganjfq"></i><span>SUBUNIT</span><div class="collapse show" id="collapse-d5geykmfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs subunit">Please make sure you have the correct access rights<br>and the repository exists.<br>FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html<br><span class="hljs-keyword">Error: </span>Spawn failed<br></code></pre></td></tr></table></div></figure>
-
-<p>本文将详细说明排查思路与解决方案。</p>
-<hr>
-<h2 id="1️⃣-问题现象"><a href="#1️⃣-问题现象" class="headerlink" title="1️⃣ 问题现象"></a>1️⃣ 问题现象</h2><ol>
-<li>默认 SSH 账号能连接 GitHub：</li>
-</ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-icdy13mfganjfq"></i><span>BASH</span><div class="collapse show" id="collapse-icdy13mfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br><span class="hljs-comment"># 输出：</span><br><span class="hljs-comment"># Hi lifuaini2019! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></code></pre></td></tr></table></div></figure>
-
-<ol start="2">
-<li>自定义 SSH 账号无法连接：</li>
-</ol>
-<figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-i1alytmfganjfq"></i><span>BASH</span><div class="collapse show" id="collapse-i1alytmfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@lb.github.com<br><span class="hljs-comment"># 输出：</span><br><span class="hljs-comment"># ssh: connect to host github.com port 22: Connection timed out</span><br></code></pre></td></tr></table></div></figure>
-
-<hr>
-<h2 id="2️⃣-问题分析"><a href="#2️⃣-问题分析" class="headerlink" title="2️⃣ 问题分析"></a>2️⃣ 问题分析</h2><ul>
-<li>默认账户连接正常，说明 Git 与 SSH 本身没问题。</li>
-<li>自定义账号连接超时，说明 SSH 配置里 <strong>走的是 22 端口</strong>，但网络被屏蔽。</li>
-<li>Hexo deploy 依赖 <code>hexo-deployer-git</code> 调用 Git，如果 SSH 连接失败，就会报 <code>Spawn failed</code>。</li>
-</ul>
-<hr>
-<h2 id="3️⃣-多账户-SSH-配置示例"><a href="#3️⃣-多账户-SSH-配置示例" class="headerlink" title="3️⃣ 多账户 SSH 配置示例"></a>3️⃣ 多账户 SSH 配置示例</h2><p>在 <code>~/.ssh/config</code> 中配置多个账号：</p>
-<figure class="highlight plaintext"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-gsobd2mfganjfq"></i><span>SSH</span><div class="collapse show" id="collapse-gsobd2mfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs ssh"># GitHub 账户 one<br>Host lb.github.com<br>    HostName ssh.github.com  # 注意这里改成 ssh.github.com<br>    Port 443                 # 避免 22 端口被屏蔽<br>    User git<br>    PreferredAuthentications publickey<br>    IdentityFile ~/.ssh/id_rsa<br><br># GitHub 账户 two<br>Host zy.github.com<br>    HostName ssh.github.com<br>    Port 443<br>    User git<br>    PreferredAuthentications publickey<br>    IdentityFile ~/.ssh/id_rsa_zy<br><br># GitLab 账户<br>Host gitlab.com<br>    HostName gitlab.com<br>    User git<br>    IdentityFile ~/.ssh/id_rsa_lab6435<br><br># 远程设备 wky101<br>Host wky101<br>    HostName 192.168.3.101<br>    User root<br>    IdentityFile ~/.ssh/id_rsa_wky101<br></code></pre></td></tr></table></div></figure>
-
-<blockquote>
-<p>⚠ 注意：</p>
-<ul>
-<li>每个 <code>Host</code> 都可以是任意别名，比如 <code>lb.github.com</code>、<code>zy.github.com</code>。</li>
-<li>SSH key 文件路径正确且可用。</li>
-<li>对于国内网络，GitHub 默认 22 端口可能被屏蔽，改用 <code>ssh.github.com:443</code>。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="4️⃣-测试-SSH-连接"><a href="#4️⃣-测试-SSH-连接" class="headerlink" title="4️⃣ 测试 SSH 连接"></a>4️⃣ 测试 SSH 连接</h2><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-sjh550mfganjfq"></i><span>BASH</span><div class="collapse show" id="collapse-sjh550mfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@lb.github.com<br>ssh -T git@zy.github.com<br>ssh -T git@gitlab.com<br></code></pre></td></tr></table></div></figure>
-
-<p>输出类似：</p>
-<figure class="highlight ada"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-9h427omfganjfq"></i><span>ADA</span><div class="collapse show" id="collapse-9h427omfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">Hi lifuaini2019! You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></div></figure>
-
-<p>说明 SSH 配置正确。</p>
-<hr>
-<h2 id="5️⃣-Hexo-config-yml-deploy-配置示例"><a href="#5️⃣-Hexo-config-yml-deploy-配置示例" class="headerlink" title="5️⃣ Hexo _config.yml deploy 配置示例"></a>5️⃣ Hexo <code>_config.yml</code> deploy 配置示例</h2><p>如果使用 SSH，部署配置如下：</p>
-<figure class="highlight yml"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-2tg37lmfganjfq"></i><span>YML</span><div class="collapse show" id="collapse-2tg37lmfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">git@lb.github.com:用户名/仓库名.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></div></figure>
-
-<blockquote>
-<p>如果你想使用第二个账号：</p>
-<figure class="highlight yml"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-pfmysimfganjfq"></i><span>YML</span><div class="collapse show" id="collapse-pfmysimfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">git@zy.github.com:用户名/仓库名.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></div></figure>
-</blockquote>
-<hr>
-<h2 id="6️⃣-部署步骤"><a href="#6️⃣-部署步骤" class="headerlink" title="6️⃣ 部署步骤"></a>6️⃣ 部署步骤</h2><figure class="highlight bash"><i class="iconfont icon-code" type="button" data-toggle="collapse" data-target="#collapse-raoghjmfganjfq"></i><span>BASH</span><div class="collapse show" id="collapse-raoghjmfganjfq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean      <span class="hljs-comment"># 清理缓存</span><br>hexo g          <span class="hljs-comment"># 生成静态文件</span><br>hexo d          <span class="hljs-comment"># 部署到远程仓库</span><br></code></pre></td></tr></table></div></figure>
-
-<ul>
-<li>如果一切配置正确，就可以顺利部署。</li>
-<li>SSH 端口、密钥、remote URL 都是关键。</li>
-</ul>
-<hr>
-<h2 id="7️⃣-总结"><a href="#7️⃣-总结" class="headerlink" title="7️⃣ 总结"></a>7️⃣ 总结</h2><ol>
-<li>多账号 SSH 需要在 <code>~/.ssh/config</code> 中分别配置别名。</li>
-<li>国内网络可能屏蔽 22 端口，建议用 <code>ssh.github.com:443</code>。</li>
-<li>Hexo deploy 的 repository URL 对应 SSH 别名。</li>
-<li>每次部署前可用 <code>ssh -T</code> 测试连接，确保密钥有效。</li>
-</ol>
-<p>这样，你的 Hexo 部署就能安全、稳定地支持多个账号。</p>
-<hr>
-<p><strong>小提示</strong>：以后如果新增 GitHub 账号，只需在 <code>~/.ssh/config</code> 添加一段对应配置，然后在 Hexo 配置里改 URL 即可。</p>
+                <h1 id="1121"><a href="#1121" class="headerlink" title="1121"></a>1121</h1><p>在这里开始写作…</p>
 
                 
               </div>
@@ -411,40 +343,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/" class="category-chain-item">hexo与git学习日记</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/GPT%E5%AD%A6%E4%B9%A0/" class="print-no-link">#GPT学习</a>
-      
-        <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
-      
-        <a href="/tags/git%E5%91%BD%E4%BB%A4/" class="print-no-link">#git命令</a>
-      
-        <a href="/tags/hexo%E5%8D%9A%E5%AE%A2/" class="print-no-link">#hexo博客</a>
-      
-    </div>
   
 </div>
 
@@ -456,18 +354,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/27/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E6%97%A5%E8%AE%B0/macOS%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%B8%B8/macOS%E8%84%9A%E6%9C%AC%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="macOS脚本无法运行解决方法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">macOS脚本无法运行解决方法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/08/27/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%97%A5%E5%B8%B8/%E6%9C%AA%E6%9D%A5%E5%8D%81%E5%B9%B4%E5%8D%B0%E5%BA%A6%E7%BB%8F%E6%B5%8E%E8%B5%B0%E5%90%91%E9%A2%84%E6%B5%8B/" title="未来十年印度经济走向预测">
-                        <span class="hidden-mobile">未来十年印度经济走向预测</span>
+                      <a href="/2025/09/09/hexo%E4%B8%8Egit%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E7%A6%8F%E7%94%B0%E5%8F%A3%E5%B2%B8%E7%AD%89%E5%8F%A3%E5%B2%B8/" title="福田口岸等口岸">
+                        <span class="hidden-mobile">福田口岸等口岸</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
