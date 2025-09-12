@@ -1,5 +1,5 @@
 ---
-title: 程序转成exe后运行图标出错的处理方法
+title: 程序转成exe
 categories:
   - GPT问答类
 date: 2024-11-15 17:26:16
